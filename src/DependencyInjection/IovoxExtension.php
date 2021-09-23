@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -10,15 +12,16 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class IovoxExtension extends Extension
 {
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('iovox.example', $config['example']);
-        $container->setParameter('iovox.example_with_default_value', $config['example_with_default_value']);
+        $container->setParameter('iovox.endpoint', $config['endpoint']);
+        $container->setParameter('iovox.username', $config['username']);
+        $container->setParameter('iovox.secure_key', $config['secure_key']);
 
         $loader = new YamlFileLoader(
             $container,

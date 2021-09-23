@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -17,8 +19,9 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('example')->info('example info')->end()
-            ->scalarNode('example_with_default_value')->defaultValue('var')->end()
+            ->scalarNode('endpoint')->end()
+            ->scalarNode('username')->end()
+            ->scalarNode('secure_key')->end()
             ->end();
 
         return $treeBuilder;
