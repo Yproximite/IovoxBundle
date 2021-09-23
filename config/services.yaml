@@ -3,5 +3,5 @@ services:
     autowire: true
     autoconfigure: true
 
-  Yproximite\IovoxBundle\Iovox\:
-    resource: '../../Iovox/'
+  Yproximite\IovoxBundle\:
+    resource: '../src'
