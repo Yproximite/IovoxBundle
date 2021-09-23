@@ -3,34 +3,34 @@
 namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
-use Yproximite\IovoxBundle\Api\AbstractApi;
-use Yproximite\IovoxBundle\Api\Query;
 use Yproximite\IovoxBundle\Api\QueryParameter\GenericQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\LimitQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\OutputQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\PageQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
-use Yproximite\IovoxBundle\Exception\Api\BadQueryParameterException;
 
-class GetSoundFiles extends AbstractApi
+/**
+ * @see https://docs.iovox.com/display/RA/getSoundFiles
+ */
+class GetSoundFiles extends AbstractSoundFiles
 {
-    public function executeQuery(array $queryParameters = [])
+    public const QUERY_PARAMETER_ORDER       = 'order';
+    public const QUERY_PARAMETER_REQ_FIELDS  = 'req_fields';
+    public const QUERY_PARAMETER_SOUND_LABEL = 'sound_label';
+    public const QUERY_PARAMETER_SOUND_GROUP = 'sound_group';
+
+    /**
+     * @param array<string, string|int> $queryParameters
+     *
+     * @return array<string, mixed>
+     */
+    public function executeQuery(array $queryParameters = []): array
     {
-        $query = new Query($this->method, $this->endpoint);
-        foreach ($queryParameters as $key => $queryParameter) {
-            if (!array_key_exists($key, $this->editableQueryParameters)) {
-                throw new BadQueryParameterException($key, array_keys($this->editableQueryParameters));
-            }
+        $query    = $this->createQuery($queryParameters);
+        $response = $this->client->executeQuery($query);
 
-            $query->addQueryParameter($queryParameter, $this->editableQueryParameters[$key]);
-        }
-
-        foreach ($this->allQueryParameters as $queryParameter) {
-            $query->addDefaultQueryParameter($queryParameter);
-        }
-
-        return json_decode($this->client->executeQuery($query));
+        return json_decode($response->getContent());
     }
 
     protected function setMethod(): void
@@ -38,20 +38,15 @@ class GetSoundFiles extends AbstractApi
         $this->method = Request::METHOD_GET;
     }
 
-    protected function setEndpoint(): void
-    {
-        $this->endpoint = '/SoundFiles';
-    }
-
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            PageQueryParameter::getParameterName()    => new PageQueryParameter(),
-            LimitQueryParameter::getParameterName()   => new LimitQueryParameter(),
-            'order'                                   => new GenericQueryParameter('order', GenericQueryParameter::TYPE_STRING),
-            'req_fields'                              => new GenericQueryParameter('req_fields', GenericQueryParameter::TYPE_STRING),
-            'sound_label'                             => new GenericQueryParameter('sound_label', GenericQueryParameter::TYPE_STRING),
-            'sound_group'                             => new GenericQueryParameter('sound_group', GenericQueryParameter::TYPE_STRING),
+            PageQueryParameter::getParameterName()  => new PageQueryParameter(),
+            LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
+            static::QUERY_PARAMETER_ORDER           => new GenericQueryParameter(static::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING),
+            static::QUERY_PARAMETER_REQ_FIELDS      => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
+            static::QUERY_PARAMETER_SOUND_LABEL     => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_LABEL, GenericQueryParameter::TYPE_STRING),
+            static::QUERY_PARAMETER_SOUND_GROUP     => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_GROUP, GenericQueryParameter::TYPE_STRING),
         ];
 
         $this->allQueryParameters = array_merge([

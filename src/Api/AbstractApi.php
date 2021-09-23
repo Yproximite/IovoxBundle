@@ -4,6 +4,7 @@ namespace Yproximite\IovoxBundle\Api;
 
 use Yproximite\IovoxBundle\Api\QueryParameter\QueryParameterInterface;
 use Yproximite\IovoxBundle\Client;
+use Yproximite\IovoxBundle\Exception\Api\BadQueryParameterException;
 
 abstract class AbstractApi
 {
@@ -19,6 +20,27 @@ abstract class AbstractApi
         $this->setMethod();
         $this->setEndpoint();
         $this->setQueryParameters();
+    }
+
+    /**
+     * @param array<string, string|int> $queryParameters
+     */
+    protected function createQuery(array $queryParameters = []): Query
+    {
+        $query = new Query($this->method, $this->endpoint);
+        foreach ($queryParameters as $key => $queryParameter) {
+            if (!array_key_exists($key, $this->editableQueryParameters)) {
+                throw new BadQueryParameterException($key, array_keys($this->editableQueryParameters));
+            }
+
+            $query->addQueryParameter($queryParameter, $this->editableQueryParameters[$key]);
+        }
+
+        foreach ($this->allQueryParameters as $queryParameter) {
+            $query->addDefaultQueryParameter($queryParameter);
+        }
+
+        return $query;
     }
 
     protected abstract function setMethod(): void;

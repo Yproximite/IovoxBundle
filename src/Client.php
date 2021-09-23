@@ -4,6 +4,7 @@ namespace Yproximite\IovoxBundle;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Contracts\HttpClient\ResponseInterface;
 use Yproximite\IovoxBundle\Api\Query;
 
 class Client
@@ -12,16 +13,20 @@ class Client
     {
     }
 
-    public function executeQuery(Query $query)
+    public function executeQuery(Query $query): ResponseInterface
     {
-        $response = $this->client->request($query->method, sprintf('%s%s', $this->parameterBag->get('iovox.endpoint'), $query->endpoint), [
+        $options = [
             'query'   => $query->getQueryParameters(),
             'headers' => [
                 'username'  => $this->parameterBag->get('iovox.username'),
                 'secureKey' => $this->parameterBag->get('iovox.secure_key'),
             ],
-        ]);
+        ];
 
-        return $response->getContent();
+        if (null !== $content = $query->getContent()) {
+            $options['body'] = $content;
+        }
+
+        return $this->client->request($query->method, sprintf('%s%s', $this->parameterBag->get('iovox.endpoint'), $query->endpoint), $options);
     }
 }

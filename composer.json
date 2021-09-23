@@ -13,8 +13,10 @@
   },
   "require": {
     "php": "^8.0",
+    "doctrine/annotations": "^1.13",
     "symfony/framework-bundle": "^5.3",
-    "symfony/serializer": "^5.3"
+    "symfony/serializer": "^5.3",
+    "symfony/validator": "^5.3"
   },
   "require-dev": {
     "escapestudios/symfony2-coding-standard": "^3.12",

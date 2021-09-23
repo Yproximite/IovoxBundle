@@ -11,14 +11,11 @@ class Query
     /**
      * @param array<string, string|int> $queryParameters
      */
-    public function __construct(public string $method, public string $endpoint, private array $queryParameters = [])
+    public function __construct(public string $method, public string $endpoint, private array $queryParameters = [], private ?string $content = null)
     {
     }
 
-    /**
-     * @param string|int $queryParameter
-     */
-    public function addQueryParameter($queryParameter, QueryParameterInterface $queryParameterConfig): void
+    public function addQueryParameter(string|int $queryParameter, QueryParameterInterface $queryParameterConfig): void
     {
         if (!$queryParameterConfig->isValid($queryParameter)) {
             throw new InvalidQueryParameterException($queryParameter, $queryParameterConfig);
@@ -50,5 +47,15 @@ class Query
     public function getQueryParameters(): array
     {
         return $this->queryParameters;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): void
+    {
+        $this->content = $content;
     }
 }

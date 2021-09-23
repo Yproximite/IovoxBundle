@@ -3,31 +3,27 @@
 namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
-use Yproximite\IovoxBundle\Api\AbstractApi;
-use Yproximite\IovoxBundle\Api\Query;
+use Symfony\Component\HttpFoundation\Response;
 use Yproximite\IovoxBundle\Api\QueryParameter\GenericQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
-use Yproximite\IovoxBundle\Exception\Api\BadQueryParameterException;
 
-class DeleteSoundFiles extends AbstractApi
+/**
+ * @see https://docs.iovox.com/display/RA/deleteSoundFiles
+ */
+class DeleteSoundFiles extends AbstractSoundFiles
 {
-    public function executeQuery(array $queryParameters = [])
+    public const QUERY_PARAMETER_SOUND_FILES = 'sound_files';
+
+    /**
+     * @param array<string, string|int> $queryParameters
+     */
+    public function executeQuery(array $queryParameters = []): bool
     {
-        $query = new Query($this->method, $this->endpoint);
-        foreach ($queryParameters as $key => $queryParameter) {
-            if (!array_key_exists($key, $this->editableQueryParameters)) {
-                throw new BadQueryParameterException($key, array_keys($this->editableQueryParameters));
-            }
+        $query    = $this->createQuery($queryParameters);
+        $response = $this->client->executeQuery($query);
 
-            $query->addQueryParameter($queryParameter, $this->editableQueryParameters[$key]);
-        }
-
-        foreach ($this->allQueryParameters as $queryParameter) {
-            $query->addDefaultQueryParameter($queryParameter);
-        }
-
-        return json_decode($this->client->executeQuery($query));
+        return $response->getStatusCode() === Response::HTTP_NO_CONTENT;
     }
 
     protected function setMethod(): void
@@ -35,15 +31,10 @@ class DeleteSoundFiles extends AbstractApi
         $this->method = Request::METHOD_DELETE;
     }
 
-    protected function setEndpoint(): void
-    {
-        $this->endpoint = '/SoundFiles';
-    }
-
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            'sound_files' => new GenericQueryParameter('sound_files', GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all sound files (sound_label;sound_group) to be deleted', true),
+            static::QUERY_PARAMETER_SOUND_FILES => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_FILES, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all sound files (sound_label;sound_group) to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([

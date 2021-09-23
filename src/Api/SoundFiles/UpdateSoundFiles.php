@@ -11,9 +11,9 @@ use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
- * @see https://docs.iovox.com/display/RA/createSoundFiles
+ * @see https://docs.iovox.com/display/RA/updateSoundFiles
  */
-class CreateSoundFiles extends AbstractSoundFiles
+class UpdateSoundFiles extends AbstractSoundFiles
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer)
     {
@@ -22,16 +22,16 @@ class CreateSoundFiles extends AbstractSoundFiles
 
     public function executeQuery(SoundFilesPayload $payload): bool
     {
-        $query = $this->createQuery();
-        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [SoundFilesPayload::GROUP_CREATE]]));
+        $query    = $this->createQuery();
+        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [SoundFilesPayload::GROUP_UPDATE]]));
         $response = $this->client->executeQuery($query);
 
-        return $response->getStatusCode() === Response::HTTP_CREATED;
+        return $response->getStatusCode() === Response::HTTP_NO_CONTENT;
     }
 
     protected function setMethod(): void
     {
-        $this->method = Request::METHOD_POST;
+        $this->method = Request::METHOD_PUT;
     }
 
     protected function setQueryParameters(): void
@@ -40,7 +40,7 @@ class CreateSoundFiles extends AbstractSoundFiles
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('createSoundFiles'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('updateSoundFiles'),
         ], $this->editableQueryParameters);
     }
 }
