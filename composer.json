@@ -1,0 +1,35 @@
+{
+  "name": "yproximite/iovox-bundle",
+  "type": "symfony-bundle",
+  "description": "",
+  "license": "MIT",
+  "config": {
+    "bin-dir": "bin",
+    "sort-packages": true
+  },
+  "scripts": {
+    "phpstan": "phpstan analyze --ansi",
+    "phpunit": "phpunit"
+  },
+  "require": {
+    "php": "^8.0",
+    "symfony/framework-bundle": "^5.3"
+  },
+  "require-dev": {
+    "escapestudios/symfony2-coding-standard": "^3.12",
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "nyholm/symfony-bundle-test": "^1.6.1",
+    "phpstan/phpstan": "^0.12.99",
+    "phpstan/phpstan-strict-rules": "^0.12.11",
+    "squizlabs/php_codesniffer": "^3.6",
+    "symfony/phpunit-bridge": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Yproximite\\IovoxBundle\\": "src"
+    },
+    "exclude-from-classmap": [
+      "/tests/"
+    ]
+  }
+}

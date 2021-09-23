@@ -1,0 +1,7 @@
+/.php_cs.cache
+/.phpcs-cache
+
+/bin/*
+
+vendor
+node_modules
