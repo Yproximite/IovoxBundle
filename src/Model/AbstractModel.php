@@ -10,4 +10,23 @@ abstract class AbstractModel implements ModelInterface
      * @param array<string, mixed> $opts
      */
     abstract public static function create(array $opts): self;
+
+    /**
+     * @param array<string, mixed> $response
+     *
+     * @return array<int|string, mixed>
+     */
+    protected static function formatResult(array $response, bool $isFirstNode = true): array
+    {
+        $results = $response;
+        if ($isFirstNode) {
+            $results = $response['results']['result'] ?? [];
+        }
+
+        if ([] !== $results && !array_key_exists(0, $results)) {
+            return [$results];
+        }
+
+        return $results;
+    }
 }
