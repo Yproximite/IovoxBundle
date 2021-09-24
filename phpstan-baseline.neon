@@ -1,6 +1,41 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$allQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/DeleteSoundFiles.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$editableQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/DeleteSoundFiles.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$allQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/GetSoundFileData.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$editableQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/GetSoundFileData.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$allQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/GetSoundFiles.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\AbstractApi\\:\\:\\$editableQueryParameters \\(array\\<string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\QueryParameterInterface\\>\\) does not accept array\\<int\\|string, Yproximite\\\\IovoxBundle\\\\Api\\\\QueryParameter\\\\GenericQueryParameter\\>\\.$#"
+			count: 1
+			path: src/Api/SoundFiles/GetSoundFiles.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
 			message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition\\:\\:children\\(\\)\\.$#"
 			count: 1
 			path: src/DependencyInjection/Configuration.php
@@ -9,4 +44,19 @@ parameters:
 			message: "#^Method Yproximite\\\\IovoxBundle\\\\DependencyInjection\\\\IovoxExtension\\:\\:load\\(\\) has parameter \\$configs with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/DependencyInjection/IovoxExtension.php
+
+		-
+			message: "#^Parameter \\#4 \\$results of method Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:__construct\\(\\) expects Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\>, Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\SoundFiles\\\\SoundFileModel\\> given\\.$#"
+			count: 1
+			path: src/Model/SoundFiles/GetSoundFilesModel.php
+
+		-
+			message: "#^Method Yproximite\\\\IovoxBundle\\\\Serializer\\\\IovoxSerializer\\:\\:deserialize\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Serializer/IovoxSerializer.php
+
+		-
+			message: "#^Method Yproximite\\\\IovoxBundle\\\\Serializer\\\\IovoxSerializer\\:\\:serialize\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Serializer/IovoxSerializer.php
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -9,6 +11,7 @@ use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\OutputQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\PageQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
+use Yproximite\IovoxBundle\Model\SoundFiles\GetSoundFilesModel;
 
 /**
  * @see https://docs.iovox.com/display/RA/getSoundFiles
@@ -22,15 +25,13 @@ class GetSoundFiles extends AbstractSoundFiles
 
     /**
      * @param array<string, string|int> $queryParameters
-     *
-     * @return array<string, mixed>
      */
-    public function executeQuery(array $queryParameters = []): array
+    public function executeQuery(array $queryParameters = []): GetSoundFilesModel
     {
         $query    = $this->createQuery($queryParameters);
         $response = $this->client->executeQuery($query);
 
-        return json_decode($response->getContent());
+        return GetSoundFilesModel::create($response->toArray());
     }
 
     protected function setMethod(): void
