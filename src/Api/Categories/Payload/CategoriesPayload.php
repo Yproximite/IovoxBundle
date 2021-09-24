@@ -10,15 +10,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class CategoriesPayload
 {
-    public const GROUP_CREATE = 'categories_create';
-    public const GROUP_UPDATE = 'categories_update';
+    public const GROUP_CREATE               = 'categories_create';
+    public const GROUP_CREATE_CONFIGURATION = 'categories_create_configuration';
 
     /**
      * @var array<int, CategoryPayload>
      */
     #[SerializedName('category')]
-    #[Groups(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
-    #[Assert\Valid(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
+    #[Groups(groups: [self::GROUP_CREATE, self::GROUP_CREATE_CONFIGURATION])]
+    #[Assert\Valid(groups: [self::GROUP_CREATE, self::GROUP_CREATE_CONFIGURATION])]
     public array $categories;
 
     /**
