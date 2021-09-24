@@ -6,7 +6,6 @@ namespace Yproximite\IovoxBundle\Exception\Api;
 
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
-use Throwable;
 
 class ValidationPayloadException extends \Exception
 {
