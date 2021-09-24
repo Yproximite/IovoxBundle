@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Model;
 
-abstract class AbstractModel
+abstract class AbstractModel implements ModelInterface
 {
     /**
      * @param array<string, mixed> $opts
-     *
-     * @return mixed|null
      */
-    abstract public static function create(array $opts);
+    abstract public static function create(array $opts): self;
 }
