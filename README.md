@@ -26,6 +26,9 @@ iovox:
   secure_key: secureKey
 ```
 
+# Account Setup
+### [Categories](doc/Categories.md)
+
 # Calling
 ### [SoundFiles](doc/SoundFiles.md)
 

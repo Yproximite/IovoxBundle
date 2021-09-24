@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Model\SoundFiles;
+namespace Yproximite\IovoxBundle\Model\Categories;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Yproximite\IovoxBundle\Model\PaginateResponse;
 
-class GetSoundFilesModel extends PaginateResponse
+class GetCategoryIdModel extends PaginateResponse
 {
     /**
-     * @param Collection<int, SoundFileModel> $results
+     * @param Collection<int, CategoryIdModel> $results
      */
     protected function __construct(public int $currentPage, public int $totalPages, public int $totalResults, public Collection $results)
     {
@@ -26,7 +26,7 @@ class GetSoundFilesModel extends PaginateResponse
             (int) ($response['current_page'] ?? 0),
             (int) ($response['total_pages'] ?? 0),
             (int) ($response['total_results'] ?? 0),
-            (new ArrayCollection(static::formatResult($response)))->map(fn ($v): SoundFileModel => SoundFileModel::create($v))
+            (new ArrayCollection(static::formatResult($response)))->map(fn ($v): CategoryIdModel => CategoryIdModel::create($v))
         );
     }
 }

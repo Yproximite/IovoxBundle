@@ -28,4 +28,19 @@ class PaginateResponse extends Response
             new ArrayCollection($response['results'])
         );
     }
+
+    /**
+     * @param array<string, mixed> $response
+     *
+     * @return array<int|string, mixed>
+     */
+    protected static function formatResult(array $response): array
+    {
+        $results = $response['results']['result'] ?? [];
+        if ([] !== $results && !array_key_exists(0, $results)) {
+            return [$results];
+        }
+
+        return $results;
+    }
 }

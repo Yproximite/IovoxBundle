@@ -6,6 +6,7 @@ namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Yproximite\IovoxBundle\Api\ErrorResult\GenericErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestEmptyErrorResult;
@@ -19,6 +20,7 @@ use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
+use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
@@ -26,7 +28,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
  */
 class UpdateSoundFiles extends AbstractSoundFiles
 {
-    public function __construct(protected Client $client, protected IovoxSerializer $serializer)
+    public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
     }
@@ -34,6 +36,12 @@ class UpdateSoundFiles extends AbstractSoundFiles
     public function executeQuery(SoundFilesPayload $payload): bool
     {
         $query = $this->createQuery();
+
+        $validate = $this->validator->validate($payload, null, [SoundFilesPayload::GROUP_UPDATE]);
+        if ($validate->count() > 0) {
+            throw new ValidationPayloadException($validate);
+        }
+
         $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [SoundFilesPayload::GROUP_UPDATE]]));
         $response = $this->client->executeQuery($query);
 
