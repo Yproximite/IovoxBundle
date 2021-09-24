@@ -9,6 +9,26 @@
 $ composer require yproximite/iovox-bundle
 ```
 
+```php
+# in config/bundle.php
+return [
+    ...
+    Yproximite\IovoxBundle\IovoxBundle::class => ['all' => true]
+    ...
+];
+```
+
+```yaml
+# in config/packages/iovox.yaml
+iovox:
+  endpoint: endpoint
+  username: username
+  secure_key: secureKey
+```
+
+# Calling
+### [SoundFiles](doc/SoundFiles.md)
+
 # Other
 
 * Use in a live repo
@@ -18,7 +38,7 @@ In the composer file:
 "repositories": [
     {
       "type": "path",
-      "url": "__YOUR-PATH__/iovox-bundle",
+      "url": "__YOUR-PATH__/IovoxBundle",
       "options": {
         "symlink": true
       }
