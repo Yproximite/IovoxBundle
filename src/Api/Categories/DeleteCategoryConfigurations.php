@@ -17,11 +17,11 @@ use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 
 /**
- * @see https://docs.iovox.com/display/RA/deleteCategories
+ * @see https://docs.iovox.com/display/RA/deleteCategoryConfigurations
  */
-class DeleteCategories extends AbstractCategories
+class DeleteCategoryConfigurations extends AbstractCategories
 {
-    public const QUERY_PARAMETER_CATEGORIES = 'categories';
+    public const QUERY_PARAMETER_CATEGORIES_IDS = 'categories_ids';
 
     /**
      * @param array<string, string|int> $queryParameters
@@ -46,12 +46,12 @@ class DeleteCategories extends AbstractCategories
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_CATEGORIES => new GenericQueryParameter(static::QUERY_PARAMETER_CATEGORIES, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all category label and id combinations of the categories to be deleted. Category label and id should be separated by a semi-colon. e.g. Location;Cambridge,Location;London', true),
+            static::QUERY_PARAMETER_CATEGORIES_IDS => new GenericQueryParameter(static::QUERY_PARAMETER_CATEGORIES_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of all categories configuration IDs to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('deleteCategories'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('deleteCategoryConfigurations'),
         ], $this->editableQueryParameters);
     }
 
@@ -61,9 +61,8 @@ class DeleteCategories extends AbstractCategories
             new VersionEmptyErrorResult(),
             new VersionInvalidErrorResult(),
             new RequestMethodInvalidErrorResult($this->method),
-            new GenericErrorResult(400, 'Category ID \d+ of \d+ does not exist', 'Correct category_id x (item) of y (total)'),
-            new GenericErrorResult(400, 'Category ID \d+ of \d+ Empty', 'Correct category_id x (item) of y (total)'),
-            new GenericErrorResult(400, 'Category IDs Empty', 'Add one or more categories to the request'),
+            new GenericErrorResult(400, 'Category ID \d+ of \d+ does not exist', 'Correct categories x (item) of y (total)'),
+            new GenericErrorResult(400, 'Category ID \d+ of \d+ is empty', 'Correct categories x (item) of y (total)'),
             new InternalErrorResult(),
         ];
     }

@@ -23,6 +23,9 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
+/**
+ * @see https://docs.iovox.com/display/RA/createCategoryConfigurations
+ */
 class CreateCategoryConfigurations extends AbstractCategories
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
