@@ -65,8 +65,6 @@ public function example(UpdateSoundFiles $updateSoundFiles)
 
 ```php
 use Yproximite\IovoxBundle\Api\SoundFiles\DeleteSoundFiles;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilePayload;
 
 public function example(DeleteSoundFiles $deleteSoundFiles)
 {
