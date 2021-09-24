@@ -38,11 +38,19 @@ class BadResponseReturnException extends \Exception
      */
     private function decodeContent(ResponseInterface $response): array
     {
-        $xml    = simplexml_load_string($response->getContent(false));
-        $json   = json_encode($xml);
-        $errors = ['An error occurred'];
-        if (false !== $json) {
-            $errors = json_decode($json, true);
+        try {
+            $xml    = simplexml_load_string($response->getContent(false));
+            $json   = json_encode($xml);
+            $errors = ['An error occurred'];
+            if (false !== $json) {
+                $errors = json_decode($json, true);
+            }
+        } catch (\Throwable $e) {
+            try {
+                $errors = json_decode($response->getContent(false), true)['errors'] ?? ['An error occurred'];
+            } catch (\Throwable $e) {
+                $errors = [$response->getContent(false)];
+            }
         }
 
         return $errors;
