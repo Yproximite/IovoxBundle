@@ -1,12 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\RequestMethodInvalidErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\VersionEmptyErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\VersionInvalidErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\GenericQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Client;
+use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
@@ -30,7 +38,11 @@ class GetSoundFileData extends AbstractSoundFiles
         $query    = $this->createQuery($queryParameters);
         $response = $this->client->executeQuery($query);
 
-        return $response->getContent();
+        if (Response::HTTP_OK === $response->getStatusCode()) {
+            return $response->getContent();
+        }
+
+        throw new BadResponseReturnException($response, $this->errorResults);
     }
 
     protected function setMethod(): void
@@ -49,5 +61,15 @@ class GetSoundFileData extends AbstractSoundFiles
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
             MethodQueryParameter::getParameterName()  => new MethodQueryParameter('getSoundFileData'),
         ], $this->editableQueryParameters);
+    }
+
+    protected function setErrorResults(): void
+    {
+        $this->errorResults = [
+            new VersionEmptyErrorResult(),
+            new VersionInvalidErrorResult(),
+            new RequestMethodInvalidErrorResult($this->method),
+            new InternalErrorResult(),
+        ];
     }
 }

@@ -1,13 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Yproximite\IovoxBundle\Api\ErrorResult\GenericErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\RequestEmptyErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\RequestMethodInvalidErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\VersionEmptyErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\VersionInvalidErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
+use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
 use Yproximite\IovoxBundle\Client;
+use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
@@ -22,11 +33,15 @@ class UpdateSoundFiles extends AbstractSoundFiles
 
     public function executeQuery(SoundFilesPayload $payload): bool
     {
-        $query    = $this->createQuery();
+        $query = $this->createQuery();
         $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [SoundFilesPayload::GROUP_UPDATE]]));
         $response = $this->client->executeQuery($query);
 
-        return $response->getStatusCode() === Response::HTTP_NO_CONTENT;
+        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
+            return true;
+        }
+
+        throw new BadResponseReturnException($response, $this->errorResults);
     }
 
     protected function setMethod(): void
@@ -42,5 +57,25 @@ class UpdateSoundFiles extends AbstractSoundFiles
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
             MethodQueryParameter::getParameterName()  => new MethodQueryParameter('updateSoundFiles'),
         ], $this->editableQueryParameters);
+    }
+
+    protected function setErrorResults(): void
+    {
+        $this->errorResults = [
+            new VersionEmptyErrorResult(),
+            new VersionInvalidErrorResult(),
+            new RequestMethodInvalidErrorResult($this->method),
+            new XmlEmptyErrorResult(),
+            new XmlParseErrorResult(),
+            new RequestEmptyErrorResult(),
+            new GenericErrorResult(400, 'Sound Label \d+ of \d+ Empty', 'Add sound_label to sound_file x (item) of y (total)'),
+            new GenericErrorResult(400, 'Sound File \d+ of \d+ Does not exist', 'Create or remove sound file x (item) of y (total)'),
+            new GenericErrorResult(400, 'Sound Label \d+ of \d+ already exists in Sound Group', 'Remove or change sound_label x (item) of y (total)'),
+            new GenericErrorResult(400, 'Sound Group \d+ of \d+ Forbidden', 'Change sound_group x (item) of y (total)'),
+            new GenericErrorResult(400, 'Sound File \d+ of \d+ Empty', 'Add in sound_file base64 encoded binary data for sound_file x (item) of y (total)'),
+            new GenericErrorResult(400, 'Sound File \d+ of \d+ Exceeds maximum allowed filesize', 'Change sound_file x (item) of y (total) to a smaller filesize file'),
+            new GenericErrorResult(400, 'Duplicate Sound File Received', 'Remove any duplicate sound_label and sound_group combinations from the XML'),
+            new InternalErrorResult(),
+        ];
     }
 }
