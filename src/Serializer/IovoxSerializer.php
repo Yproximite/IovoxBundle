@@ -22,7 +22,7 @@ class IovoxSerializer implements SerializerInterface
     {
         $xmlEncoderDefaultConfig = [
             'xml_format_output'  => 'true',
-            'xml_encoding'       => 'UTF-8',
+            'xml_encoding'       => 'utf-8',
             'xml_root_node_name' => 'request',
             'remove_empty_tags'  => true,
         ];
