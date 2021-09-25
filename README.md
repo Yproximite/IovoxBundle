@@ -27,6 +27,7 @@ iovox:
 ```
 
 # Account Setup
+### [Nodes](doc/AccountSetup/Nodes.md)
 ### [Categories](doc/Categories.md)
 
 # Calling
