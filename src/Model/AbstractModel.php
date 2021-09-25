@@ -7,7 +7,7 @@ namespace Yproximite\IovoxBundle\Model;
 abstract class AbstractModel implements ModelInterface
 {
     /**
-     * @param array<string, mixed> $opts
+     * @param array<int|string, mixed> $opts
      */
     abstract public static function create(array $opts): self;
 

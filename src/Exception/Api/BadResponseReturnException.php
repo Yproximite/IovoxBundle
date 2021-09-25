@@ -6,6 +6,7 @@ namespace Yproximite\IovoxBundle\Exception\Api;
 
 use Symfony\Contracts\HttpClient\ResponseInterface;
 use Yproximite\IovoxBundle\Api\ErrorResult\ErrorResultInterface;
+use Yproximite\IovoxBundle\Utils\ConvertXmlString;
 
 class BadResponseReturnException extends \Exception
 {
@@ -39,16 +40,14 @@ class BadResponseReturnException extends \Exception
     private function decodeContent(ResponseInterface $response): array
     {
         try {
-            $xml    = simplexml_load_string($response->getContent(false));
-            $json   = json_encode($xml);
-            $errors = ['An error occurred'];
-            if (false !== $json) {
-                $errors = json_decode($json, true);
+            $errors = ConvertXmlString::convertXmlStringToArray($response->getContent(false));
+            if (null === $errors) {
+                $errors = ['An error occurred'];
             }
-        } catch (\Throwable $e) {
+        } catch (\Throwable) {
             try {
                 $errors = json_decode($response->getContent(false), true)['errors'] ?? ['An error occurred'];
-            } catch (\Throwable $e) {
+            } catch (\Throwable) {
                 $errors = [$response->getContent(false)];
             }
         }
