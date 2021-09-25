@@ -23,7 +23,7 @@ use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
- * @see https://docs.iovox.com/display/RA/getVoxnumbers
+ * @see https://docs.iovox.com/display/RA/setCallStatus
  */
 class SetCallStatus extends AbstractVoxnumbers
 {
