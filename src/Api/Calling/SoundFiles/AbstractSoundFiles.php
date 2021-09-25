@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\SoundFiles;
+namespace Yproximite\IovoxBundle\Api\Calling\SoundFiles;
 
 use Yproximite\IovoxBundle\Api\AbstractApi;
 

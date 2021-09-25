@@ -1,7 +1,7 @@
 # GetSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\SoundFiles\GetSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFiles;
 
 public function example(GetSoundFiles $getSoundFiles)
 {
@@ -9,12 +9,12 @@ public function example(GetSoundFiles $getSoundFiles)
 } 
 ```
 
-see [GetSoundFiles](../src/Api/SoundFiles/GetSoundFiles.php) for available options
+see [GetSoundFiles](../../src/Api/Calling/SoundFiles/GetSoundFiles.php) for available options
 
 # GetSoundFileData
 
 ```php
-use Yproximite\IovoxBundle\Api\SoundFiles\GetSoundFileData;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFileData;
 
 public function example(GetSoundFileData $getSoundFileData)
 {
@@ -22,14 +22,14 @@ public function example(GetSoundFileData $getSoundFileData)
 } 
 ```
 
-see [GetSoundFileData](../src/Api/SoundFiles/GetSoundFileData.php) for available options
+see [GetSoundFileData](../../src/Api/Calling/SoundFiles/GetSoundFileData.php) for available options
 
 # CreateSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\SoundFiles\CreateSoundFiles;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilePayload;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\CreateSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilesPayload;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilePayload;
 
 public function example(CreateSoundFiles $createSoundFiles)
 {
@@ -46,9 +46,9 @@ public function example(CreateSoundFiles $createSoundFiles)
 # UpdateSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\SoundFiles\UpdateSoundFiles;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilePayload;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\UpdateSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilesPayload;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilePayload;
 
 public function example(UpdateSoundFiles $updateSoundFiles)
 {
@@ -64,7 +64,7 @@ public function example(UpdateSoundFiles $updateSoundFiles)
 # DeleteSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\SoundFiles\DeleteSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\DeleteSoundFiles;
 
 public function example(DeleteSoundFiles $deleteSoundFiles)
 {
@@ -73,4 +73,4 @@ public function example(DeleteSoundFiles $deleteSoundFiles)
 } 
 ```
 
-see [DeleteSoundFiles](../src/Api/SoundFiles/DeleteSoundFiles.php) for available options
+see [DeleteSoundFiles](../../src/Api/Calling/SoundFiles/DeleteSoundFiles.php) for available options

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\SoundFiles;
+namespace Yproximite\IovoxBundle\Api\Calling\SoundFiles;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
-use Yproximite\IovoxBundle\Api\SoundFiles\Payload\SoundFilesPayload;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilesPayload;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
