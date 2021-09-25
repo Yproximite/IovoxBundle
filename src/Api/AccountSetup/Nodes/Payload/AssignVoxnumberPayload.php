@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload;
 
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class AssignVoxnumberPayload
 {
     #[Groups(groups: [NodesPayload::GROUP_CREATE_FULL])]
+    #[Assert\Choice(choices: ['BY AREA', 'BY VOXNUMBER', 'BY POSTCODE'], groups: [NodesPayload::GROUP_CREATE_FULL])]
     public ?string $method;
 
     #[Groups(groups: [NodesPayload::GROUP_CREATE_FULL])]

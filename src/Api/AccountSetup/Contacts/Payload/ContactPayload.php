@@ -9,72 +9,75 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactPayload
 {
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
-    #[Assert\NotNull(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
+    #[Assert\NotNull(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $contactId;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $displayName;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $firstName;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $lastName;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $email;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $email2;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $company;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $mobilePhone;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homePhone;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $businessPhone;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $businessFax;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $workAddress1;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $workAddress2;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $workCity;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $workCountry;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $workPostcode;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homeAddress1;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homeAddress2;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homeCity;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homeCountry;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $homePostcode;
 
-    #[Groups(groups: [ContactsPayload::GROUP_CREATE])]
+    #[Groups(groups: [ContactsPayload::GROUP_CREATE, ContactsPayload::GROUP_UPDATE])]
     public ?string $notes;
+
+    #[Groups(groups: [ContactsPayload::GROUP_UPDATE])]
+    public ?string $newContactId;
 
     public function __construct(
         ?string $contactId,
@@ -99,6 +102,7 @@ class ContactPayload
         ?string $homeCountry = null,
         ?string $homePostcode = null,
         ?string $notes = null,
+        ?string $newContactId = null,
     ) {
         $this->contactId     = $contactId;
         $this->displayName   = $displayName;
@@ -122,5 +126,6 @@ class ContactPayload
         $this->homeCountry   = $homeCountry;
         $this->homePostcode  = $homePostcode;
         $this->notes         = $notes;
+        $this->newContactId  = $newContactId;
     }
 }
