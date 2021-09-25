@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Nodes;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes;
 
 use Yproximite\IovoxBundle\Api\AbstractApi;
 

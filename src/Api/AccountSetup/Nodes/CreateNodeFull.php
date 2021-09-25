@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Nodes;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +15,8 @@ use Yproximite\IovoxBundle\Api\ErrorResult\VersionEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\VersionInvalidErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
-use Yproximite\IovoxBundle\Api\Nodes\Payload\NodePayload;
-use Yproximite\IovoxBundle\Api\Nodes\Payload\NodesPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodePayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodesPayload;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Client;

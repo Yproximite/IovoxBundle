@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Nodes;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Yproximite\IovoxBundle\Api\ErrorResult\GenericErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestMethodInvalidErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\VersionEmptyErrorResult;

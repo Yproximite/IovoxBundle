@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Nodes\Payload;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload;
 
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
