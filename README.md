@@ -26,35 +26,15 @@ iovox:
   secure_key: secureKey
 ```
 
-# Account Setup
-### [Nodes](doc/AccountSetup/Nodes.md)
-### [Categories](doc/AccountSetup/Categories.md)
-### [Contacts](doc/AccountSetup/Contacts.md)
+# API
+### Account Setup
+#### [Nodes](doc/AccountSetup/Nodes.md)
+#### [Categories](doc/AccountSetup/Categories.md)
+#### [Contacts](doc/AccountSetup/Contacts.md)
 
-# Calling
-### [SoundFiles](doc/Calling/SoundFiles.md)
+### Calling
+#### [SoundFiles](doc/Calling/SoundFiles.md)
 
-# Numbering
-### [Voxnumbers](doc/Numbering/Voxnumbers.md)
-
-# Other
-
-* Use in a live repo
-
-In the composer file:
-```
-"repositories": [
-    {
-      "type": "path",
-      "url": "__YOUR-PATH__/IovoxBundle",
-      "options": {
-        "symlink": true
-      }
-    },
-]
-```
-then
-```console
-$ composer remove yproximite/iovox-bundle
-$ composer require yproximite/iovox-bundle:@dev
-```
+### Numbering
+#### [Voxnumbers](doc/Numbering/Voxnumbers.md)
+#### [Purchase](doc/Numbering/Purchase.md)
