@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Categories;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Categories;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
-use Yproximite\IovoxBundle\Api\Categories\Payload\CategoriesPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoriesPayload;
 use Yproximite\IovoxBundle\Api\ErrorResult\GenericErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestEmptyErrorResult;
@@ -24,9 +24,9 @@ use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
- * @see https://docs.iovox.com/display/RA/createCategoryConfigurations
+ * @see https://docs.iovox.com/display/RA/createCategories
  */
-class CreateCategoryConfigurations extends AbstractCategories
+class CreateCategories extends AbstractCategories
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
@@ -37,12 +37,12 @@ class CreateCategoryConfigurations extends AbstractCategories
     {
         $query = $this->createQuery();
 
-        $validate = $this->validator->validate($payload, null, [CategoriesPayload::GROUP_CREATE_CONFIGURATION]);
+        $validate = $this->validator->validate($payload, null, [CategoriesPayload::GROUP_CREATE]);
         if ($validate->count() > 0) {
             throw new ValidationPayloadException($validate);
         }
 
-        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [CategoriesPayload::GROUP_CREATE_CONFIGURATION]]));
+        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [CategoriesPayload::GROUP_CREATE]]));
         $response = $this->client->executeQuery($query);
 
         if (Response::HTTP_CREATED === $response->getStatusCode()) {
@@ -63,7 +63,7 @@ class CreateCategoryConfigurations extends AbstractCategories
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('createCategoryConfigurations'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('createCategories'),
         ], $this->editableQueryParameters);
     }
 
@@ -77,11 +77,13 @@ class CreateCategoryConfigurations extends AbstractCategories
             new XmlParseErrorResult(),
             new RequestEmptyErrorResult(),
             new GenericErrorResult(400, 'Category ID \d+ of \d+ Empty', 'Add the Category ID for the Category x (item) of y (total)'),
-            new GenericErrorResult(400, 'Category ID \d+ of \d+ exists', 'Correct the Category ID for the Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Category ID \d+ of \d+ already exist', 'Correct the Category ID for the Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Parent ID \d+ of \d+ Empty', 'Add the Parent ID for the Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Parent ID \d+ of \d+ does not exist', 'Correct the Parent ID for the Category x (item) of y (total)'),
             new GenericErrorResult(400, 'Label \d+ of \d+ Empty', 'Add the Label for the Category x (item) of y (total)'),
-            new GenericErrorResult(400, 'Label \d+ of \d+ exist', 'Correct Label for Category x (item) of y (total)'),
-            new GenericErrorResult(400, 'Type \d+ of \d+ invalid', 'Correct the type for Category x (item) of y (total)'),
-            new GenericErrorResult(400, 'Color \d+ of \d+ invalid', 'Correct the colour for Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Label \d+ of \d+ does not exist', 'Correct the Label for the Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Value \d+ of \d+ Empty', 'Add the Value for the Category x (item) of y (total)'),
+            new GenericErrorResult(400, 'Value \d+ of \d+ Empty', 'Add the Value for the Category x (item) of y (total)'),
             new InternalErrorResult(),
         ];
     }

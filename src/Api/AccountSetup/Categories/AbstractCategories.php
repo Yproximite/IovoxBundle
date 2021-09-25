@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Categories;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Categories;
 
 use Yproximite\IovoxBundle\Api\AbstractApi;
 

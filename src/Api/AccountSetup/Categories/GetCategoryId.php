@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yproximite\IovoxBundle\Api\Categories;
+namespace Yproximite\IovoxBundle\Api\AccountSetup\Categories;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,26 +22,27 @@ use Yproximite\IovoxBundle\Api\QueryParameter\OutputQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\PageQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
-use Yproximite\IovoxBundle\Model\Categories\GetCategoriesModel;
+use Yproximite\IovoxBundle\Model\Categories\GetCategoryIdModel;
 
 /**
- * @see https://docs.iovox.com/display/RA/getCategories
+ * @see https://docs.iovox.com/display/RA/getCategoryId
  */
-class GetCategories extends AbstractCategories
+class GetCategoryId extends AbstractCategories
 {
-    public const QUERY_PARAMETER_REQ_FIELDS         = 'req_fields';
-    public const QUERY_PARAMETER_PARENT_CATEGORY_ID = 'parent_category_id';
+    public const QUERY_PARAMETER_LABEL     = 'label';
+    public const QUERY_PARAMETER_VALUE     = 'value';
+    public const QUERY_PARAMETER_DELIMITER = 'delimiter';
 
     /**
      * @param array<string, string|int> $queryParameters
      */
-    public function executeQuery(array $queryParameters = []): GetCategoriesModel
+    public function executeQuery(array $queryParameters = []): GetCategoryIdModel
     {
         $query    = $this->createQuery($queryParameters);
         $response = $this->client->executeQuery($query);
 
         if (Response::HTTP_OK === $response->getStatusCode()) {
-            return GetCategoriesModel::create($response->toArray());
+            return GetCategoryIdModel::create($response->toArray());
         }
 
         throw new BadResponseReturnException($response, $this->errorResults);
@@ -55,15 +56,16 @@ class GetCategories extends AbstractCategories
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            PageQueryParameter::getParameterName()     => new PageQueryParameter(),
-            LimitQueryParameter::getParameterName()    => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_REQ_FIELDS         => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
-            static::QUERY_PARAMETER_PARENT_CATEGORY_ID => new GenericQueryParameter(static::QUERY_PARAMETER_PARENT_CATEGORY_ID, GenericQueryParameter::TYPE_STRING),
+            PageQueryParameter::getParameterName()  => new PageQueryParameter(),
+            LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
+            static::QUERY_PARAMETER_LABEL           => new GenericQueryParameter(static::QUERY_PARAMETER_LABEL, GenericQueryParameter::TYPE_STRING, 'The label of the category', true),
+            static::QUERY_PARAMETER_VALUE           => new GenericQueryParameter(static::QUERY_PARAMETER_VALUE, GenericQueryParameter::TYPE_STRING, 'The value of the leaf to return the path for', true),
+            static::QUERY_PARAMETER_DELIMITER       => new GenericQueryParameter(static::QUERY_PARAMETER_DELIMITER, GenericQueryParameter::TYPE_STRING, 'The delimiter to use in the category_path', false),
         ];
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('getCategories'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('getCategoryId'),
             OutputQueryParameter::getParameterName()  => new OutputQueryParameter(),
         ], $this->editableQueryParameters);
     }
@@ -77,9 +79,8 @@ class GetCategories extends AbstractCategories
             new PageIntegerErrorResult(),
             new LimitIntegerErrorResult(),
             new LimitIntervalErrorResult(),
-            new GenericErrorResult(400, 'Category ID does not exist', 'Change parent_category_id to an existing Category ID'),
-            new GenericErrorResult(400, 'Required Fields Invalid: \w+', 'Change field1 for any of the Required Fields allowed'),
-            new GenericErrorResult(400, 'Child Count not allow to be alone in the Required Fields', 'Add any of the other Required Fields allowed. Child Count is not allow to be alone in the Required Fields'),
+            new GenericErrorResult(400, 'Label Empty', 'Add value to the Request'),
+            new GenericErrorResult(400, 'Value Empty', 'Correct output parameter'),
             new OutputInvalidErrorResult(),
             new InternalErrorResult(),
         ];

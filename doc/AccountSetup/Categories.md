@@ -1,7 +1,7 @@
 # GetCategoryId
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\GetCategoryId;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategoryId;
 
 public function example(GetCategoryId $getCategoryId)
 {
@@ -9,12 +9,12 @@ public function example(GetCategoryId $getCategoryId)
 } 
 ```
 
-see [GetCategoryId](../src/Api/Categories/GetCategoryId.php) for available options
+see [GetCategoryId](../../src/Api/AccountSetup/Categories/GetCategoryId.php) for available options
 
 # GetCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\GetCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategories;
 
 public function example(GetCategories $getCategories)
 {
@@ -22,14 +22,14 @@ public function example(GetCategories $getCategories)
 } 
 ```
 
-see [GetCategories](../src/Api/Categories/GetCategories.php) for available options
+see [GetCategories](../../src/Api/AccountSetup/Categories/GetCategories.php) for available options
 
 # CreateCategoryConfigurations
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\CreateCategoryConfigurations;
-use Yproximite\IovoxBundle\Api\Categories\Payload\CategoriesPayload;
-use Yproximite\IovoxBundle\Api\Categories\Payload\CategoryPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoryConfigurations;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoriesPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoryPayload;
 
 public function example(CreateCategoryConfigurations $createCategoryConfigurations)
 {
@@ -47,9 +47,9 @@ public function example(CreateCategoryConfigurations $createCategoryConfiguratio
 # CreateCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\CreateCategories;
-use Yproximite\IovoxBundle\Api\Categories\Payload\CategoriesPayload;
-use Yproximite\IovoxBundle\Api\Categories\Payload\CategoryPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoriesPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoryPayload;
 
 public function example(CreateCategories $createCategories)
 {
@@ -66,7 +66,7 @@ public function example(CreateCategories $createCategories)
 # DeleteCategoryConfigurations
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\DeleteCategoryConfigurations;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategoryConfigurations;
 
 public function example(DeleteCategoryConfigurations $deleteCategoryConfigurations)
 {
@@ -75,12 +75,12 @@ public function example(DeleteCategoryConfigurations $deleteCategoryConfiguratio
 } 
 ```
 
-see [DeleteCategoryConfigurations](../src/Api/Categories/DeleteCategoryConfigurations.php) for available options
+see [DeleteCategoryConfigurations](../../src/Api/AccountSetup/Categories/DeleteCategoryConfigurations.php) for available options
 
 # DeleteCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\Categories\DeleteCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategories;
 
 public function example(DeleteCategories $deleteCategories)
 {
@@ -89,4 +89,4 @@ public function example(DeleteCategories $deleteCategories)
 } 
 ```
 
-see [DeleteCategories](../src/Api/Categories/DeleteCategories.php) for available options
+see [DeleteCategories](../../src/Api/AccountSetup/Categories/DeleteCategories.php) for available options
