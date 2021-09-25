@@ -53,6 +53,10 @@ class BadResponseReturnException extends \Exception
             }
         }
 
+        if (array_key_exists('error', $errors) && !is_string($errors['error'])) {
+            return $errors['error'];
+        }
+
         return $errors;
     }
 
