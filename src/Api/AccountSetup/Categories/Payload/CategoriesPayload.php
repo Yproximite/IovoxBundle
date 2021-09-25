@@ -13,9 +13,7 @@ class CategoriesPayload
     public const GROUP_CREATE               = 'categories_create';
     public const GROUP_CREATE_CONFIGURATION = 'categories_create_configuration';
 
-    /**
-     * @var array<int, CategoryPayload>
-     */
+    /** @var array<int, CategoryPayload> */
     #[SerializedName('category')]
     #[Groups(groups: [self::GROUP_CREATE, self::GROUP_CREATE_CONFIGURATION])]
     #[Assert\Valid(groups: [self::GROUP_CREATE, self::GROUP_CREATE_CONFIGURATION])]
