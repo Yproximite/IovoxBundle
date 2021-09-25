@@ -12,7 +12,7 @@ interface QueryParameterInterface
 
     public function getDescription(): ?string;
 
-    public function isValid(int|string|null $value): bool;
+    public function isValid(int|string|array|null $value): bool;
 
-    public function getDefaultValue(): int|string|null;
+    public function getDefaultValue(): int|string|array|null;
 }
