@@ -29,6 +29,7 @@ iovox:
 # Account Setup
 ### [Nodes](doc/AccountSetup/Nodes.md)
 ### [Categories](doc/AccountSetup/Categories.md)
+### [Contacts](doc/AccountSetup/Contacts.md)
 
 # Calling
 ### [SoundFiles](doc/Calling/SoundFiles.md)
