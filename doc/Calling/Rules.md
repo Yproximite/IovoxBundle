@@ -93,3 +93,15 @@ public function example(DeleteTimeTemplates $deleteTimeTemplates)
 
 see [DeleteTimeTemplates](../../src/Api/Calling/Rules/DeleteTimeTemplates.php) for available options
 
+# GetBlockedNumbers
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetBlockedNumbers;
+
+public function example(GetBlockedNumbers $getBlockedNumbers)
+{
+    $blockedNumbers = $getBlockedNumbers->executeQuery($options);
+}
+```
+see [GetBlockedNumbers](../../src/Api/Calling/Rules/GetBlockedNumbers.php) for available options
+
