@@ -24,7 +24,7 @@ class BlockedNumberModel extends AbstractModel
             $opts['in_or_out'],
             $opts['operator'],
             $opts['notes'],
-            $opts['defaults'],
+            $opts['default'],
             (new ArrayCollection(static::formatResult($opts['rules']['rule'] ?? [], false)))->map(fn($v): RuleBlockedNumberModel => RuleBlockedNumberModel::create($v))
         );
     }

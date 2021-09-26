@@ -105,3 +105,35 @@ public function example(GetBlockedNumbers $getBlockedNumbers)
 ```
 see [GetBlockedNumbers](../../src/Api/Calling/Rules/GetBlockedNumbers.php) for available options
 
+
+# CreateBlockedNumbers
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\CreateBlockedNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumberPayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumbersPayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\RuleBlockedNumberPayload;
+
+public function example(CreateBlockedNumbers $createBlockedNumbers)
+{
+    $payload = new BlockedNumbersPayload([
+        new BlockedNumberPayload('33601020304', 'IN', 'EQUALS', 'BLOCK'),
+        new BlockedNumberPayload(
+            '33601020304',
+            'IN',// IN|OUT
+            'EQUALS',// EQUALS|STARTSWITH
+            'BLOCK',// BLOCK|ALLOW
+            [
+                new RuleBlockedNumberPayload(
+                    ['link_id', 'other_link_id'],
+                    'time_template',
+                    'BLOCK',// BLOCK|ALLOW
+                )
+            ]
+        ),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $createBlockedNumbers->executeQuery($payload);
+}
+```
