@@ -33,6 +33,7 @@ iovox:
 #### [Contacts](doc/AccountSetup/Contacts.md)
 
 ### Calling
+#### [Rules](doc/Calling/Rules.md)
 #### [SoundFiles](doc/Calling/SoundFiles.md)
 
 ### Numbering
