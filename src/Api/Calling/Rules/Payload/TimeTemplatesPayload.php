@@ -11,11 +11,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 class TimeTemplatesPayload
 {
     public const GROUP_CREATE = 'time_templates_create';
+    public const GROUP_UPDATE = 'time_templates_update';
 
     /** @var array<int, TimeTemplatePayload> */
     #[SerializedName('time_template')]
-    #[Groups(groups: [self::GROUP_CREATE])]
-    #[Assert\Valid(groups: [self::GROUP_CREATE])]
+    #[Groups(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
+    #[Assert\Valid(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
     public array $timeTemplates;
 
     /**

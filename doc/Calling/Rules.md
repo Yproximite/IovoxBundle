@@ -51,6 +51,34 @@ public function example(CreateTimeTemplates $createTimeTemplates)
 }
 ```
 
+# UpdateTimeTemplates
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateTimeTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeFramePayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatePayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatesPayload;
+
+public function example(UpdateTimeTemplates $updateTimeTemplates)
+{
+    $payload = new TimeTemplatesPayload([
+        new TimeTemplatePayload('label', [
+            new TimeFramePayload(
+                '2021-10-01',// date_from
+                '2022-01-01',// date_to
+                'NONE',// YEARLY, MONTHLY, NONE
+                '09:00',// time_from
+                '18:00',// time_to
+                TimeFramePayload::ALL_WEEK,// see const DAY_ in class TimeFramePayload
+            ),
+        ], 'new label')
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $updateTimeTemplates->executeQuery($payload);
+}
+```
+
 # DeleteTimeTemplates
 
 ```php

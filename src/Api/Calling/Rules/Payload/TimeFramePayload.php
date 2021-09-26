@@ -27,29 +27,29 @@ class TimeFramePayload
         self::DAY_SUNDAY,
     ];
 
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\Date(groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\Date(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public ?string $dateFrom;
 
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\Date(groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\Date(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public ?string $dateTo;
 
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\Choice(choices: ['YEARLY', 'MONTHLY', 'NONE'], groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\Choice(choices: ['YEARLY', 'MONTHLY', 'NONE'], groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public ?string $recurrence;
 
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\Regex(pattern: '/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/', groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\Regex(pattern: '/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/', groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public ?string $timeFrom;
 
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\Regex(pattern: '/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/', groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\Regex(pattern: '/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/', groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public ?string $timeTo;
 
     /** @var array{ day?: array<int, string>} */
-    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE])]
-    #[Assert\NotBlank(groups: [TimeTemplatesPayload::GROUP_CREATE])]
+    #[Groups(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
+    #[Assert\NotBlank(groups: [TimeTemplatesPayload::GROUP_CREATE, TimeTemplatesPayload::GROUP_UPDATE])]
     public array $days;
 
     /**
