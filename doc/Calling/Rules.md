@@ -38,3 +38,18 @@ public function example(CreateTimeTemplates $createTimeTemplates)
     $result = $createTimeTemplates->executeQuery($payload);
 }
 ```
+
+# DeleteTimeTemplates
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteTimeTemplates;
+
+public function example(DeleteTimeTemplates $deleteTimeTemplates)
+{
+    // true if ok else BadResponseReturnException
+    $result = $deleteTimeTemplates->executeQuery([DeleteTimeTemplates::QUERY_PARAMETER_TIME_TEMPLATE_LABELS => 'label']); 
+}
+```
+
+see [DeleteTimeTemplates](../../src/Api/Calling/Rules/DeleteTimeTemplates.php) for available options
+
