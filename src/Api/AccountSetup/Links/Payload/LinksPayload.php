@@ -11,11 +11,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 class LinksPayload
 {
     public const GROUP_CREATE = 'links_create';
+    public const GROUP_UPDATE = 'links_update';
 
     /** @var array<int, LinkPayload> */
     #[SerializedName('link')]
-    #[Groups(groups: [self::GROUP_CREATE])]
-    #[Assert\Valid(groups: [self::GROUP_CREATE])]
+    #[Groups(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
+    #[Assert\Valid(groups: [self::GROUP_CREATE, self::GROUP_UPDATE])]
     public array $links;
 
     /**

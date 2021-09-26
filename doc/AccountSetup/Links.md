@@ -36,3 +36,30 @@ public function example(CreateLinks $createLinks)
     $result = $createLinks->executeQuery($payload); 
 }
 ```
+
+# UpdateLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\UpdateLinks;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\LinkPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\LinksPayload;
+
+public function example(UpdateLinks $updateLinks)
+{
+    $payload = new LinksPayload([
+        new LinkPayload(null, 'link_id', 'link_name', 'link_type'),
+        new LinkPayload(
+            null,
+            'link_id',
+            'link_name',
+            'link_type',
+            '2020-10-20',// link_date
+            0,// click_to_call 0|1
+            'new_link_id'
+        ),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $updateLinks->executeQuery($payload);
+}
+```
