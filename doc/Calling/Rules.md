@@ -173,3 +173,15 @@ public function example(UpdateBlockedNumbers $updateBlockedNumbers)
     $result = $updateBlockedNumbers->executeQuery($payload);
 }
 ```
+
+# DeleteBlockNumbers
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteBlockNumbers;
+
+public function example(DeleteBlockNumbers $deleteBlockNumbers)
+{
+    // true if ok else BadResponseReturnException
+    $result = $deleteBlockNumbers->executeQuery([DeleteBlockNumbers::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => '339;IN;STARTSWITH,334;OUT;EQUALS']); 
+}
+```
