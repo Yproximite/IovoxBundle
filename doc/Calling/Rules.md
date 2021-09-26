@@ -185,3 +185,15 @@ public function example(DeleteBlockNumbers $deleteBlockNumbers)
     $result = $deleteBlockNumbers->executeQuery([DeleteBlockNumbers::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => '339;IN;STARTSWITH,334;OUT;EQUALS']); 
 }
 ```
+
+# GetVariableRulesOfTemplate
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetVariableRulesOfTemplate;
+
+public function example(GetVariableRulesOfTemplate $getVariableRulesOfTemplate)
+{
+    $variablesRulesOfTemplate = $getVariableRulesOfTemplate->executeQuery($options);
+}
+```
+see [GetVariableRulesOfTemplate](../../src/Api/Calling/Rules/GetVariableRulesOfTemplate.php) for available options
