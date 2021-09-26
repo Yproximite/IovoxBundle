@@ -60,7 +60,7 @@ public function example(CreateCategories $createCategories)
     
     // true if ok else BadResponseReturnException
     $result = $createCategories->executeQuery($payload); 
-} 
+}
 ```
 
 # DeleteCategoryConfigurations

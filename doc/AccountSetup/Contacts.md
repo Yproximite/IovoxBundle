@@ -63,7 +63,7 @@ public function example(CreateContacts $createContacts)
     
     // true if ok else BadResponseReturnException
     $result = $createContacts->executeQuery($payload); 
-} 
+}
 
 ```
 
