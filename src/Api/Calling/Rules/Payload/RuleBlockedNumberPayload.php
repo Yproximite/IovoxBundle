@@ -10,16 +10,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 class RuleBlockedNumberPayload
 {
     /** @var array{ link_id?: array<int, string>} */
-    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE])]
-    #[Assert\NotNull(groups: [BlockedNumbersPayload::GROUP_CREATE])]
+    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
+    #[Assert\NotNull(groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
     public array $linkIds;
 
-    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE])]
+    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
     public ?string $timeTemplate;
 
-    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE])]
-    #[Assert\NotNull(groups: [BlockedNumbersPayload::GROUP_CREATE])]
-    #[Assert\Choice(choices: ['BLOCK', 'ALLOW'], groups: [BlockedNumbersPayload::GROUP_CREATE])]
+    #[Groups(groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
+    #[Assert\NotNull(groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
+    #[Assert\Choice(choices: ['BLOCK', 'ALLOW'], groups: [BlockedNumbersPayload::GROUP_CREATE, BlockedNumbersPayload::GROUP_UPDATE])]
     public ?string $blockingType;
 
     /**

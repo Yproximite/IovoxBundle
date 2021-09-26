@@ -105,7 +105,6 @@ public function example(GetBlockedNumbers $getBlockedNumbers)
 ```
 see [GetBlockedNumbers](../../src/Api/Calling/Rules/GetBlockedNumbers.php) for available options
 
-
 # CreateBlockedNumbers
 
 ```php
@@ -135,5 +134,42 @@ public function example(CreateBlockedNumbers $createBlockedNumbers)
 
     // true if ok else BadResponseReturnException
     $result = $createBlockedNumbers->executeQuery($payload);
+}
+
+```
+# UpdateBlockedNumbers
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateBlockedNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumberPayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumbersPayload;
+use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\RuleBlockedNumberPayload;
+
+public function example(UpdateBlockedNumbers $updateBlockedNumbers)
+{
+    $payload = new BlockedNumbersPayload([
+        new BlockedNumberPayload('33601020304', 'IN', 'EQUALS', 'BLOCK'),
+        new BlockedNumberPayload(
+            '33601020304',
+            'IN',// IN|OUT
+            'EQUALS',// EQUALS|STARTSWITH
+            'BLOCK',// BLOCK|ALLOW
+            [
+                new RuleBlockedNumberPayload(
+                    ['link_id', 'other_link_id'],
+                    'time_template',
+                    'BLOCK',// BLOCK|ALLOW
+                )
+            ],
+            '33601020305',// change number
+            'OUT',
+            'STARTSWITH',// change operator
+            'ALLOW',
+            'OVERWRITE',// if exists
+        ),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $updateBlockedNumbers->executeQuery($payload);
 }
 ```

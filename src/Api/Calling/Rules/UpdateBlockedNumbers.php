@@ -23,9 +23,9 @@ use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
 use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 
 /**
- * @see https://docs.iovox.com/display/RA/createBlockedNumbers
+ * @see https://docs.iovox.com/display/RA/updateBlockedNumbers
  */
-class CreateBlockedNumbers extends AbstractRules
+class UpdateBlockedNumbers extends AbstractRules
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
@@ -36,15 +36,15 @@ class CreateBlockedNumbers extends AbstractRules
     {
         $query = $this->createQuery();
 
-        $validate = $this->validator->validate($payload, null, [BlockedNumbersPayload::GROUP_CREATE]);
+        $validate = $this->validator->validate($payload, null, [BlockedNumbersPayload::GROUP_UPDATE]);
         if ($validate->count() > 0) {
             throw new ValidationPayloadException($validate);
         }
 
-        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [BlockedNumbersPayload::GROUP_CREATE]]));
+        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [BlockedNumbersPayload::GROUP_UPDATE]]));
         $response = $this->client->executeQuery($query);
 
-        if (Response::HTTP_CREATED === $response->getStatusCode()) {
+        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
             return true;
         }
 
@@ -53,7 +53,7 @@ class CreateBlockedNumbers extends AbstractRules
 
     protected function setMethod(): void
     {
-        $this->method = Request::METHOD_POST;
+        $this->method = Request::METHOD_PUT;
     }
 
     protected function setQueryParameters(): void
@@ -62,7 +62,7 @@ class CreateBlockedNumbers extends AbstractRules
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('createBlockedNumbers'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('updateBlockedNumbers'),
         ], $this->editableQueryParameters);
     }
 
