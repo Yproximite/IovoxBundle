@@ -123,11 +123,29 @@ use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\CategoryPayload;
 public function example(AttachCategoryToLink $attachCategoryToLink)
 {
     $payload = new AttachCategoryToLinkPayload([
-        new CategoryPayload('link_id', 'parent_category_id', 'category_id'),
+        new CategoryPayload('link_id', 'category_id', 'parent_category_id'),
     ]);
 
     // true if ok else BadResponseReturnException
     $result = $attachCategoryToLink->executeQuery($payload);
+}
+```
+
+# RemoveCategoryFromLink
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\RemoveCategoryFromLink;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\RemoveCategoryFromLinkPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\CategoryPayload;
+
+public function example(RemoveCategoryFromLink $removeCategoryFromLink)
+{
+    $payload = new RemoveCategoryFromLinkPayload([
+        new CategoryPayload('link_id', 'category_id'),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $removeCategoryFromLink->executeQuery($payload);
 }
 ```
 
