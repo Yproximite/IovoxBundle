@@ -29,6 +29,7 @@ iovox:
 # API
 ### Account Setup
 #### [Nodes](doc/AccountSetup/Nodes.md)
+#### [Links](doc/AccountSetup/Links.md)
 #### [Categories](doc/AccountSetup/Categories.md)
 #### [Contacts](doc/AccountSetup/Contacts.md)
 
