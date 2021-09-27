@@ -98,3 +98,18 @@ public function example(AttachVoxnumberToLink $attachVoxnumberToLink)
 }
 ```
 
+# RemoveVoxnumberFromLink
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\RemoveVoxnumberFromLink;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\RemoveVoxnumberFromLinkPayload;
+
+public function example(RemoveVoxnumberFromLink $removeVoxnumberFromLink)
+{
+    $payload = new RemoveVoxnumberFromLinkPayload(['link_id', 'link_id', 'link_id']);
+
+    // true if ok else BadResponseReturnException
+    $result = $removeVoxnumberFromLink->executeQuery($payload);
+}
+```
+
