@@ -9,9 +9,9 @@ use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
 use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\RulePayloadInterface;
 
-class AttachRuleTemplateToLinksPayload
+class AttachSMSTemplateToLinksPayload
 {
-    public const GROUP_ATTACH = 'rule_template_attach';
+    public const GROUP_ATTACH = 'sms_template_attach';
 
     #[Groups(groups: [self::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [self::GROUP_ATTACH])]

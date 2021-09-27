@@ -160,6 +160,52 @@ public function example(AttachRuleTemplateToLinks $attachRuleTemplateToLinks)
 }
 ```
 
+# RemoveRuleTemplateFromLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\RemoveRuleTemplateFromLinks;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\RemoveRuleTemplateFromLinksPayload;
+
+public function example(RemoveRuleTemplateFromLinks $removeRuleTemplateFromLinks)
+{
+    $payload = new RemoveRuleTemplateFromLinksPayload(['link_id', 'link_id']);
+
+    // true if ok else BadResponseReturnException
+    $result = $removeRuleTemplateFromLinks->executeQuery($payload);
+}
+```
+
+# AttachSMSTemplateToLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachSMSTemplateToLinks;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachSMSTemplateToLinksPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\ContactRulePayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\RulePayload;
+
+public function example(AttachSMSTemplateToLinks $attachSMSTemplateToLinks)
+{
+    $payload = new AttachSMSTemplateToLinksPayload(
+        'template_name',
+        'TRUE',// overwrite_existing TRUE|FALSE
+        ['link_id', 'link_id'],
+        [
+            new RulePayload(
+                'rule_id',
+                'rule_type',
+                'rule_label',
+                null,
+                null,
+                new ContactRulePayload('contact_id', 'one_phone_number_on_contact_id'),
+            ),
+        ]
+    );
+
+    // true if ok else BadResponseReturnException
+    $result = $attachSMSTemplateToLinks->executeQuery($payload);
+}
+```
+
 # AttachCategoryToLink
 
 ```php

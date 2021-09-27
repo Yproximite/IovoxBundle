@@ -7,18 +7,19 @@ namespace Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachRuleTemplateToLinksPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachSMSTemplateToLinksPayload;
 
 class RulePayload implements RulePayloadInterface
 {
-    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
+    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH, AttachSMSTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
     public ?string $ruleId;
 
-    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
+    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH, AttachSMSTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
     public ?string $ruleType;
 
-    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
+    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH, AttachSMSTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
     public ?string $ruleLabel;
 
@@ -30,7 +31,7 @@ class RulePayload implements RulePayloadInterface
     #[Assert\NotNull(groups: [])]
     public ?SoundFilesRulePayload $play;
 
-    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
+    #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH, AttachSMSTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
     public ?ContactRulePayload $contact;
 
