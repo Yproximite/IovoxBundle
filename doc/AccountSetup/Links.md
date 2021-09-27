@@ -206,6 +206,21 @@ public function example(AttachSMSTemplateToLinks $attachSMSTemplateToLinks)
 }
 ```
 
+# RemoveSMSTemplateFromLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\RemoveSMSTemplateFromLinks;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\RemoveSMSTemplateFromLinksPayload;
+
+public function example(RemoveSMSTemplateFromLinks $removeSMSTemplateFromLinks)
+{
+    $payload = new RemoveSMSTemplateFromLinksPayload(['link_id', 'link_id']);
+
+    // true if ok else BadResponseReturnException
+    $result = $removeSMSTemplateFromLinks->executeQuery($payload);
+}
+```
+
 # AttachCategoryToLink
 
 ```php
