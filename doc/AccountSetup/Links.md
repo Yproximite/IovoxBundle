@@ -63,3 +63,18 @@ public function example(UpdateLinks $updateLinks)
     $result = $updateLinks->executeQuery($payload);
 }
 ```
+
+# DeleteLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\DeleteLinks;
+
+public function example(DeleteLinks $deleteLinks)
+{
+    // true if ok else BadResponseReturnException
+    $result = $deleteLinks->executeQuery([DeleteLinks::QUERY_PARAMETER_LINK_IDS => 'link_id_1,link_id_2']); 
+}
+```
+
+see [DeleteLinks](../../src/Api/AccountSetup/Links/DeleteLinks.php) for available options
+
