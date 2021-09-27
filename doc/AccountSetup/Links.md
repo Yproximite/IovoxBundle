@@ -78,3 +78,23 @@ public function example(DeleteLinks $deleteLinks)
 
 see [DeleteLinks](../../src/Api/AccountSetup/Links/DeleteLinks.php) for available options
 
+# AttachVoxnumberToLink
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachVoxnumberToLink;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachVoxnumberToLinkPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\VoxNumberPayload;
+
+public function example(AttachVoxnumberToLink $attachVoxnumberToLink)
+{
+    $payload = new AttachVoxnumberToLinkPayload([
+        new VoxNumberPayload('link_id', 'BY AREA',33/* voxnumberIdd */,9/* areaCode */),
+        new VoxNumberPayload('link_id', 'BY VOXNUMBER', null, null, 33492393368/* fullVoxnumber */),
+        new VoxNumberPayload('link_id', 'BY POSTCODE', null, null, null, 'FRANCE'/* country FRANCE|UNITED KINGDOM */, '69000'/* postcode */),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $attachVoxnumberToLink->executeQuery($payload);
+}
+```
+
