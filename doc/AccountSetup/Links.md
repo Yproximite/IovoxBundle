@@ -113,3 +113,21 @@ public function example(RemoveVoxnumberFromLink $removeVoxnumberFromLink)
 }
 ```
 
+# AttachCategoryToLink
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachCategoryToLink;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachCategoryToLinkPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\CategoryPayload;
+
+public function example(AttachCategoryToLink $attachCategoryToLink)
+{
+    $payload = new AttachCategoryToLinkPayload([
+        new CategoryPayload('link_id', 'parent_category_id', 'category_id'),
+    ]);
+
+    // true if ok else BadResponseReturnException
+    $result = $attachCategoryToLink->executeQuery($payload);
+}
+```
+
