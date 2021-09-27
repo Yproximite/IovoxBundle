@@ -113,6 +113,53 @@ public function example(RemoveVoxnumberFromLink $removeVoxnumberFromLink)
 }
 ```
 
+# AttachRuleTemplateToLinks
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachRuleTemplateToLinks;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\AttachRuleTemplateToLinksPayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\ContactRulePayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\RulePayload;
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload\Rules\SoundFilesRulePayload;
+
+public function example(AttachRuleTemplateToLinks $attachRuleTemplateToLinks)
+{
+    $payload = new AttachRuleTemplateToLinksPayload(
+        'template_name',
+        'TRUE',// overwrite_existing TRUE|FALSE
+        ['link_id', 'link_id'],
+        [
+            new RulePayload(
+                'rule_id',
+                'rule_type',
+                'rule_label',
+                new SoundFilesRulePayload(['sound_group|sound_label']),// sounds_files
+            ),
+            new RulePayload(
+                'rule_id',
+                'rule_type',
+                'rule_label',
+                new SoundFilesRulePayload(['sound_group|sound_label']),// sounds_files
+                new SoundFilesRulePayload(['sound_group|sound_label']),// play
+                new ContactRulePayload('contact_id', 'one_phone_number_on_contact_id'),
+                new SoundFilesRulePayload(['sound_group|sound_label']),// caller_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// called_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// voice_mail_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// completed_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// failure_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// no_key_message
+                new SoundFilesRulePayload(['sound_group|sound_label']),// unmatched_message
+                'send_call_alert',// NONE|MISSED_CALLS|MISSED_CALLS_NO_WITHHELD|ALL_CALLS
+                'record_call',// TRUE|FALSE
+            ),
+        ]
+    );
+
+    // true if ok else BadResponseReturnException
+    $result = $attachRuleTemplateToLinks->executeQuery($payload);
+}
+```
+
 # AttachCategoryToLink
 
 ```php
