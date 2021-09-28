@@ -17,6 +17,7 @@ class GetCallFlowModel extends AbstractModel
 
     public static function create(array $opts): self
     {
+        // TODO: convert to object
         return new self($opts);
     }
 }
