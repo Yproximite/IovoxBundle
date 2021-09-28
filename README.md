@@ -45,4 +45,4 @@ iovox:
 #### [Purchase](doc/Numbering/Purchase.md)
 
 ### Analytics
-#### [Purchase](doc/Analytics/Calls.md)
+#### [Calls](doc/Analytics/Calls.md)
