@@ -43,3 +43,6 @@ iovox:
 #### [Voxnumbers](doc/Numbering/Voxnumbers.md)
 #### [Countries](doc/Numbering/Countries.md)
 #### [Purchase](doc/Numbering/Purchase.md)
+
+### Analytics
+#### [Purchase](doc/Analytics/Calls.md)
