@@ -8,6 +8,7 @@ public function example(GetCallFlows $getCallFlows)
     $callFlows = $getCallFlows->executeQuery($options);
 }
 ```
+
 see [GetCallFlows](../../src/Api/Calling/CallFlow/GetCallFlows.php) for available options
 
 # GetCallFlow
@@ -21,6 +22,7 @@ public function example(GetCallFlow $getCallFlow)
     $callFlow = $getCallFlow->executeQuery($options);
 }
 ```
+
 see [GetCallFlow](../../src/Api/Calling/CallFlow/GetCallFlow.php) for available options
 
 # CreateCallFlow
@@ -51,5 +53,37 @@ public function example(CreateCallFlow $createCallFlow)
 
     // Return true if OK
     $response = $createCallFlow->executeQuery($payload);
+}
+```
+
+# UpdateCallFlow
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\UpdateCallFlow;
+
+public function example(UpdateCallFlow $updateCallFlow)
+{
+    // add @ at beginning of key for attributes
+    // add # for key to define the data of a node
+    $payload = [
+        'callFlow' => [
+            '@name'    => 'name',
+            '@newName' => 'newName',
+            '@notes'   => 'notes',
+            'call'     => [
+                '@id' => 'id',
+                '@label' => 'label',
+                '@timeout' => 10,
+                '@record' => 'false',
+                '@sendCallAlert' => 'NONE',
+                '@destinationPhoneNumber' => '?',
+                '@destinationContactId' => '?',
+                'eventHandlers' => []
+            ]
+        ]
+    ];
+
+    // Return true if OK
+    $response = $updateCallFlow->executeQuery($payload);
 }
 ```
