@@ -20,9 +20,9 @@ use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 
 /**
- * @see https://docs.iovox.com/display/RA/getCallRecording
+ * @see https://docs.iovox.com/display/RA/getVoicemailRecording
  */
-class GetCallRecording extends AbstractCalls
+class GetVoicemailRecording extends AbstractCalls
 {
     public const QUERY_PARAMETER_ID = 'id';
 
@@ -54,7 +54,7 @@ class GetCallRecording extends AbstractCalls
 
         $this->allQueryParameters = array_merge([
             VersionQueryParameter::getParameterName() => new VersionQueryParameter(),
-            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('getCallRecording'),
+            MethodQueryParameter::getParameterName()  => new MethodQueryParameter('getVoicemailRecording'),
         ], $this->editableQueryParameters);
     }
 

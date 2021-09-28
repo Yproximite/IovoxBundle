@@ -39,3 +39,16 @@ public function example(GetCallRecording $getCallRecording)
 ```
 
 see [GetCallRecording](../../src/Api/Analytics/Calls/GetCallRecording.php) for available options
+
+# GetVoicemailRecording
+
+```php
+use Yproximite\IovoxBundle\Api\Analytics\Calls\GetVoicemailRecording;
+
+public function example(GetVoicemailRecording $getVoicemailRecording)
+{
+    $recording = $getVoicemailRecording->executeQuery([GetVoicemailRecording::QUERY_PARAMETER_ID => 'recording_id']);
+}
+```
+
+see [GetVoicemailRecording](../../src/Api/Analytics/Calls/GetVoicemailRecording.php) for available options
