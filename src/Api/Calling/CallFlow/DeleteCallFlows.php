@@ -46,8 +46,8 @@ class DeleteCallFlows extends AbstractCallFlow
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_CALL_FLOWS        => new GenericQueryParameter(static::QUERY_PARAMETER_CALL_FLOWS, GenericQueryParameter::TYPE_STRING, 'A pipe delimited list of all Call Flows to be deleted', true),
-            static::QUERY_PARAMETER_DETACH_FROM_LINKS => new GenericQueryParameter(static::QUERY_PARAMETER_DETACH_FROM_LINKS, GenericQueryParameter::TYPE_BOOLEAN, 'Detaches the Call Flow from links. If FALSE, only Call Flows not attached to links can be deleted.'),
+            self::QUERY_PARAMETER_CALL_FLOWS        => new GenericQueryParameter(self::QUERY_PARAMETER_CALL_FLOWS, GenericQueryParameter::TYPE_STRING, 'A pipe delimited list of all Call Flows to be deleted', true),
+            self::QUERY_PARAMETER_DETACH_FROM_LINKS => new GenericQueryParameter(self::QUERY_PARAMETER_DETACH_FROM_LINKS, GenericQueryParameter::TYPE_BOOLEAN, 'Detaches the Call Flow from links. If FALSE, only Call Flows not attached to links can be deleted.'),
         ];
 
         $this->allQueryParameters = array_merge([

@@ -57,9 +57,9 @@ class GetTimeTemplates extends AbstractRules
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()      => new PageQueryParameter(),
             LimitQueryParameter::getParameterName()     => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_ORDER               => new GenericQueryParameter(static::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with ASC or DESC for ascending or descending respectively. For example, "lDESC" will return results ordered by label'),
-            static::QUERY_PARAMETER_REQ_FIELDS          => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response. l=label, n=notes, tf=time_frames, c=created'),
-            static::QUERY_PARAMETER_TIME_TEMPLATE_LABEL => new GenericQueryParameter(static::QUERY_PARAMETER_TIME_TEMPLATE_LABEL, GenericQueryParameter::TYPE_STRING, 'Returns the TimeTemplates which have this label'),
+            self::QUERY_PARAMETER_ORDER                 => new GenericQueryParameter(self::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with ASC or DESC for ascending or descending respectively. For example, "lDESC" will return results ordered by label'),
+            self::QUERY_PARAMETER_REQ_FIELDS            => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response. l=label, n=notes, tf=time_frames, c=created'),
+            self::QUERY_PARAMETER_TIME_TEMPLATE_LABEL   => new GenericQueryParameter(self::QUERY_PARAMETER_TIME_TEMPLATE_LABEL, GenericQueryParameter::TYPE_STRING, 'Returns the TimeTemplates which have this label'),
         ];
 
         $this->allQueryParameters = array_merge([

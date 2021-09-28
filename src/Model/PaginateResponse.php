@@ -10,7 +10,9 @@ use Doctrine\Common\Collections\Collection;
 class PaginateResponse extends Response
 {
     /**
-     * @param Collection<int, ModelInterface> $results
+     * @phpstan-template T of ModelInterface
+     *
+     * @param Collection<int, T> $results
      */
     protected function __construct(public int $currentPage, public int $totalPages, public int $totalResults, public Collection $results)
     {

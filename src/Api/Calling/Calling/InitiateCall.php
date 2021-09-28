@@ -46,8 +46,6 @@ class InitiateCall extends AbstractCalling
 
         $response = $this->client->executeQuery($query);
         if (Response::HTTP_CREATED === $response->getStatusCode()) {
-            dd($response->getContent(false));
-
             return true;
         }
 

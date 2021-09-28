@@ -11,7 +11,7 @@ class PurchaseVoxnumbersPayload
 {
     public const GROUP_PURCHASE = 'purchase_voxnumbers';
 
-    /** @var array<int, PurchaseVoxnumberPayload> */
+    /** @var array{ item: array<int, PurchaseVoxnumberPayload>} */
     #[Groups(groups: [self::GROUP_PURCHASE])]
     #[Assert\Valid(groups: [self::GROUP_PURCHASE])]
     public array $items;

@@ -10,7 +10,9 @@ use Doctrine\Common\Collections\Collection;
 class Response extends AbstractModel
 {
     /**
-     * @param Collection<int, ModelInterface> $results
+     * @phpstan-template T of ModelInterface
+     *
+     * @param Collection<int, T> $results
      */
     protected function __construct(public Collection $results)
     {

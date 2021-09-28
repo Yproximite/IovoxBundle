@@ -61,13 +61,13 @@ class GetContacts extends AbstractContacts
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_ORDER           => new GenericQueryParameter(static::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with _ASC or _DESC for ascending or descending respectively. For example, "od_DESC" will return results ordered by order_date with the most recent first'),
-            static::QUERY_PARAMETER_REQ_FIELDS      => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response.cid=contact_id, dn=display_name, comp=Company, em=Email, bphone=business_phone,as=assigned_status'),
-            static::QUERY_PARAMETER_CONTACT_ID      => new GenericQueryParameter(static::QUERY_PARAMETER_CONTACT_ID, GenericQueryParameter::TYPE_STRING, 'Returns the Contact with the specified Contact ID'),
-            static::QUERY_PARAMETER_DISPLAY_NAME    => new GenericQueryParameter(static::QUERY_PARAMETER_DISPLAY_NAME, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts which contains the display name'),
-            static::QUERY_PARAMETER_COMPANY         => new GenericQueryParameter(static::QUERY_PARAMETER_COMPANY, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified Company'),
-            static::QUERY_PARAMETER_PHONE_NUMBER    => new GenericQueryParameter(static::QUERY_PARAMETER_PHONE_NUMBER, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified Phone Number'),
-            static::QUERY_PARAMETER_EMAIL           => new GenericQueryParameter(static::QUERY_PARAMETER_EMAIL, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified email'),
+            self::QUERY_PARAMETER_ORDER             => new GenericQueryParameter(self::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with _ASC or _DESC for ascending or descending respectively. For example, "od_DESC" will return results ordered by order_date with the most recent first'),
+            self::QUERY_PARAMETER_REQ_FIELDS        => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response.cid=contact_id, dn=display_name, comp=Company, em=Email, bphone=business_phone,as=assigned_status'),
+            self::QUERY_PARAMETER_CONTACT_ID        => new GenericQueryParameter(self::QUERY_PARAMETER_CONTACT_ID, GenericQueryParameter::TYPE_STRING, 'Returns the Contact with the specified Contact ID'),
+            self::QUERY_PARAMETER_DISPLAY_NAME      => new GenericQueryParameter(self::QUERY_PARAMETER_DISPLAY_NAME, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts which contains the display name'),
+            self::QUERY_PARAMETER_COMPANY           => new GenericQueryParameter(self::QUERY_PARAMETER_COMPANY, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified Company'),
+            self::QUERY_PARAMETER_PHONE_NUMBER      => new GenericQueryParameter(self::QUERY_PARAMETER_PHONE_NUMBER, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified Phone Number'),
+            self::QUERY_PARAMETER_EMAIL             => new GenericQueryParameter(self::QUERY_PARAMETER_EMAIL, GenericQueryParameter::TYPE_STRING, 'Returns the Contacts with the specified email'),
         ];
 
         $this->allQueryParameters = array_merge([

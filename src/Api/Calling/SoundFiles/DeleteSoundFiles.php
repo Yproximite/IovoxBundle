@@ -46,7 +46,7 @@ class DeleteSoundFiles extends AbstractSoundFiles
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_SOUND_FILES => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_FILES, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all sound files (sound_label;sound_group) to be deleted', true),
+            self::QUERY_PARAMETER_SOUND_FILES => new GenericQueryParameter(self::QUERY_PARAMETER_SOUND_FILES, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all sound files (sound_label;sound_group) to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([

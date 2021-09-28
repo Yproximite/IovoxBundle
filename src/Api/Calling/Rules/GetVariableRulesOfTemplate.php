@@ -56,8 +56,8 @@ class GetVariableRulesOfTemplate extends AbstractRules
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_TEMPLATE_NAME   => new GenericQueryParameter(static::QUERY_PARAMETER_TEMPLATE_NAME, GenericQueryParameter::TYPE_STRING, 'Returns the specified rule variables for the specific template name.'),
-            static::QUERY_PARAMETER_LINK_ID         => new GenericQueryParameter(static::QUERY_PARAMETER_LINK_ID, GenericQueryParameter::TYPE_STRING, 'Returns the rule variables for the specified Link ID'),
+            self::QUERY_PARAMETER_TEMPLATE_NAME     => new GenericQueryParameter(self::QUERY_PARAMETER_TEMPLATE_NAME, GenericQueryParameter::TYPE_STRING, 'Returns the specified rule variables for the specific template name.'),
+            self::QUERY_PARAMETER_LINK_ID           => new GenericQueryParameter(self::QUERY_PARAMETER_LINK_ID, GenericQueryParameter::TYPE_STRING, 'Returns the rule variables for the specified Link ID'),
         ];
 
         $this->allQueryParameters = array_merge([

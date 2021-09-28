@@ -47,9 +47,9 @@ class DeleteContacts extends AbstractContacts
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_CONTACT_IDS => new GenericQueryParameter(static::QUERY_PARAMETER_CONTACT_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all contact ids of the contacts to be deleted', true),
-            static::QUERY_PARAMETER_RM_RULES    => new GenericQueryParameter(static::QUERY_PARAMETER_RM_RULES, GenericQueryParameter::TYPE_BOOLEAN, "TRUE/FALSE. If set to TRUE and the contact's details form part of a custom Rule Template the Template will be deleted and removed from any Links it is attached to. Also, if the contact's details have been used to fix a variable rule the related template will be detached from any Links using these details. If set to FALSE and the contact's details are used in a Rule Template or to fix a variable Rule, an error will be thrown"),
-            static::QUERY_PARAMETER_RM_IF_USER  => new GenericQueryParameter(static::QUERY_PARAMETER_RM_IF_USER, GenericQueryParameter::TYPE_BOOLEAN, 'TRUE/FALSE. If set to TRUE and the contact has a user account then the user will also be removed. If set to FALSE and the contact has a user account, an error will be thrown'),
+            self::QUERY_PARAMETER_CONTACT_IDS => new GenericQueryParameter(self::QUERY_PARAMETER_CONTACT_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all contact ids of the contacts to be deleted', true),
+            self::QUERY_PARAMETER_RM_RULES    => new GenericQueryParameter(self::QUERY_PARAMETER_RM_RULES, GenericQueryParameter::TYPE_BOOLEAN, "TRUE/FALSE. If set to TRUE and the contact's details form part of a custom Rule Template the Template will be deleted and removed from any Links it is attached to. Also, if the contact's details have been used to fix a variable rule the related template will be detached from any Links using these details. If set to FALSE and the contact's details are used in a Rule Template or to fix a variable Rule, an error will be thrown"),
+            self::QUERY_PARAMETER_RM_IF_USER  => new GenericQueryParameter(self::QUERY_PARAMETER_RM_IF_USER, GenericQueryParameter::TYPE_BOOLEAN, 'TRUE/FALSE. If set to TRUE and the contact has a user account then the user will also be removed. If set to FALSE and the contact has a user account, an error will be thrown'),
         ];
 
         $this->allQueryParameters = array_merge([

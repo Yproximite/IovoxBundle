@@ -53,8 +53,8 @@ class GetSoundFileData extends AbstractSoundFiles
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_SOUND_LABEL => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_LABEL, GenericQueryParameter::TYPE_STRING, 'The label of the sound file to return', true),
-            static::QUERY_PARAMETER_SOUND_GROUP => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_GROUP, GenericQueryParameter::TYPE_STRING, 'The group of the sound file to return'),
+            self::QUERY_PARAMETER_SOUND_LABEL => new GenericQueryParameter(self::QUERY_PARAMETER_SOUND_LABEL, GenericQueryParameter::TYPE_STRING, 'The label of the sound file to return', true),
+            self::QUERY_PARAMETER_SOUND_GROUP => new GenericQueryParameter(self::QUERY_PARAMETER_SOUND_GROUP, GenericQueryParameter::TYPE_STRING, 'The group of the sound file to return'),
         ];
 
         $this->allQueryParameters = array_merge([

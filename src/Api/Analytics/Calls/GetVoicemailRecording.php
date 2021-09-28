@@ -7,10 +7,6 @@ namespace Yproximite\IovoxBundle\Api\Analytics\Calls;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
-use Yproximite\IovoxBundle\Api\ErrorResult\LimitIntegerErrorResult;
-use Yproximite\IovoxBundle\Api\ErrorResult\LimitIntervalErrorResult;
-use Yproximite\IovoxBundle\Api\ErrorResult\OutputInvalidErrorResult;
-use Yproximite\IovoxBundle\Api\ErrorResult\PageIntegerErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestMethodInvalidErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\VersionEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\VersionInvalidErrorResult;
@@ -49,7 +45,7 @@ class GetVoicemailRecording extends AbstractCalls
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_ID => new GenericQueryParameter(static::QUERY_PARAMETER_ID, GenericQueryParameter::TYPE_STRING, 'Returns the MP3 data for the recording associated with this Call ID. This ID is the id field retrieved from Calls::getCallData', true),
+            self::QUERY_PARAMETER_ID => new GenericQueryParameter(self::QUERY_PARAMETER_ID, GenericQueryParameter::TYPE_STRING, 'Returns the MP3 data for the recording associated with this Call ID. This ID is the id field retrieved from Calls::getCallData', true),
         ];
 
         $this->allQueryParameters = array_merge([

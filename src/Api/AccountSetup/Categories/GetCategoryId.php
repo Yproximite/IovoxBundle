@@ -58,9 +58,9 @@ class GetCategoryId extends AbstractCategories
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_LABEL           => new GenericQueryParameter(static::QUERY_PARAMETER_LABEL, GenericQueryParameter::TYPE_STRING, 'The label of the category', true),
-            static::QUERY_PARAMETER_VALUE           => new GenericQueryParameter(static::QUERY_PARAMETER_VALUE, GenericQueryParameter::TYPE_STRING, 'The value of the leaf to return the path for', true),
-            static::QUERY_PARAMETER_DELIMITER       => new GenericQueryParameter(static::QUERY_PARAMETER_DELIMITER, GenericQueryParameter::TYPE_STRING, 'The delimiter to use in the category_path', false),
+            self::QUERY_PARAMETER_LABEL             => new GenericQueryParameter(self::QUERY_PARAMETER_LABEL, GenericQueryParameter::TYPE_STRING, 'The label of the category', true),
+            self::QUERY_PARAMETER_VALUE             => new GenericQueryParameter(self::QUERY_PARAMETER_VALUE, GenericQueryParameter::TYPE_STRING, 'The value of the leaf to return the path for', true),
+            self::QUERY_PARAMETER_DELIMITER         => new GenericQueryParameter(self::QUERY_PARAMETER_DELIMITER, GenericQueryParameter::TYPE_STRING, 'The delimiter to use in the category_path', false),
         ];
 
         $this->allQueryParameters = array_merge([

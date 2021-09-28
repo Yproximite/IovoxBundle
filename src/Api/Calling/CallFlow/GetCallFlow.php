@@ -50,7 +50,7 @@ class GetCallFlow extends AbstractCallFlow
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_CALL_FLOW => new GenericQueryParameter(static::QUERY_PARAMETER_CALL_FLOW, GenericQueryParameter::TYPE_STRING, 'The Call Flow title you want to retrieve the details from', true),
+            self::QUERY_PARAMETER_CALL_FLOW => new GenericQueryParameter(self::QUERY_PARAMETER_CALL_FLOW, GenericQueryParameter::TYPE_STRING, 'The Call Flow title you want to retrieve the details from', true),
         ];
 
         $this->allQueryParameters = array_merge([

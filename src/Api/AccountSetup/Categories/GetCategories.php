@@ -57,8 +57,8 @@ class GetCategories extends AbstractCategories
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()     => new PageQueryParameter(),
             LimitQueryParameter::getParameterName()    => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_REQ_FIELDS         => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
-            static::QUERY_PARAMETER_PARENT_CATEGORY_ID => new GenericQueryParameter(static::QUERY_PARAMETER_PARENT_CATEGORY_ID, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_REQ_FIELDS           => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_PARENT_CATEGORY_ID   => new GenericQueryParameter(self::QUERY_PARAMETER_PARENT_CATEGORY_ID, GenericQueryParameter::TYPE_STRING),
         ];
 
         $this->allQueryParameters = array_merge([

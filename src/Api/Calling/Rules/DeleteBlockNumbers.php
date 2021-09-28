@@ -45,7 +45,7 @@ class DeleteBlockNumbers extends AbstractRules
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => new GenericQueryParameter(static::QUERY_PARAMETER_TIME_BLOCK_NUMBERS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of number;in_or_out;operator of the Blocked Numbers to be deleted', true),
+            self::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => new GenericQueryParameter(self::QUERY_PARAMETER_TIME_BLOCK_NUMBERS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of number;in_or_out;operator of the Blocked Numbers to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([

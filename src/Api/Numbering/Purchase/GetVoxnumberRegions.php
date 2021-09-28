@@ -58,10 +58,10 @@ class GetVoxnumberRegions extends AbstractPurchase
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_NUMBER_TYPE     => new GenericQueryParameter(static::QUERY_PARAMETER_NUMBER_TYPE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the current region selected. number_type can be NATIONAL, GEOGRAPHIC, TOLLFREE'),
-            static::QUERY_PARAMETER_AREA_CODE       => new GenericQueryParameter(static::QUERY_PARAMETER_AREA_CODE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the country_code selected.'),
-            static::QUERY_PARAMETER_COUNTRY_CODE    => new GenericQueryParameter(static::QUERY_PARAMETER_COUNTRY_CODE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the area_code selected.'),
-            static::QUERY_PARAMETER_REQ_FIELDS      => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response.ac=Area Code,cc=Country Code ,con=Country Name, stn=State Name, cin=City Name,ct=Cost'),
+            self::QUERY_PARAMETER_NUMBER_TYPE       => new GenericQueryParameter(self::QUERY_PARAMETER_NUMBER_TYPE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the current region selected. number_type can be NATIONAL, GEOGRAPHIC, TOLLFREE'),
+            self::QUERY_PARAMETER_AREA_CODE         => new GenericQueryParameter(self::QUERY_PARAMETER_AREA_CODE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the country_code selected.'),
+            self::QUERY_PARAMETER_COUNTRY_CODE      => new GenericQueryParameter(self::QUERY_PARAMETER_COUNTRY_CODE, GenericQueryParameter::TYPE_STRING, 'Returns the Regions Details for the area_code selected.'),
+            self::QUERY_PARAMETER_REQ_FIELDS        => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response.ac=Area Code,cc=Country Code ,con=Country Name, stn=State Name, cin=City Name,ct=Cost'),
         ];
 
         $this->allQueryParameters = array_merge([

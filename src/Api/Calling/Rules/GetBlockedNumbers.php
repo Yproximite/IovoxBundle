@@ -59,11 +59,11 @@ class GetBlockedNumbers extends AbstractRules
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_NUMBER          => new GenericQueryParameter(static::QUERY_PARAMETER_NUMBER, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with this Number'),
-            static::QUERY_PARAMETER_OPERATOR        => new GenericQueryParameter(static::QUERY_PARAMETER_OPERATOR, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with this Operator'),
-            static::QUERY_PARAMETER_IN_OR_OUT       => new GenericQueryParameter(static::QUERY_PARAMETER_IN_OR_OUT, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with respectively in or out'),
-            static::QUERY_PARAMETER_REQ_FIELDS      => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response. no = Number, op = Operator, ioo = Inbound Or Outbound, nn = Number Notes, rules = Special time based rules'),
-            static::QUERY_PARAMETER_ORDER           => new GenericQueryParameter(static::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with ASC or DESC for ascending or descending respectively. For example, "no_DESC" will return results ordered by Number on descending alfabetical order.'),
+            self::QUERY_PARAMETER_NUMBER            => new GenericQueryParameter(self::QUERY_PARAMETER_NUMBER, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with this Number'),
+            self::QUERY_PARAMETER_OPERATOR          => new GenericQueryParameter(self::QUERY_PARAMETER_OPERATOR, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with this Operator'),
+            self::QUERY_PARAMETER_IN_OR_OUT         => new GenericQueryParameter(self::QUERY_PARAMETER_IN_OR_OUT, GenericQueryParameter::TYPE_STRING, 'Returns all Blocked Numbers with respectively in or out'),
+            self::QUERY_PARAMETER_REQ_FIELDS        => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response. no = Number, op = Operator, ioo = Inbound Or Outbound, nn = Number Notes, rules = Special time based rules'),
+            self::QUERY_PARAMETER_ORDER             => new GenericQueryParameter(self::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with ASC or DESC for ascending or descending respectively. For example, "no_DESC" will return results ordered by Number on descending alfabetical order.'),
         ];
 
         $this->allQueryParameters = array_merge([

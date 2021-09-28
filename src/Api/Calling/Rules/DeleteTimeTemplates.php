@@ -46,8 +46,8 @@ class DeleteTimeTemplates extends AbstractRules
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_TIME_TEMPLATE_LABELS => new GenericQueryParameter(static::QUERY_PARAMETER_TIME_TEMPLATE_LABELS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all Time Template labels of the Time Template to be deleted', true),
-            static::QUERY_PARAMETER_FORCE => new GenericQueryParameter(static::QUERY_PARAMETER_FORCE, GenericQueryParameter::TYPE_BOOLEAN, 'TRUE/FALSE. If set to TRUE and the Time Template is used by a blocking rules, it will also remove the template from the rule. If set to FALSE and the Time Template is used by a blocking rules, an error will be thrown'),
+            self::QUERY_PARAMETER_TIME_TEMPLATE_LABELS => new GenericQueryParameter(self::QUERY_PARAMETER_TIME_TEMPLATE_LABELS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all Time Template labels of the Time Template to be deleted', true),
+            self::QUERY_PARAMETER_FORCE                => new GenericQueryParameter(self::QUERY_PARAMETER_FORCE, GenericQueryParameter::TYPE_BOOLEAN, 'TRUE/FALSE. If set to TRUE and the Time Template is used by a blocking rules, it will also remove the template from the rule. If set to FALSE and the Time Template is used by a blocking rules, an error will be thrown'),
         ];
 
         $this->allQueryParameters = array_merge([

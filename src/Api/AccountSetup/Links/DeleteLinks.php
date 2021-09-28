@@ -45,7 +45,7 @@ class DeleteLinks extends AbstractLinks
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_LINK_IDS => new GenericQueryParameter(static::QUERY_PARAMETER_LINK_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all link ids of the links to be deleted', true),
+            self::QUERY_PARAMETER_LINK_IDS => new GenericQueryParameter(self::QUERY_PARAMETER_LINK_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all link ids of the links to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([

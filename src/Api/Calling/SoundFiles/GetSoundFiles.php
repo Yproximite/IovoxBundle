@@ -58,10 +58,10 @@ class GetSoundFiles extends AbstractSoundFiles
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_ORDER           => new GenericQueryParameter(static::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING),
-            static::QUERY_PARAMETER_REQ_FIELDS      => new GenericQueryParameter(static::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
-            static::QUERY_PARAMETER_SOUND_LABEL     => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_LABEL, GenericQueryParameter::TYPE_STRING),
-            static::QUERY_PARAMETER_SOUND_GROUP     => new GenericQueryParameter(static::QUERY_PARAMETER_SOUND_GROUP, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_ORDER             => new GenericQueryParameter(self::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_REQ_FIELDS        => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_SOUND_LABEL       => new GenericQueryParameter(self::QUERY_PARAMETER_SOUND_LABEL, GenericQueryParameter::TYPE_STRING),
+            self::QUERY_PARAMETER_SOUND_GROUP       => new GenericQueryParameter(self::QUERY_PARAMETER_SOUND_GROUP, GenericQueryParameter::TYPE_STRING),
         ];
 
         $this->allQueryParameters = array_merge([

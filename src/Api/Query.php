@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api;
 
 use Yproximite\IovoxBundle\Api\QueryParameter\QueryParameterInterface;
@@ -9,7 +11,7 @@ use Yproximite\IovoxBundle\Exception\Api\MandatoryQueryParameterException;
 class Query
 {
     /**
-     * @param array<string, string|int> $queryParameters
+     * @param array<string, array|string|int> $queryParameters
      */
     public function __construct(public string $method, public string $endpoint, private array $queryParameters = [], private ?string $content = null)
     {
@@ -42,7 +44,7 @@ class Query
     }
 
     /**
-     * @return array<string, string|int>
+     * @return array<string, array|string|int>
      */
     public function getQueryParameters(): array
     {

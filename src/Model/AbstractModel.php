@@ -14,7 +14,7 @@ abstract class AbstractModel implements ModelInterface
     /**
      * @param array<string, mixed> $response
      *
-     * @return array<int|string, mixed>
+     * @return array<int, mixed>
      */
     protected static function formatResult(array $response, bool $isFirstNode = true): array
     {

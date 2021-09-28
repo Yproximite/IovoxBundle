@@ -55,7 +55,7 @@ class GetContactDetails extends AbstractContacts
         $this->editableQueryParameters = [
             PageQueryParameter::getParameterName()  => new PageQueryParameter(),
             LimitQueryParameter::getParameterName() => new LimitQueryParameter(),
-            static::QUERY_PARAMETER_CONTACT_ID      => new GenericQueryParameter(static::QUERY_PARAMETER_CONTACT_ID, GenericQueryParameter::TYPE_STRING, 'Returns the Contact with the specified Contact ID'),
+            self::QUERY_PARAMETER_CONTACT_ID        => new GenericQueryParameter(self::QUERY_PARAMETER_CONTACT_ID, GenericQueryParameter::TYPE_STRING, 'Returns the Contact with the specified Contact ID'),
         ];
 
         $this->allQueryParameters = array_merge([

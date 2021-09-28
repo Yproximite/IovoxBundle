@@ -45,7 +45,7 @@ class DeleteNodes extends AbstractNodes
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_NODE_IDS => new GenericQueryParameter(static::QUERY_PARAMETER_NODE_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of all Node ids of the nodes to be deleted', true),
+            self::QUERY_PARAMETER_NODE_IDS => new GenericQueryParameter(self::QUERY_PARAMETER_NODE_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of all Node ids of the nodes to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([

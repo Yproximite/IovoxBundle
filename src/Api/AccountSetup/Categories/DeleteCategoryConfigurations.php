@@ -46,7 +46,7 @@ class DeleteCategoryConfigurations extends AbstractCategories
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            static::QUERY_PARAMETER_CATEGORIES_IDS => new GenericQueryParameter(static::QUERY_PARAMETER_CATEGORIES_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of all categories configuration IDs to be deleted', true),
+            self::QUERY_PARAMETER_CATEGORIES_IDS => new GenericQueryParameter(self::QUERY_PARAMETER_CATEGORIES_IDS, GenericQueryParameter::TYPE_STRING, 'A comma delimeted list of all categories configuration IDs to be deleted', true),
         ];
 
         $this->allQueryParameters = array_merge([
