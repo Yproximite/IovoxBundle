@@ -19,4 +19,28 @@ class ConvertXmlString
 
         return null;
     }
+
+    /**
+     * @return array<int|string, mixed>|null
+     */
+    public static function convertXsdStringToArray(string $xsdString): ?array
+    {
+        $tmpXsdFile = sprintf('%s/schema.xsd', sys_get_temp_dir());
+        file_put_contents($tmpXsdFile, $xsdString);
+
+        $tmpFile                 = sprintf('%s/schema.xml', sys_get_temp_dir());
+        $doc                     = new \DOMDocument();
+        $doc->preserveWhiteSpace = true;
+        $doc->load($tmpXsdFile);
+        $doc->save($tmpFile);
+
+        $file = file_get_contents($tmpFile);
+        if (!$doc->lastChild instanceof \DOMNode || false === $file) {
+            return null;
+        }
+
+        $parseObj = str_replace($doc->lastChild->prefix.':', '', $file);
+
+        return static::convertXmlStringToArray($parseObj);
+    }
 }
