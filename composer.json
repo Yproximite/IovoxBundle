@@ -9,7 +9,10 @@
   },
   "scripts": {
     "phpstan": "phpstan analyze --ansi",
-    "phpunit": "phpunit"
+    "php-cs-fixer": "php-cs-fixer fix -v",
+    "php-cs-fixer@ci": "php-cs-fixer fix -v --diff --dry-run",
+    "phpcs": "phpcs -s --warning-severity=0",
+    "phpunit": "simple-phpunit"
   },
   "require": {
     "php": "^8.0",
@@ -35,5 +38,10 @@
     "exclude-from-classmap": [
       "/tests/"
     ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Yproximite\\IovoxBundle\\Tests\\": "tests"
+    }
   }
 }
