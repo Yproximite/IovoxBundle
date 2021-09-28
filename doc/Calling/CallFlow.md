@@ -87,3 +87,17 @@ public function example(UpdateCallFlow $updateCallFlow)
     $response = $updateCallFlow->executeQuery($payload);
 }
 ```
+
+# DeleteCallFlows
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\DeleteCallFlows;
+
+public function example(DeleteCallFlows $deleteCallFlows)
+{
+    // true if ok else BadResponseReturnException
+    $response = $deleteCallFlows->executeQuery([DeleteCallFlows::QUERY_PARAMETER_CALL_FLOWS => 'call_flow_name|other_call_flow_name']);
+}
+```
+
+see [DeleteCallFlows](../../src/Api/Calling/CallFlow/DeleteCallFlows.php) for available options
