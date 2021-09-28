@@ -44,7 +44,7 @@ jobs:
 
       - run: composer php-cs-fixer@ci
 
-      - run: composer phpcs --warning-severity=0
+      - run: composer phpcs
 
   ci:
     runs-on: ubuntu-latest
