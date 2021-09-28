@@ -38,5 +38,10 @@
     "exclude-from-classmap": [
       "/tests/"
     ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Yproximite\\IovoxBundle\\Tests\\": "tests"
+    }
   }
 }
