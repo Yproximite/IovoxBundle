@@ -58,7 +58,6 @@ class GetCallData extends AbstractCalls
         $response = $this->client->executeQuery($query);
 
         if (Response::HTTP_OK === $response->getStatusCode()) {
-            dump($response->toArray());
             return GetCallDataModel::create($response->toArray());
         }
 
