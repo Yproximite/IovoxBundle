@@ -26,3 +26,16 @@ public function example(GetCallMetrics $getCallMetrics)
 ```
 
 see [GetCallMetrics](../../src/Api/Analytics/Calls/GetCallMetrics.php) for available options
+
+# GetCallRecording
+
+```php
+use Yproximite\IovoxBundle\Api\Analytics\Calls\GetCallRecording;
+
+public function example(GetCallRecording $getCallRecording)
+{
+    $recording = $getCallRecording->executeQuery([GetCallRecording::QUERY_PARAMETER_ID => 'recording_id']);
+}
+```
+
+see [GetCallRecording](../../src/Api/Analytics/Calls/GetCallRecording.php) for available options
