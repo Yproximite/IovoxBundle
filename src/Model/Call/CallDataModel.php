@@ -73,18 +73,18 @@ class CallDataModel extends AbstractModel
             $opts['link_id'] ?? null,
             $opts['link_name'] ?? null,
             $opts['link_type'] ?? null,
-            (null !== $hasRecording = $opts['has_recording'] ?? null) ? $hasRecording !== '0' : null,
-            (null !== $emailSent = $opts['email_sent'] ?? null) ? $emailSent !== '0' : null,
+            (null !== $hasRecording = $opts['has_recording'] ?? null) ? '0' !== $hasRecording : null,
+            (null !== $emailSent = $opts['email_sent'] ?? null) ? '0' !== $emailSent : null,
             $opts['direction'] ?? null,
             $opts['call_origin_encoded'] ?? null,
             (null !== $categories = ($opts['categories']['category'] ?? null)) ?
-                (new ArrayCollection(static::formatResult($categories, false)))->map(fn($v): CategoryModel => CategoryModel::create($v)) : null,
+                (new ArrayCollection(static::formatResult($categories, false)))->map(fn ($v): CategoryModel => CategoryModel::create($v)) : null,
             (null !== $categories = ($opts['call_categories']['call_category'] ?? null)) ?
-                (new ArrayCollection(static::formatResult($categories, false)))->map(fn($v): CategoryModel => CategoryModel::create($v)) : null,
+                (new ArrayCollection(static::formatResult($categories, false)))->map(fn ($v): CategoryModel => CategoryModel::create($v)) : null,
             (null !== $categories = ($opts['node_categories']['node_category'] ?? null)) ?
-                (new ArrayCollection(static::formatResult($categories, false)))->map(fn($v): CategoryModel => CategoryModel::create($v)) : null,
+                (new ArrayCollection(static::formatResult($categories, false)))->map(fn ($v): CategoryModel => CategoryModel::create($v)) : null,
             (null !== $categories = ($opts['contact_categories']['contact_category'] ?? null)) ?
-                (new ArrayCollection(static::formatResult($categories, false)))->map(fn($v): CategoryModel => CategoryModel::create($v)) : null,
+                (new ArrayCollection(static::formatResult($categories, false)))->map(fn ($v): CategoryModel => CategoryModel::create($v)) : null,
         );
     }
 }

@@ -19,7 +19,7 @@ class CallFlowModel extends AbstractModel
             $opts['template_notes'] ?? null,
             $opts['template_type'] ?? null,
             (null !== $created = ($opts['created'] ?? null)) ? new \DateTimeImmutable($created) : null,
-            (null !== $advanced = ($opts['advanced'] ?? null)) ? $advanced === 'YES' : null,
+            (null !== $advanced = ($opts['advanced'] ?? null)) ? 'YES' === $advanced : null,
         );
     }
 }

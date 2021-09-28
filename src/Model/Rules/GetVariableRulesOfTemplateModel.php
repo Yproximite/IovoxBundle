@@ -22,7 +22,7 @@ class GetVariableRulesOfTemplateModel extends AbstractModel
         $response = $opts['response'];
 
         return new self(
-            (new ArrayCollection(static::formatResult($response['rules']['rule'] ?? [], false)))->map(fn($v): GetVariableRuleModel => GetVariableRuleModel::create($v))
+            (new ArrayCollection(static::formatResult($response['rules']['rule'] ?? [], false)))->map(fn ($v): GetVariableRuleModel => GetVariableRuleModel::create($v))
         );
     }
 }

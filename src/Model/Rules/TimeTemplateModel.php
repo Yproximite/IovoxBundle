@@ -11,7 +11,7 @@ use Yproximite\IovoxBundle\Model\AbstractModel;
 class TimeTemplateModel extends AbstractModel
 {
     /**
-     * @param Collection<int, TimeFrameModel>  $timeFrames
+     * @param Collection<int, TimeFrameModel> $timeFrames
      */
     private function __construct(public ?string $label, public Collection $timeFrames)
     {
@@ -21,7 +21,7 @@ class TimeTemplateModel extends AbstractModel
     {
         return new self(
             $opts['label'],
-            (new ArrayCollection(static::formatResult($opts['time_frames']['time_frame'] ?? [], false)))->map(fn($v): TimeFrameModel => TimeFrameModel::create($v))
+            (new ArrayCollection(static::formatResult($opts['time_frames']['time_frame'] ?? [], false)))->map(fn ($v): TimeFrameModel => TimeFrameModel::create($v))
         );
     }
 }

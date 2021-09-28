@@ -33,8 +33,8 @@ class LinkModel extends AbstractModel
             $opts['link_type'],
             $opts['voxnumber'],
             $opts['rule_template_name'] ?? null,
-            (new ArrayCollection(static::formatResult($opts['rules']['rule'] ?? [], false)))->map(fn($v): RuleModel => RuleModel::create($v)),
-            (new ArrayCollection(static::formatResult($opts['cats']['cat'] ?? [], false)))->map(fn($v): CategoryModel => CategoryModel::create($v))
+            (new ArrayCollection(static::formatResult($opts['rules']['rule'] ?? [], false)))->map(fn ($v): RuleModel => RuleModel::create($v)),
+            (new ArrayCollection(static::formatResult($opts['cats']['cat'] ?? [], false)))->map(fn ($v): CategoryModel => CategoryModel::create($v))
         );
     }
 }

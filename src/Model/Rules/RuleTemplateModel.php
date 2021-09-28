@@ -19,7 +19,7 @@ class RuleTemplateModel extends AbstractModel
             $opts['template_notes'],
             $opts['template_type'],
             new \DateTimeImmutable($opts['created']),
-            $opts['advanced'] === 'YES',
+            'YES' === $opts['advanced'],
         );
     }
 }

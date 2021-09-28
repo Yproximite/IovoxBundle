@@ -22,7 +22,7 @@ class PurchaseVoxnumbersResponseModel extends AbstractModel
         return new self(
             $opts['order_reference'] ?? null,
             $opts['order_status'] ?? null,
-            (new ArrayCollection(static::formatResult($opts['voxnumbers']['voxnumber'] ?? [], false)))->map(fn($v): VoxnumberModel => VoxnumberModel::create($v))
+            (new ArrayCollection(static::formatResult($opts['voxnumbers']['voxnumber'] ?? [], false)))->map(fn ($v): VoxnumberModel => VoxnumberModel::create($v))
         );
     }
 }

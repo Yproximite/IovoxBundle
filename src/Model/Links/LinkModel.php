@@ -30,7 +30,7 @@ class LinkModel extends AbstractModel
             $opts['link_id'] ?? null,
             $opts['link_name'] ?? null,
             $opts['link_type'] ?? null,
-            null !== ($clickToCall = ($opts['click_to_call'] ?? null)) ? $clickToCall === '1' : null,
+            null !== ($clickToCall = ($opts['click_to_call'] ?? null)) ? '1' === $clickToCall : null,
             $opts['voxnumber'] ?? null,
             $opts['rule_name'] ?? null,
         );

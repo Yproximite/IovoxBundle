@@ -34,7 +34,7 @@ class IovoxSerializer implements SerializerInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function serialize($data, string $format, array $context = [])
     {
@@ -42,7 +42,7 @@ class IovoxSerializer implements SerializerInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function deserialize($data, string $type, string $format, array $context = [])
     {

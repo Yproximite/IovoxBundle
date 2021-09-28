@@ -8,7 +8,6 @@ use Yproximite\IovoxBundle\Model\AbstractModel;
 
 class CategoryModel extends AbstractModel
 {
-
     private function __construct(public ?string $label, public ?string $value, public ?string $categoryId)
     {
     }

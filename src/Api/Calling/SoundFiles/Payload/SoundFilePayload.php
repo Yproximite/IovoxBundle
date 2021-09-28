@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload;
 
 use Symfony\Component\Serializer\Annotation\Groups;

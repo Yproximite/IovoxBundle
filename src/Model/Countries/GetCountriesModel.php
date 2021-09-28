@@ -26,7 +26,7 @@ class GetCountriesModel extends PaginateResponse
             (int) ($response['current_page'] ?? 0),
             (int) ($response['total_pages'] ?? 0),
             (int) ($response['total_results'] ?? 0),
-            (new ArrayCollection(static::formatResult($response)))->map(fn($v): CountryModel => CountryModel::create($v))
+            (new ArrayCollection(static::formatResult($response)))->map(fn ($v): CountryModel => CountryModel::create($v))
         );
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Api\QueryParameter;
 
 class LimitQueryParameter extends GenericQueryParameter

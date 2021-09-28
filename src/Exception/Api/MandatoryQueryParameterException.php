@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yproximite\IovoxBundle\Exception\Api;
 
 use Yproximite\IovoxBundle\Api\QueryParameter\QueryParameterInterface;

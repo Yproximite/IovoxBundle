@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Model\Nodes;
 
-use Doctrine\Common\Collections\Collection;
 use Yproximite\IovoxBundle\Model\AbstractModel;
 
 class RuleModel extends AbstractModel
