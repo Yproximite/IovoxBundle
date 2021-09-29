@@ -18,14 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteVoxnumbersFromAccount
  */
-class DeleteVoxnumbersFromAccount extends AbstractVoxnumbers
+class DeleteVoxnumbersFromAccount extends AbstractVoxnumbers implements DeleteVoxnumbersFromAccountInterface
 {
-    public const QUERY_PARAMETER_RM_IF_IN_USE    = 'rm_if_in_use';
-    public const QUERY_PARAMETER_FULL_VOXNUMBERS = 'full_voxnumbers';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);
@@ -46,8 +40,8 @@ class DeleteVoxnumbersFromAccount extends AbstractVoxnumbers
     protected function setQueryParameters(): void
     {
         $this->editableQueryParameters = [
-            self::QUERY_PARAMETER_RM_IF_IN_USE    => new GenericQueryParameter(self::QUERY_PARAMETER_RM_IF_IN_USE, GenericQueryParameter::TYPE_BOOLEAN, 'If TRUE the VoxNumbers will be removed from any Links if they are attached to. If FALSE a validation message will be thrown if any of the requested VoxNumbers are attached to a Link'),
             self::QUERY_PARAMETER_FULL_VOXNUMBERS => new GenericQueryParameter(self::QUERY_PARAMETER_FULL_VOXNUMBERS, GenericQueryParameter::TYPE_STRING, 'A comma delimited list of all voxnumbers to be removed. These must be in e164 format with no leading zeros or + (e.g. 44207100234 for a London VoxNumber)', true),
+            self::QUERY_PARAMETER_RM_IF_IN_USE    => new GenericQueryParameter(self::QUERY_PARAMETER_RM_IF_IN_USE, GenericQueryParameter::TYPE_BOOLEAN, 'If TRUE the VoxNumbers will be removed from any Links if they are attached to. If FALSE a validation message will be thrown if any of the requested VoxNumbers are attached to a Link'),
         ];
 
         $this->allQueryParameters = array_merge([

@@ -29,7 +29,7 @@ abstract class AbstractApi
     }
 
     /**
-     * @param array<string, string|int> $queryParameters
+     * @param array<string, string|int|array<int|string, mixed>> $queryParameters
      */
     protected function createQuery(array $queryParameters = []): Query
     {

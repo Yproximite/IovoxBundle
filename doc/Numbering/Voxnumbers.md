@@ -1,9 +1,9 @@
 # GetVoxnumbers
 
 ```php
-use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\GetVoxnumbers;
+use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\GetVoxnumbersInterface;
 
-public function example(GetVoxnumbers $getVoxnumbers)
+public function example(GetVoxnumbersInterface $getVoxnumbers)
 {
     $voxnumbers = $getVoxnumbers->executeQuery($options); 
 } 
@@ -14,11 +14,11 @@ see [GetVoxnumbers](../../src/Api/Numbering/Voxnumbers/GetVoxnumbers.php) for av
 # SetCallStatus
 
 ```php
-use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\SetCallStatus;
+use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\SetCallStatusInterface;
 use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\Payload\VoxnumberPayload;
 use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\Payload\VoxnumbersPayload;
 
-public function example(SetCallStatus $setCallStatus)
+public function example(SetCallStatusInterface $setCallStatus)
 {
     $payload = new VoxnumbersPayload(
         'ON',// ON|OFF
@@ -36,12 +36,12 @@ public function example(SetCallStatus $setCallStatus)
 # DeleteVoxnumbersFromAccount
 
 ```php
-use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\DeleteVoxnumbersFromAccount;
+use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\DeleteVoxnumbersFromAccountInterface;
 
-public function example(DeleteVoxnumbersFromAccount $deleteVoxnumbersFromAccount)
+public function example(DeleteVoxnumbersFromAccountInterface $deleteVoxnumbersFromAccount)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteVoxnumbersFromAccount->executeQuery([DeleteVoxnumbersFromAccount::QUERY_PARAMETER_FULL_VOXNUMBERS => '33901020304,33401020304']); 
+    $result = $deleteVoxnumbersFromAccount->executeQuery([DeleteVoxnumbersFromAccountInterface::QUERY_PARAMETER_FULL_VOXNUMBERS => '33901020304,33401020304']); 
 }
 ```
 

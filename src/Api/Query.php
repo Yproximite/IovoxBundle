@@ -17,7 +17,10 @@ class Query
     {
     }
 
-    public function addQueryParameter(string|int $queryParameter, QueryParameterInterface $queryParameterConfig): void
+    /**
+     * @param string|int|array<int|string, mixed> $queryParameter
+     */
+    public function addQueryParameter(string|int|array $queryParameter, QueryParameterInterface $queryParameterConfig): void
     {
         if (!$queryParameterConfig->isValid($queryParameter)) {
             throw new InvalidQueryParameterException($queryParameter, $queryParameterConfig);

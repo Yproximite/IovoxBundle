@@ -29,7 +29,7 @@ use Yproximite\IovoxBundle\Utils\ConvertXmlString;
 /**
  * @see https://docs.iovox.com/display/RA/purchaseVoxNumbers
  */
-class PurchaseVoxnumbers extends AbstractPurchase
+class PurchaseVoxnumbers extends AbstractPurchase implements PurchaseVoxnumbersInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

@@ -161,6 +161,16 @@ parameters:
 			path: src/Api/Calling/SoundFiles/GetSoundFileDataInterface.php
 
 		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccount\\:\\:executeQuery\\(\\) is incompatible with type array\\('full_voxnumbers' \\=\\> non\\-empty\\-string, \\?'rm_if_in_use' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Numbering/Voxnumbers/DeleteVoxnumbersFromAccount.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccountInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('full_voxnumbers' \\=\\> non\\-empty\\-string, \\?'rm_if_in_use' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Numbering/Voxnumbers/DeleteVoxnumbersFromAccountInterface.php
+
+		-
 			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
 			count: 1
 			path: src/Client.php

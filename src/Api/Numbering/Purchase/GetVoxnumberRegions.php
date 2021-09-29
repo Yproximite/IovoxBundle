@@ -26,16 +26,8 @@ use Yproximite\IovoxBundle\Model\Purchase\GetVoxnumberRegionsModel;
 /**
  * @see https://docs.iovox.com/display/RA/getVoxnumberRegions
  */
-class GetVoxnumberRegions extends AbstractPurchase
+class GetVoxnumberRegions extends AbstractPurchase implements GetVoxnumberRegionsInterface
 {
-    public const QUERY_PARAMETER_NUMBER_TYPE  = 'number_type';
-    public const QUERY_PARAMETER_AREA_CODE    = 'area_code';
-    public const QUERY_PARAMETER_COUNTRY_CODE = 'country_code';
-    public const QUERY_PARAMETER_REQ_FIELDS   = 'req_fields';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetVoxnumberRegionsModel
     {
         $query    = $this->createQuery($queryParameters);

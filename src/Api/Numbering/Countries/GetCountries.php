@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Model\Countries\GetCountriesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getCountries
  */
-class GetCountries extends AbstractCountries
+class GetCountries extends AbstractCountries implements GetCountriesInterface
 {
     /**
      * @param array<string, string|int> $queryParameters

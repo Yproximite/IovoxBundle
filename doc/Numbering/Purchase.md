@@ -1,9 +1,9 @@
 # GetVoxnumberRegions
 
 ```php
-use Yproximite\IovoxBundle\Api\Numbering\Purchase\GetVoxnumberRegions;
+use Yproximite\IovoxBundle\Api\Numbering\Purchase\GetVoxnumberRegionsInterface;
 
-public function example(GetVoxnumberRegions $getVoxnumberRegions)
+public function example(GetVoxnumberRegionsInterface $getVoxnumberRegions)
 {
     $voxnumberRegions = $getVoxnumberRegions->executeQuery($options); 
 }
@@ -17,9 +17,9 @@ see [GetVoxnumberRegions](../../src/Api/Numbering/Purchase/GetVoxnumberRegions.p
 use Yproximite\IovoxBundle\Api\Numbering\Purchase\Payload\PurchaseVoxNumberAdditionalInformationPayload;
 use Yproximite\IovoxBundle\Api\Numbering\Purchase\Payload\PurchaseVoxnumberPayload;
 use Yproximite\IovoxBundle\Api\Numbering\Purchase\Payload\PurchaseVoxnumbersPayload;
-use Yproximite\IovoxBundle\Api\Numbering\Purchase\PurchaseVoxnumbers;
+use Yproximite\IovoxBundle\Api\Numbering\Purchase\PurchaseVoxnumbersInterface;
 
-public function example(PurchaseVoxnumbers $purchaseVoxnumbers)
+public function example(PurchaseVoxnumbersInterface $purchaseVoxnumbers)
 {
     $payload = new PurchaseVoxnumbersPayload([
         new PurchaseVoxnumberPayload(33, 9, 'NATIONAL', 1),

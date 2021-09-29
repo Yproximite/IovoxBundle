@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/setCallStatus
  */
-class SetCallStatus extends AbstractVoxnumbers
+class SetCallStatus extends AbstractVoxnumbers implements SetCallStatusInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
