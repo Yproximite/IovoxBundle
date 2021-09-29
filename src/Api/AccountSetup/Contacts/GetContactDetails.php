@@ -26,13 +26,8 @@ use Yproximite\IovoxBundle\Model\Contacts\GetContactDetailsModel;
 /**
  * @see https://docs.iovox.com/display/RA/getContactDetails
  */
-class GetContactDetails extends AbstractContacts
+class GetContactDetails extends AbstractContacts implements GetContactDetailsInterface
 {
-    public const QUERY_PARAMETER_CONTACT_ID = 'contact_id';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetContactDetailsModel
     {
         $query    = $this->createQuery($queryParameters);

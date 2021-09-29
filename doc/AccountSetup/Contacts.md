@@ -1,9 +1,9 @@
 # GetContacts
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\GetContacts;
+use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\GetContactsInterface;
 
-public function example(GetContacts $getContacts)
+public function example(GetContactsInterface $getContacts)
 {
     $contacts = $getContacts->executeQuery($options); 
 } 
@@ -14,11 +14,11 @@ see [GetContacts](../../src/Api/AccountSetup/Contacts/GetContacts.php) for avail
 # GetContactDetails
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\GetContactDetails;
+use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\GetContactDetailsInterface;
 
-public function example(GetContactDetails $getContactDetails)
+public function example(GetContactDetailsInterface $getContactDetails)
 {
-    $contactDetails = $getContactDetails->executeQuery([GetContactDetails::QUERY_PARAMETER_CONTACT_ID => 'contact id']); 
+    $contactDetails = $getContactDetails->executeQuery([GetContactDetailsInterface::QUERY_PARAMETER_CONTACT_ID => 'contact id']); 
 } 
 ```
 
@@ -27,11 +27,11 @@ see [GetContactDetails](../../src/Api/AccountSetup/Contacts/GetContactDetails.ph
 # CreateContacts
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\CreateContacts;
+use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\CreateContactsInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\Payload\ContactPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\Payload\ContactsPayload;
 
-public function example(CreateContacts $createContacts)
+public function example(CreateContactsInterface $createContacts)
 {
     $payload = new ContactsPayload([
         new ContactPayload('contact_id'),
@@ -70,11 +70,11 @@ public function example(CreateContacts $createContacts)
 # UpdateContacts
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\UpdateContacts;
+use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\UpdateContactsInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\Payload\ContactPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\Payload\ContactsPayload;
 
-public function example(UpdateContacts $updateContacts)
+public function example(UpdateContactsInterface $updateContacts)
 {
     $payload = new ContactsPayload([
         new ContactPayload('contact_id'),
@@ -113,12 +113,12 @@ public function example(UpdateContacts $updateContacts)
 # DeleteContacts
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\DeleteContacts;
+use Yproximite\IovoxBundle\Api\AccountSetup\Contacts\DeleteContactsInterface;
 
-public function example(DeleteContacts $deleteContacts)
+public function example(DeleteContactsInterface $deleteContacts)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteContacts->executeQuery([DeleteContacts::QUERY_PARAMETER_CONTACT_IDS => 'contact_id_1,contact_id_2']); 
+    $result = $deleteContacts->executeQuery([DeleteContactsInterface::QUERY_PARAMETER_CONTACT_IDS => 'contact_id_1,contact_id_2']); 
 }
 ```
 

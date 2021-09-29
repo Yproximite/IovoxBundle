@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/attachSMSTemplateToLinks
  */
-class AttachSMSTemplateToLinks extends AbstractLinks
+class AttachSMSTemplateToLinks extends AbstractLinks implements AttachSMSTemplateToLinksInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

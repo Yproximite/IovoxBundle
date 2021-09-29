@@ -19,13 +19,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteCategoryConfigurations
  */
-class DeleteCategoryConfigurations extends AbstractCategories
+class DeleteCategoryConfigurations extends AbstractCategories implements DeleteCategoryConfigurationsInterface
 {
-    public const QUERY_PARAMETER_CATEGORIES_IDS = 'categories_ids';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

@@ -26,18 +26,8 @@ use Yproximite\IovoxBundle\Model\Links\GetLinksModel;
 /**
  * @see https://docs.iovox.com/display/RA/getLinks
  */
-class GetLinks extends AbstractLinks
+class GetLinks extends AbstractLinks implements GetLinksInterface
 {
-    public const QUERY_PARAMETER_NODE_ID    = 'node_id';
-    public const QUERY_PARAMETER_NODE_TYPE  = 'node_type';
-    public const QUERY_PARAMETER_LINK_ID    = 'link_id';
-    public const QUERY_PARAMETER_LINK_TYPE  = 'link_type';
-    public const QUERY_PARAMETER_REQ_FIELDS = 'req_fields';
-    public const QUERY_PARAMETER_ORDER      = 'order';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetLinksModel
     {
         $query    = $this->createQuery($queryParameters);

@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/attachVoxnumberToLink
  */
-class AttachVoxnumberToLink extends AbstractLinks
+class AttachVoxnumberToLink extends AbstractLinks implements AttachVoxnumberToLinkInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

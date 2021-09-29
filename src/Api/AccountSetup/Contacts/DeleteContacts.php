@@ -18,15 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteContacts
  */
-class DeleteContacts extends AbstractContacts
+class DeleteContacts extends AbstractContacts implements DeleteContactsInterface
 {
-    public const QUERY_PARAMETER_CONTACT_IDS = 'contact_ids';
-    public const QUERY_PARAMETER_RM_RULES    = 'rm_rules';
-    public const QUERY_PARAMETER_RM_IF_USER  = 'rm_if_user';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

@@ -18,13 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteNodes
  */
-class DeleteNodes extends AbstractNodes
+class DeleteNodes extends AbstractNodes implements DeleteNodesInterface
 {
-    public const QUERY_PARAMETER_NODE_IDS = 'node_ids';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

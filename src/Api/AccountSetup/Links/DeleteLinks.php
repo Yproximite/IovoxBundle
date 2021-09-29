@@ -18,13 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteLinks
  */
-class DeleteLinks extends AbstractLinks
+class DeleteLinks extends AbstractLinks implements DeleteLinksInterface
 {
-    public const QUERY_PARAMETER_LINK_IDS = 'link_ids';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

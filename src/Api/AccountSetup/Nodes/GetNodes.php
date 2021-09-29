@@ -27,20 +27,8 @@ use Yproximite\IovoxBundle\Model\Nodes\GetNodesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getNodes
  */
-class GetNodes extends AbstractNodes
+class GetNodes extends AbstractNodes implements GetNodesInterface
 {
-    public const QUERY_PARAMETER_NODE_ID    = 'node_id';
-    public const QUERY_PARAMETER_NODE_TYPE  = 'node_type';
-    public const QUERY_PARAMETER_LINK_ID    = 'link_id';
-    public const QUERY_PARAMETER_LINK_TYPE  = 'link_type';
-    public const QUERY_PARAMETER_VOXNUMBER  = 'voxnumber';
-    public const QUERY_PARAMETER_REQ_FIELDS = 'req_fields';
-    public const QUERY_PARAMETER_RULE_NAME  = 'rule_name';
-    public const QUERY_PARAMETER_ORDER      = 'order';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetNodesModel
     {
         $query    = $this->createQuery($queryParameters);

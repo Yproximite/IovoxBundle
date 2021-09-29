@@ -27,15 +27,8 @@ use Yproximite\IovoxBundle\Model\Categories\GetCategoryIdModel;
 /**
  * @see https://docs.iovox.com/display/RA/getCategoryId
  */
-class GetCategoryId extends AbstractCategories
+class GetCategoryId extends AbstractCategories implements GetCategoryIdInterface
 {
-    public const QUERY_PARAMETER_LABEL     = 'label';
-    public const QUERY_PARAMETER_VALUE     = 'value';
-    public const QUERY_PARAMETER_DELIMITER = 'delimiter';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetCategoryIdModel
     {
         $query    = $this->createQuery($queryParameters);

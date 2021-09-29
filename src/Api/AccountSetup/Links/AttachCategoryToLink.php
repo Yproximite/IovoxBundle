@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/attachCategoryToLink
  */
-class AttachCategoryToLink extends AbstractLinks
+class AttachCategoryToLink extends AbstractLinks implements AttachCategoryToLinkInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

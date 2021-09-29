@@ -1,6 +1,86 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategories\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/DeleteCategories.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoriesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/DeleteCategoriesInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoryConfigurations\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/DeleteCategoryConfigurations.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoryConfigurationsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/DeleteCategoryConfigurationsInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryId\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'label' \\=\\> non\\-empty\\-string, 'value' \\=\\> non\\-empty\\-string, \\?'delimiter' \\=\\> string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/GetCategoryId.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryIdInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'label' \\=\\> non\\-empty\\-string, 'value' \\=\\> non\\-empty\\-string, \\?'delimiter' \\=\\> string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Categories/GetCategoryIdInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContacts\\:\\:executeQuery\\(\\) is incompatible with type array\\('contact_ids' \\=\\> non\\-empty\\-string, \\?'rm_rules' \\=\\> 'FALSE'\\|'TRUE', \\?'rm_if_user' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Contacts/DeleteContacts.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContactsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('contact_ids' \\=\\> non\\-empty\\-string, \\?'rm_rules' \\=\\> 'FALSE'\\|'TRUE', \\?'rm_if_user' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Contacts/DeleteContactsInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'contact_id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Contacts/GetContactDetails.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'contact_id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Contacts/GetContactDetailsInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinks\\:\\:executeQuery\\(\\) is incompatible with type array\\('link_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Links/DeleteLinks.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinksInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('link_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Links/DeleteLinksInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodes\\:\\:executeQuery\\(\\) is incompatible with type array\\('node_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Nodes/DeleteNodes.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('node_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Nodes/DeleteNodesInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'node_id' \\=\\> non\\-empty\\-string, \\?'link_id' \\=\\> non\\-empty\\-string, \\?'req_fields' \\=\\> non\\-empty\\-string, \\?'return_rule_name' \\=\\> non\\-empty\\-string, \\?'return_voxnumber' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Nodes/GetNodeDetails.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'node_id' \\=\\> non\\-empty\\-string, \\?'link_id' \\=\\> non\\-empty\\-string, \\?'req_fields' \\=\\> non\\-empty\\-string, \\?'return_rule_name' \\=\\> non\\-empty\\-string, \\?'return_voxnumber' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/AccountSetup/Nodes/GetNodeDetailsInterface.php
+
+		-
 			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
 			count: 1
 			path: src/Client.php

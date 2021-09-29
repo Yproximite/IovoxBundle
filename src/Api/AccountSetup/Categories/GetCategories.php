@@ -27,14 +27,8 @@ use Yproximite\IovoxBundle\Model\Categories\GetCategoriesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getCategories
  */
-class GetCategories extends AbstractCategories
+class GetCategories extends AbstractCategories implements GetCategoriesInterface
 {
-    public const QUERY_PARAMETER_REQ_FIELDS         = 'req_fields';
-    public const QUERY_PARAMETER_PARENT_CATEGORY_ID = 'parent_category_id';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetCategoriesModel
     {
         $query    = $this->createQuery($queryParameters);
