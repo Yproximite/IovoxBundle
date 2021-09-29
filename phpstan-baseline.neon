@@ -81,6 +81,26 @@ parameters:
 			path: src/Api/AccountSetup/Nodes/GetNodeDetailsInterface.php
 
 		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Analytics/Calls/GetCallRecording.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Analytics/Calls/GetCallRecordingInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Analytics/Calls/GetVoicemailRecording.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Analytics/Calls/GetVoicemailRecordingInterface.php
+
+		-
 			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
 			count: 1
 			path: src/Client.php

@@ -26,32 +26,8 @@ use Yproximite\IovoxBundle\Model\Call\GetCallDataModel;
 /**
  * @see https://docs.iovox.com/display/RA/getCallData
  */
-class GetCallData extends AbstractCalls
+class GetCallData extends AbstractCalls implements GetCallDataInterface
 {
-    public const QUERY_PARAMETER_ORDER               = 'order';
-    public const QUERY_PARAMETER_SDT                 = 'sdt';
-    public const QUERY_PARAMETER_EDT                 = 'edt';
-    public const QUERY_PARAMETER_DCONST              = 'dconst';
-    public const QUERY_PARAMETER_ID                  = 'id';
-    public const QUERY_PARAMETER_NODE_ID             = 'node_id';
-    public const QUERY_PARAMETER_NODE_TYPE           = 'node_type';
-    public const QUERY_PARAMETER_LINK_ID             = 'link_id';
-    public const QUERY_PARAMETER_LINK_TYPE           = 'link_type';
-    public const QUERY_PARAMETER_CTYPE               = 'ctype';
-    public const QUERY_PARAMETER_CALL_RES            = 'call_res';
-    public const QUERY_PARAMETER_RULE_RES            = 'rule_res';
-    public const QUERY_PARAMETER_CALL_ORIGIN         = 'call_origin';
-    public const QUERY_PARAMETER_CALL_ORIGIN_ENCODED = 'call_origin_encoded';
-    public const QUERY_PARAMETER_VOXNUMBER           = 'voxnumber';
-    public const QUERY_PARAMETER_CALL_DEST           = 'call_dest';
-    public const QUERY_PARAMETER_DIRECTION           = 'direction';
-    public const QUERY_PARAMETER_DETAIL              = 'detail';
-    public const QUERY_PARAMETER_CAT_IDS             = 'cat_ids';
-    public const QUERY_PARAMETER_REQ_FIELDS          = 'req_fields';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetCallDataModel
     {
         $query    = $this->createQuery($queryParameters);
