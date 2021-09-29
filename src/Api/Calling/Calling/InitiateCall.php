@@ -24,16 +24,13 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/initiateCall
  */
-class InitiateCall extends AbstractCalling
+class InitiateCall extends AbstractCalling implements InitiateCallInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
     }
 
-    /**
-     * @param array<int|string, mixed> $payload
-     */
     public function executeQuery(array $payload): bool
     {
         $query = $this->createQuery();

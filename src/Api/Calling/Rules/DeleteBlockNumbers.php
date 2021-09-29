@@ -18,13 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteBlockedNumbers
  */
-class DeleteBlockNumbers extends AbstractRules
+class DeleteBlockNumbers extends AbstractRules implements DeleteBlockNumbersInterface
 {
-    public const QUERY_PARAMETER_TIME_BLOCK_NUMBERS = 'blocked_numbers';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

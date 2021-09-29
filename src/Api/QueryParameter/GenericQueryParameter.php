@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\QueryParameter;
 
+use Yproximite\IovoxBundle\Enum\BooleanString;
+
 class GenericQueryParameter implements QueryParameterInterface
 {
     public const TYPE_INTEGER = 'int';
@@ -43,7 +45,7 @@ class GenericQueryParameter implements QueryParameterInterface
         return match ($this->getType()) {
             static::TYPE_INTEGER => is_integer($value),
             static::TYPE_STRING  => is_string($value),
-            static::TYPE_BOOLEAN => in_array($value, ['TRUE', 'FALSE'], true),
+            static::TYPE_BOOLEAN => in_array($value, [BooleanString::TRUE, BooleanString::FALSE], true),
             static::TYPE_ARRAY   => is_array($value),
             default              => false,
         };

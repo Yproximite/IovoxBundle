@@ -26,17 +26,8 @@ use Yproximite\IovoxBundle\Model\CallFlow\GetCallFlowsModel;
 /**
  * @see https://docs.iovox.com/display/RA/getCallFlows
  */
-class GetCallFlows extends AbstractCallFlow
+class GetCallFlows extends AbstractCallFlow implements GetCallFlowsInterface
 {
-    public const QUERY_PARAMETER_ORDER         = 'order';
-    public const QUERY_PARAMETER_REQ_FIELDS    = 'req_fields';
-    public const QUERY_PARAMETER_TEMPLATE_NAME = 'template_name';
-    public const QUERY_PARAMETER_TEMPLATE_TYPE = 'template_type';
-    public const QUERY_PARAMETER_ADVANCED      = 'advanced';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetCallFlowsModel
     {
         $query    = $this->createQuery($queryParameters);

@@ -26,17 +26,8 @@ use Yproximite\IovoxBundle\Model\Rules\GetBlockedNumbersModel;
 /**
  * @see https://docs.iovox.com/display/RA/getBlockedNumbers
  */
-class GetBlockedNumbers extends AbstractRules
+class GetBlockedNumbers extends AbstractRules implements GetBlockedNumbersInterface
 {
-    public const QUERY_PARAMETER_NUMBER     = 'number';
-    public const QUERY_PARAMETER_OPERATOR   = 'operator';
-    public const QUERY_PARAMETER_IN_OR_OUT  = 'in_or_out';
-    public const QUERY_PARAMETER_REQ_FIELDS = 'req_fields';
-    public const QUERY_PARAMETER_ORDER      = 'order';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetBlockedNumbersModel
     {
         $query    = $this->createQuery($queryParameters);

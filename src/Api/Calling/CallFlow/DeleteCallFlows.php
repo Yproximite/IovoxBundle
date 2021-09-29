@@ -18,14 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteCallFlows
  */
-class DeleteCallFlows extends AbstractCallFlow
+class DeleteCallFlows extends AbstractCallFlow implements DeleteCallFlowsInterface
 {
-    public const QUERY_PARAMETER_CALL_FLOWS        = 'call_flows';
-    public const QUERY_PARAMETER_DETACH_FROM_LINKS = 'detach_from_links';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

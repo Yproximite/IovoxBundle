@@ -26,17 +26,8 @@ use Yproximite\IovoxBundle\Model\Rules\GetRuleTemplatesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getRuleTemplates
  */
-class GetRuleTemplates extends AbstractRules
+class GetRuleTemplates extends AbstractRules implements GetRuleTemplatesInterface
 {
-    public const QUERY_PARAMETER_ORDER         = 'order';
-    public const QUERY_PARAMETER_REQ_FIELDS    = 'req_fields';
-    public const QUERY_PARAMETER_TEMPLATE_NAME = 'template_name';
-    public const QUERY_PARAMETER_TEMPLATE_TYPE = 'template_type';
-    public const QUERY_PARAMETER_ADVANCED      = 'advanced';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetRuleTemplatesModel
     {
         $query    = $this->createQuery($queryParameters);

@@ -21,13 +21,8 @@ use Yproximite\IovoxBundle\Utils\ConvertXmlString;
 /**
  * @see https://docs.iovox.com/display/RA/getCallFlow
  */
-class GetCallFlow extends AbstractCallFlow
+class GetCallFlow extends AbstractCallFlow implements GetCallFlowInterface
 {
-    public const QUERY_PARAMETER_CALL_FLOW = 'call_flow';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetCallFlowModel
     {
         $query    = $this->createQuery($queryParameters);

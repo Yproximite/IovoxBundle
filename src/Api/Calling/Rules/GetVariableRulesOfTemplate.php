@@ -26,14 +26,8 @@ use Yproximite\IovoxBundle\Model\Rules\GetVariableRulesOfTemplateModel;
 /**
  * @see https://docs.iovox.com/display/RA/getVariableRulesOfTemplate
  */
-class GetVariableRulesOfTemplate extends AbstractRules
+class GetVariableRulesOfTemplate extends AbstractRules implements GetVariableRulesOfTemplateInterface
 {
-    public const QUERY_PARAMETER_TEMPLATE_NAME = 'template_name';
-    public const QUERY_PARAMETER_LINK_ID       = 'link_id';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetVariableRulesOfTemplateModel
     {
         $query    = $this->createQuery($queryParameters);

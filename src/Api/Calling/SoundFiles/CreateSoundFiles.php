@@ -26,7 +26,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createSoundFiles
  */
-class CreateSoundFiles extends AbstractSoundFiles
+class CreateSoundFiles extends AbstractSoundFiles implements CreateSoundFilesInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

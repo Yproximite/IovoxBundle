@@ -101,6 +101,66 @@ parameters:
 			path: src/Api/Analytics/Calls/GetVoicemailRecordingInterface.php
 
 		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlows\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flows' \\=\\> non\\-empty\\-string, \\?'detach_from_links' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/CallFlow/DeleteCallFlows.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlowsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flows' \\=\\> non\\-empty\\-string, \\?'detach_from_links' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/CallFlow/DeleteCallFlowsInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlow\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flow' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/CallFlow/GetCallFlow.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlowInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flow' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/CallFlow/GetCallFlowInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbers\\:\\:executeQuery\\(\\) is incompatible with type array\\('blocked_numbers' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/Rules/DeleteBlockNumbers.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbersInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('blocked_numbers' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/Rules/DeleteBlockNumbersInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplates\\:\\:executeQuery\\(\\) is incompatible with type array\\('time_template_labels' \\=\\> non\\-empty\\-string, \\?'force' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/Rules/DeleteTimeTemplates.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplatesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('time_template_labels' \\=\\> non\\-empty\\-string, \\?'force' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/Rules/DeleteTimeTemplatesInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFiles\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_files' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/SoundFiles/DeleteSoundFiles.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFilesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_files' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/SoundFiles/DeleteSoundFilesInterface.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileData\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_label' \\=\\> non\\-empty\\-string, \\?'sound_group' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/SoundFiles/GetSoundFileData.php
+
+		-
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileDataInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_label' \\=\\> non\\-empty\\-string, \\?'sound_group' \\=\\> non\\-empty\\-string\\)\\.$#"
+			count: 1
+			path: src/Api/Calling/SoundFiles/GetSoundFileDataInterface.php
+
+		-
 			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
 			count: 1
 			path: src/Client.php

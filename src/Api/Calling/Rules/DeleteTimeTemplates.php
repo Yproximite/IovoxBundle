@@ -18,14 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteTimeTemplates
  */
-class DeleteTimeTemplates extends AbstractRules
+class DeleteTimeTemplates extends AbstractRules implements DeleteTimeTemplatesInterface
 {
-    public const QUERY_PARAMETER_TIME_TEMPLATE_LABELS = 'time_template_labels';
-    public const QUERY_PARAMETER_FORCE                = 'force';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

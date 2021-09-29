@@ -1,9 +1,9 @@
 # GetRuleTemplates
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\GetRuleTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetRuleTemplatesInterface;
 
-public function example(GetRuleTemplates $getRuleTemplates)
+public function example(GetRuleTemplatesInterface $getRuleTemplates)
 {
     $ruleTemplates = $getRuleTemplates->executeQuery($options);
 }
@@ -13,9 +13,9 @@ see [GetRuleTemplates](../../src/Api/Calling/Rules/GetRuleTemplates.php) for ava
 # GetTimeTemplates
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\GetTimeTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetTimeTemplatesInterface;
 
-public function example(GetTimeTemplates $getTimeTemplates)
+public function example(GetTimeTemplatesInterface $getTimeTemplates)
 {
     $timeTemplates = $getTimeTemplates->executeQuery($options);
 }
@@ -25,12 +25,12 @@ see [GetTimeTemplates](../../src/Api/Calling/Rules/GetTimeTemplates.php) for ava
 # CreateTimeTemplates
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\CreateTimeTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\CreateTimeTemplatesInterface;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeFramePayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatePayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatesPayload;
 
-public function example(CreateTimeTemplates $createTimeTemplates)
+public function example(CreateTimeTemplatesInterface $createTimeTemplates)
 {
     $payload = new TimeTemplatesPayload([
         new TimeTemplatePayload('label', [
@@ -54,12 +54,12 @@ public function example(CreateTimeTemplates $createTimeTemplates)
 # UpdateTimeTemplates
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateTimeTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateTimeTemplatesInterface;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeFramePayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatePayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\TimeTemplatesPayload;
 
-public function example(UpdateTimeTemplates $updateTimeTemplates)
+public function example(UpdateTimeTemplatesInterface $updateTimeTemplates)
 {
     $payload = new TimeTemplatesPayload([
         new TimeTemplatePayload('label', [
@@ -82,12 +82,12 @@ public function example(UpdateTimeTemplates $updateTimeTemplates)
 # DeleteTimeTemplates
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteTimeTemplates;
+use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteTimeTemplatesInterface;
 
-public function example(DeleteTimeTemplates $deleteTimeTemplates)
+public function example(DeleteTimeTemplatesInterface $deleteTimeTemplates)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteTimeTemplates->executeQuery([DeleteTimeTemplates::QUERY_PARAMETER_TIME_TEMPLATE_LABELS => 'label']); 
+    $result = $deleteTimeTemplates->executeQuery([DeleteTimeTemplatesInterface::QUERY_PARAMETER_TIME_TEMPLATE_LABELS => 'label']); 
 }
 ```
 
@@ -96,9 +96,9 @@ see [DeleteTimeTemplates](../../src/Api/Calling/Rules/DeleteTimeTemplates.php) f
 # GetBlockedNumbers
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\GetBlockedNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetBlockedNumbersInterface;
 
-public function example(GetBlockedNumbers $getBlockedNumbers)
+public function example(GetBlockedNumbersInterface $getBlockedNumbers)
 {
     $blockedNumbers = $getBlockedNumbers->executeQuery($options);
 }
@@ -108,12 +108,12 @@ see [GetBlockedNumbers](../../src/Api/Calling/Rules/GetBlockedNumbers.php) for a
 # CreateBlockedNumbers
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\CreateBlockedNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\CreateBlockedNumbersInterface;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumberPayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumbersPayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\RuleBlockedNumberPayload;
 
-public function example(CreateBlockedNumbers $createBlockedNumbers)
+public function example(CreateBlockedNumbersInterface $createBlockedNumbers)
 {
     $payload = new BlockedNumbersPayload([
         new BlockedNumberPayload('33601020304', 'IN', 'EQUALS', 'BLOCK'),
@@ -140,12 +140,12 @@ public function example(CreateBlockedNumbers $createBlockedNumbers)
 # UpdateBlockedNumbers
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateBlockedNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\UpdateBlockedNumbersInterface;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumberPayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\BlockedNumbersPayload;
 use Yproximite\IovoxBundle\Api\Calling\Rules\Payload\RuleBlockedNumberPayload;
 
-public function example(UpdateBlockedNumbers $updateBlockedNumbers)
+public function example(UpdateBlockedNumbersInterface $updateBlockedNumbers)
 {
     $payload = new BlockedNumbersPayload([
         new BlockedNumberPayload('33601020304', 'IN', 'EQUALS', 'BLOCK'),
@@ -177,21 +177,21 @@ public function example(UpdateBlockedNumbers $updateBlockedNumbers)
 # DeleteBlockNumbers
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteBlockNumbers;
+use Yproximite\IovoxBundle\Api\Calling\Rules\DeleteBlockNumbersInterface;
 
-public function example(DeleteBlockNumbers $deleteBlockNumbers)
+public function example(DeleteBlockNumbersInterface $deleteBlockNumbers)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteBlockNumbers->executeQuery([DeleteBlockNumbers::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => '339;IN;STARTSWITH,334;OUT;EQUALS']); 
+    $result = $deleteBlockNumbers->executeQuery([DeleteBlockNumbersInterface::QUERY_PARAMETER_TIME_BLOCK_NUMBERS => '339;IN;STARTSWITH,334;OUT;EQUALS']); 
 }
 ```
 
 # GetVariableRulesOfTemplate
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Rules\GetVariableRulesOfTemplate;
+use Yproximite\IovoxBundle\Api\Calling\Rules\GetVariableRulesOfTemplateInterface;
 
-public function example(GetVariableRulesOfTemplate $getVariableRulesOfTemplate)
+public function example(GetVariableRulesOfTemplateInterface $getVariableRulesOfTemplate)
 {
     $variablesRulesOfTemplate = $getVariableRulesOfTemplate->executeQuery($options);
 }

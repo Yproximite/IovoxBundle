@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/updateBlockedNumbers
  */
-class UpdateBlockedNumbers extends AbstractRules
+class UpdateBlockedNumbers extends AbstractRules implements UpdateBlockedNumbersInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

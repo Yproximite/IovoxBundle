@@ -24,16 +24,13 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createCallFlow
  */
-class CreateCallFlow extends AbstractCallFlow
+class CreateCallFlow extends AbstractCallFlow implements CreateCallFlowInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
     }
 
-    /**
-     * @param array<int|string, mixed> $payload
-     */
     public function executeQuery(array $payload): bool
     {
         $query = $this->createQuery();
