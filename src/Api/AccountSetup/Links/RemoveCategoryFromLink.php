@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/removeCategoryFromLink
  */
-class RemoveCategoryFromLink extends AbstractLinks
+class RemoveCategoryFromLink extends AbstractLinks implements RemoveCategoryFromLinkInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

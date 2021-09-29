@@ -1,9 +1,9 @@
 # GetCategoryId
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategoryId;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategoryIdInterface;
 
-public function example(GetCategoryId $getCategoryId)
+public function example(GetCategoryIdInterface $getCategoryId)
 {
     $categoryIds = $getCategoryId->executeQuery($options); 
 } 
@@ -14,9 +14,9 @@ see [GetCategoryId](../../src/Api/AccountSetup/Categories/GetCategoryId.php) for
 # GetCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\GetCategoriesInterface;
 
-public function example(GetCategories $getCategories)
+public function example(GetCategoriesInterface $getCategories)
 {
     $categories = $getCategories->executeQuery($options); 
 } 
@@ -27,11 +27,11 @@ see [GetCategories](../../src/Api/AccountSetup/Categories/GetCategories.php) for
 # CreateCategoryConfigurations
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoryConfigurations;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoryConfigurationsInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoriesPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoryPayload;
 
-public function example(CreateCategoryConfigurations $createCategoryConfigurations)
+public function example(CreateCategoryConfigurationsInterface $createCategoryConfigurations)
 {
     $payload = new CategoriesPayload([
         new CategoryPayload('category id', 'label'),
@@ -47,11 +47,11 @@ public function example(CreateCategoryConfigurations $createCategoryConfiguratio
 # CreateCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoriesInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoriesPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload\CategoryPayload;
 
-public function example(CreateCategories $createCategories)
+public function example(CreateCategoriesInterface $createCategories)
 {
     $payload = new CategoriesPayload([
         new CategoryPayload('category id', 'label', 'value'),
@@ -66,12 +66,12 @@ public function example(CreateCategories $createCategories)
 # DeleteCategoryConfigurations
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategoryConfigurations;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategoryConfigurationsInterface;
 
-public function example(DeleteCategoryConfigurations $deleteCategoryConfigurations)
+public function example(DeleteCategoryConfigurationsInterface $deleteCategoryConfigurations)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteCategoryConfigurations->executeQuery([DeleteCategoryConfigurations::QUERY_PARAMETER_CATEGORIES_IDS => 'category id']); 
+    $result = $deleteCategoryConfigurations->executeQuery([DeleteCategoryConfigurationsInterface::QUERY_PARAMETER_CATEGORIES_IDS => 'category id']); 
 } 
 ```
 
@@ -80,12 +80,12 @@ see [DeleteCategoryConfigurations](../../src/Api/AccountSetup/Categories/DeleteC
 # DeleteCategories
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategories;
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\DeleteCategoriesInterface;
 
-public function example(DeleteCategories $deleteCategories)
+public function example(DeleteCategoriesInterface $deleteCategories)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteCategories->executeQuery([DeleteCategories::QUERY_PARAMETER_CATEGORIES => 'category id']); 
+    $result = $deleteCategories->executeQuery([DeleteCategoriesInterface::QUERY_PARAMETER_CATEGORIES => 'category id']); 
 } 
 ```
 

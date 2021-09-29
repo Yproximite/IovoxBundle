@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/removeRuleTemplateFromLinks
  */
-class RemoveRuleTemplateFromLinks extends AbstractLinks
+class RemoveRuleTemplateFromLinks extends AbstractLinks implements RemoveRuleTemplateFromLinksInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

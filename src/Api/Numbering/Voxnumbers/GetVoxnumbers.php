@@ -26,22 +26,8 @@ use Yproximite\IovoxBundle\Model\Voxnumbers\GetVoxnumbersModel;
 /**
  * @see https://docs.iovox.com/display/RA/getVoxnumbers
  */
-class GetVoxnumbers extends AbstractVoxnumbers
+class GetVoxnumbers extends AbstractVoxnumbers implements GetVoxnumbersInterface
 {
-    public const QUERY_PARAMETER_REQ_FIELDS        = 'req_fields';
-    public const QUERY_PARAMETER_ORDER             = 'order';
-    public const QUERY_PARAMETER_VOXNUMBER         = 'voxnumber';
-    public const QUERY_PARAMETER_VOXNUMBER_TYPE    = 'voxnumber_type';
-    public const QUERY_PARAMETER_VOXNUMBER_COUNTRY = 'voxnumber_country';
-    public const QUERY_PARAMETER_VOXNUMBER_CITY    = 'voxnumber_city';
-    public const QUERY_PARAMETER_ASSIGNED_STATUS   = 'assigned_status';
-    public const QUERY_PARAMETER_CALL_STATUS       = 'call_status';
-    public const QUERY_PARAMETER_LINK_ID           = 'link_id';
-    public const QUERY_PARAMETER_CAT_IDS           = 'cat_ids';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetVoxnumbersModel
     {
         $query    = $this->createQuery($queryParameters);
@@ -66,7 +52,7 @@ class GetVoxnumbers extends AbstractVoxnumbers
             LimitQueryParameter::getParameterName()   => new LimitQueryParameter(),
             self::QUERY_PARAMETER_REQ_FIELDS          => new GenericQueryParameter(self::QUERY_PARAMETER_REQ_FIELDS, GenericQueryParameter::TYPE_STRING, 'Comma separated list of abbreviated fields to return in response. nid=Node ID, nname=Node Name, lid=Link ID, lname=Link Name, as=Assigned Status, cs=Call Status, vn=VoxNumber, vnt=VoxNumber Type, vnco=VoxNumber Country, vnci=VoxNumber City, vnpd=VoxNumber Purchase Date'),
             self::QUERY_PARAMETER_ORDER               => new GenericQueryParameter(self::QUERY_PARAMETER_ORDER, GenericQueryParameter::TYPE_STRING, 'Determines which field to order the output result by. Use a field name from the req_fields list and suffix with ASC or DESC for ascending or descending respectively. For example, "vnpd_DESC" will return results ordered by VoxNumber Purchase Date with the most recent first'),
-            self::QUERY_PARAMETER_VOXNUMBER           => new GenericQueryParameter(self::QUERY_PARAMETER_VOXNUMBER, GenericQueryParameter::TYPE_INTEGER, 'Returns VoxNumber details under the specified VoxNumber (this must be internationalised e.g. 442012344321)'),
+            self::QUERY_PARAMETER_VOXNUMBER           => new GenericQueryParameter(self::QUERY_PARAMETER_VOXNUMBER, GenericQueryParameter::TYPE_STRING, 'Returns VoxNumber details under the specified VoxNumber (this must be internationalised e.g. 442012344321)'),
             self::QUERY_PARAMETER_VOXNUMBER_TYPE      => new GenericQueryParameter(self::QUERY_PARAMETER_VOXNUMBER_TYPE, GenericQueryParameter::TYPE_STRING, 'Returns all VoxNumbers under the specified VoxNumber Type: LOCAL, NATIONAL'),
             self::QUERY_PARAMETER_VOXNUMBER_COUNTRY   => new GenericQueryParameter(self::QUERY_PARAMETER_VOXNUMBER_COUNTRY, GenericQueryParameter::TYPE_STRING, 'Returns all VoxNumbers in the specified country'),
             self::QUERY_PARAMETER_VOXNUMBER_CITY      => new GenericQueryParameter(self::QUERY_PARAMETER_VOXNUMBER_CITY, GenericQueryParameter::TYPE_STRING, 'Returns all VoxNumbers in the specified city'),

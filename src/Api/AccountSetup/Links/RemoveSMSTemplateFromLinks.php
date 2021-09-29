@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/removeSMSTemplateFromLinks
  */
-class RemoveSMSTemplateFromLinks extends AbstractLinks
+class RemoveSMSTemplateFromLinks extends AbstractLinks implements RemoveSMSTemplateFromLinksInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

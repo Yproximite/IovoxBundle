@@ -26,7 +26,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createNodes
  */
-class CreateNodes extends AbstractNodes
+class CreateNodes extends AbstractNodes implements CreateNodesInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

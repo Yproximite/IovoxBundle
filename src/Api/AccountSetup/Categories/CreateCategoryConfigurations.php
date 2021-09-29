@@ -26,7 +26,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createCategoryConfigurations
  */
-class CreateCategoryConfigurations extends AbstractCategories
+class CreateCategoryConfigurations extends AbstractCategories implements CreateCategoryConfigurationsInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

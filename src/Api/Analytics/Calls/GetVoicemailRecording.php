@@ -18,13 +18,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/getVoicemailRecording
  */
-class GetVoicemailRecording extends AbstractCalls
+class GetVoicemailRecording extends AbstractCalls implements GetVoicemailRecordingInterface
 {
-    public const QUERY_PARAMETER_ID = 'id';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): string
     {
         $query    = $this->createQuery($queryParameters);

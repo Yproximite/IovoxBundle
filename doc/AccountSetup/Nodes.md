@@ -1,9 +1,9 @@
 # GetNodes
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\GetNodes;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\GetNodesInterface;
 
-public function example(GetNodes $getNodes)
+public function example(GetNodesInterface $getNodes)
 {
     $nodes = $getNodes->executeQuery($options); 
 } 
@@ -14,9 +14,9 @@ see [GetNodes](../../src/Api/AccountSetup/Nodes/GetNodes.php) for available opti
 # GetNodeDetails
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\GetNodeDetails;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\GetNodeDetailsInterface;
 
-public function example(GetNodeDetails $getNodeDetails)
+public function example(GetNodeDetailsInterface $getNodeDetails)
 {
     $nodeDetails = $getNodeDetails->executeQuery([GetNodeDetails::QUERY_PARAMETER_NODE_ID => 'node_id']); 
 } 
@@ -27,11 +27,11 @@ see [GetNodeDetails](../../src/Api/AccountSetup/Nodes/GetNodeDetails.php) for av
 # CreateNodes
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\CreateNodes;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\CreateNodesInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodesPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodePayload;
 
-public function example(CreateNodes $createNodes)
+public function example(CreateNodesInterface $createNodes)
 {
     $payload = new NodesPayload([
         new NodePayload('node_id', 'node_name', 'node_type'),
@@ -48,14 +48,14 @@ public function example(CreateNodes $createNodes)
 
 ```php
 use Doctrine\Common\Collections\ArrayCollection;
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\CreateNodeFull;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\CreateNodeFullInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\AssignVoxnumberPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\CategoryPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\LinkPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodesPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodePayload;
 
-public function example(CreateNodeFull $createNodeFull)
+public function example(CreateNodeFullInterface $createNodeFull)
 {
     $payload = new NodePayload(
         'node_id',
@@ -93,11 +93,11 @@ public function example(CreateNodeFull $createNodeFull)
 # UpdateNodes
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\UpdateNodes;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\UpdateNodesInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodesPayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodePayload;
 
-public function example(UpdateNodes $updateNodes)
+public function example(UpdateNodesInterface $updateNodes)
 {
     $payload = new NodesPayload([
         new NodePayload('node_id', 'node_name', 'node_type'),
@@ -112,12 +112,12 @@ public function example(UpdateNodes $updateNodes)
 # DeleteNodes
 
 ```php
-use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\DeleteNodes;
+use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\DeleteNodesInterface;
 
-public function example(DeleteNodes $deleteNodes)
+public function example(DeleteNodesInterface $deleteNodes)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteNodes->executeQuery([DeleteNodes::QUERY_PARAMETER_NODE_IDS => 'node_ids']); 
+    $result = $deleteNodes->executeQuery([DeleteNodesInterface::QUERY_PARAMETER_NODE_IDS => 'node_ids']); 
 } 
 ```
 

@@ -19,13 +19,8 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 /**
  * @see https://docs.iovox.com/display/RA/deleteSoundFiles
  */
-class DeleteSoundFiles extends AbstractSoundFiles
+class DeleteSoundFiles extends AbstractSoundFiles implements DeleteSoundFilesInterface
 {
-    public const QUERY_PARAMETER_SOUND_FILES = 'sound_files';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): bool
     {
         $query    = $this->createQuery($queryParameters);

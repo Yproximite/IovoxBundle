@@ -20,19 +20,13 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/getSoundFileData
  */
-class GetSoundFileData extends AbstractSoundFiles
+class GetSoundFileData extends AbstractSoundFiles implements GetSoundFileDataInterface
 {
-    public const QUERY_PARAMETER_SOUND_LABEL = 'sound_label';
-    public const QUERY_PARAMETER_SOUND_GROUP = 'sound_group';
-
     public function __construct(protected Client $client, protected IovoxSerializer $serializer)
     {
         parent::__construct($client);
     }
 
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): string
     {
         $query    = $this->createQuery($queryParameters);

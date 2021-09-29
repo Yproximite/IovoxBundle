@@ -1,9 +1,9 @@
 # GetCallFlows
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\CallFlow\GetCallFlows;
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\GetCallFlowsInterface;
 
-public function example(GetCallFlows $getCallFlows)
+public function example(GetCallFlowsInterface $getCallFlows)
 {
     $callFlows = $getCallFlows->executeQuery($options);
 }
@@ -14,9 +14,9 @@ see [GetCallFlows](../../src/Api/Calling/CallFlow/GetCallFlows.php) for availabl
 # GetCallFlow
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\CallFlow\GetCallFlow;
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\GetCallFlowInterface;
 
-public function example(GetCallFlow $getCallFlow)
+public function example(GetCallFlowInterface $getCallFlow)
 {
     // Return array
     $callFlow = $getCallFlow->executeQuery($options);
@@ -28,9 +28,9 @@ see [GetCallFlow](../../src/Api/Calling/CallFlow/GetCallFlow.php) for available 
 # CreateCallFlow
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\CallFlow\CreateCallFlow;
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\CreateCallFlowInterface;
 
-public function example(CreateCallFlow $createCallFlow)
+public function example(CreateCallFlowInterface $createCallFlow)
 {
     // add @ at beginning of key for attributes
     // add # for key to define the data of a node
@@ -59,9 +59,9 @@ public function example(CreateCallFlow $createCallFlow)
 # UpdateCallFlow
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\CallFlow\UpdateCallFlow;
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\UpdateCallFlowInterface;
 
-public function example(UpdateCallFlow $updateCallFlow)
+public function example(UpdateCallFlowInterface $updateCallFlow)
 {
     // add @ at beginning of key for attributes
     // add # for key to define the data of a node
@@ -91,9 +91,9 @@ public function example(UpdateCallFlow $updateCallFlow)
 # DeleteCallFlows
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\CallFlow\DeleteCallFlows;
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\DeleteCallFlowsInterface;
 
-public function example(DeleteCallFlows $deleteCallFlows)
+public function example(DeleteCallFlowsInterface $deleteCallFlows)
 {
     // true if ok else BadResponseReturnException
     $response = $deleteCallFlows->executeQuery([DeleteCallFlows::QUERY_PARAMETER_CALL_FLOWS => 'call_flow_name|other_call_flow_name']);

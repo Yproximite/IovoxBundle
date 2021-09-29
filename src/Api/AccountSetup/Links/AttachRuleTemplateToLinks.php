@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/attachRuleTemplateToLinks
  */
-class AttachRuleTemplateToLinks extends AbstractLinks
+class AttachRuleTemplateToLinks extends AbstractLinks implements AttachRuleTemplateToLinksInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

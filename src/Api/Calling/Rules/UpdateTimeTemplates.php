@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/updateTimeTemplates
  */
-class UpdateTimeTemplates extends AbstractRules
+class UpdateTimeTemplates extends AbstractRules implements UpdateTimeTemplatesInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

@@ -26,15 +26,8 @@ use Yproximite\IovoxBundle\Model\Rules\GetTimeTemplatesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getTimeTemplates
  */
-class GetTimeTemplates extends AbstractRules
+class GetTimeTemplates extends AbstractRules implements GetTimeTemplatesInterface
 {
-    public const QUERY_PARAMETER_ORDER               = 'order';
-    public const QUERY_PARAMETER_REQ_FIELDS          = 'req_fields';
-    public const QUERY_PARAMETER_TIME_TEMPLATE_LABEL = 'time_template_label';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetTimeTemplatesModel
     {
         $query    = $this->createQuery($queryParameters);

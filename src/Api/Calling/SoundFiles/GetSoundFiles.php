@@ -26,16 +26,8 @@ use Yproximite\IovoxBundle\Model\SoundFiles\GetSoundFilesModel;
 /**
  * @see https://docs.iovox.com/display/RA/getSoundFiles
  */
-class GetSoundFiles extends AbstractSoundFiles
+class GetSoundFiles extends AbstractSoundFiles implements GetSoundFilesInterface
 {
-    public const QUERY_PARAMETER_ORDER       = 'order';
-    public const QUERY_PARAMETER_REQ_FIELDS  = 'req_fields';
-    public const QUERY_PARAMETER_SOUND_LABEL = 'sound_label';
-    public const QUERY_PARAMETER_SOUND_GROUP = 'sound_group';
-
-    /**
-     * @param array<string, string|int> $queryParameters
-     */
     public function executeQuery(array $queryParameters = []): GetSoundFilesModel
     {
         $query    = $this->createQuery($queryParameters);

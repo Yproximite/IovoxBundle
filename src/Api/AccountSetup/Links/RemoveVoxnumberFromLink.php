@@ -25,7 +25,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/removeVoxnumberFromLink
  */
-class RemoveVoxnumberFromLink extends AbstractLinks
+class RemoveVoxnumberFromLink extends AbstractLinks implements RemoveVoxnumberFromLinkInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

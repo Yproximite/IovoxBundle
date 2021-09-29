@@ -1,9 +1,9 @@
 # InitiateCall
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\Calling\InitiateCall;
+use Yproximite\IovoxBundle\Api\Calling\Calling\InitiateCallInterface;
 
-public function example(InitiateCall $initiateCall)
+public function example(InitiateCallInterface $initiateCall)
 {
     $payload = [
         'link_id'        => 'link_id',

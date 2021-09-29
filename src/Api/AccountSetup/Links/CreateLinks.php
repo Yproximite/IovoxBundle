@@ -26,7 +26,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createLinks
  */
-class CreateLinks extends AbstractLinks
+class CreateLinks extends AbstractLinks implements CreateLinksInterface
 {
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {

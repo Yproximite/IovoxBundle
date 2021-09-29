@@ -1,9 +1,9 @@
 # GetSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFilesInterface;
 
-public function example(GetSoundFiles $getSoundFiles)
+public function example(GetSoundFilesInterface $getSoundFiles)
 {
     $soundFiles = $getSoundFiles->executeQuery($options); 
 } 
@@ -14,11 +14,11 @@ see [GetSoundFiles](../../src/Api/Calling/SoundFiles/GetSoundFiles.php) for avai
 # GetSoundFileData
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFileData;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\GetSoundFileDataInterface;
 
-public function example(GetSoundFileData $getSoundFileData)
+public function example(GetSoundFileDataInterface $getSoundFileData)
 {
-    $soundFileMp3 = $getSoundFileData->executeQuery([GetSoundFileData::QUERY_PARAMETER_SOUND_LABEL => 'label']); 
+    $soundFileMp3 = $getSoundFileData->executeQuery([GetSoundFileDataInterface::QUERY_PARAMETER_SOUND_LABEL => 'label']); 
 } 
 ```
 
@@ -27,11 +27,11 @@ see [GetSoundFileData](../../src/Api/Calling/SoundFiles/GetSoundFileData.php) fo
 # CreateSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\SoundFiles\CreateSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\CreateSoundFilesInterface;
 use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilesPayload;
 use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilePayload;
 
-public function example(CreateSoundFiles $createSoundFiles)
+public function example(CreateSoundFilesInterface $createSoundFiles)
 {
     $payload = new SoundFilesPayload([
         new SoundFilePayload('sound label 1', 'binary sound file base64 encoded'),
@@ -46,11 +46,11 @@ public function example(CreateSoundFiles $createSoundFiles)
 # UpdateSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\SoundFiles\UpdateSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\UpdateSoundFilesInterface;
 use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilesPayload;
 use Yproximite\IovoxBundle\Api\Calling\SoundFiles\Payload\SoundFilePayload;
 
-public function example(UpdateSoundFiles $updateSoundFiles)
+public function example(UpdateSoundFilesInterface $updateSoundFiles)
 {
     $payload = new SoundFilesPayload([
         new SoundFilePayload('sound label 1', null, null, null, 'new label', 'new group'),
@@ -64,12 +64,12 @@ public function example(UpdateSoundFiles $updateSoundFiles)
 # DeleteSoundFiles
 
 ```php
-use Yproximite\IovoxBundle\Api\Calling\SoundFiles\DeleteSoundFiles;
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\DeleteSoundFilesInterface;
 
-public function example(DeleteSoundFiles $deleteSoundFiles)
+public function example(DeleteSoundFilesInterface $deleteSoundFiles)
 {
     // true if ok else BadResponseReturnException
-    $result = $deleteSoundFiles->executeQuery([DeleteSoundFiles::QUERY_PARAMETER_SOUND_FILES => 'sound label 1']); 
+    $result = $deleteSoundFiles->executeQuery([DeleteSoundFilesInterface::QUERY_PARAMETER_SOUND_FILES => 'sound label 1']); 
 } 
 ```
 
