@@ -24,14 +24,14 @@ class VoxnumberModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['link_id'],
-            $opts['assigned_status'],
-            $opts['call_status'],
-            $opts['country_code'],
-            $opts['voxnumber'],
-            $opts['voxnumber_type'],
-            $opts['voxnumber_country'],
-            $opts['voxnumber_city'],
+            $opts['link_id'] ?? null,
+            $opts['assigned_status'] ?? null,
+            $opts['call_status'] ?? null,
+            $opts['country_code'] ?? null,
+            $opts['voxnumber'] ?? null,
+            $opts['voxnumber_type'] ?? null,
+            $opts['voxnumber_country'] ?? null,
+            $opts['voxnumber_city'] ?? null,
             array_key_exists('purchase_date', $opts) ? new \DateTimeImmutable($opts['purchase_date']) : null,
         );
     }
