@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload;
 
-use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class LinkPayload
@@ -28,17 +28,18 @@ class LinkPayload
     #[Groups(groups: [NodesPayload::GROUP_CREATE_FULL])]
     public ?int $clickToCall;
 
-    /** @var Collection<int, CategoryPayload>|null */
+    /** @var array{ category:array<int, CategoryPayload>|null} */
+    #[SerializedName('categories')]
     #[Groups(groups: [NodesPayload::GROUP_CREATE_FULL])]
     #[Assert\Valid(groups: [NodesPayload::GROUP_CREATE_FULL])]
-    public ?Collection $categories;
+    public array $categories;
 
     #[Groups(groups: [NodesPayload::GROUP_CREATE_FULL])]
     #[Assert\Valid(groups: [NodesPayload::GROUP_CREATE_FULL])]
     public ?AssignVoxnumberPayload $assignVoxnumber;
 
     /**
-     * @param Collection<int, CategoryPayload>|null $categories
+     * @param array<int, CategoryPayload>|null $categories
      */
     public function __construct(
         ?string $linkId = null,
@@ -46,7 +47,7 @@ class LinkPayload
         ?string $linkType = null,
         ?\DateTimeImmutable $linkDate = null,
         ?int $clickToCall = null,
-        ?Collection $categories = null,
+        ?array $categories = null,
         ?AssignVoxnumberPayload $assignVoxnumber = null
     ) {
         $this->linkId          = $linkId;
@@ -54,7 +55,7 @@ class LinkPayload
         $this->linkType        = $linkType;
         $this->linkDate        = $linkDate;
         $this->clickToCall     = $clickToCall;
-        $this->categories      = $categories;
+        $this->categories      = ['category' => $categories];
         $this->assignVoxnumber = $assignVoxnumber;
     }
 }

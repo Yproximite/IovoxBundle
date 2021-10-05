@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodePayload;
 use Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload\NodesPayload;
-use Yproximite\IovoxBundle\Api\ErrorResult\GenericErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\InternalErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\RequestMethodInvalidErrorResult;
@@ -43,7 +42,20 @@ class CreateNodeFull extends AbstractNodes implements CreateNodeFullInterface
             throw new ValidationPayloadException($validate);
         }
 
-        $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [NodesPayload::GROUP_CREATE_FULL]]));
+        $query->setContent($this->serializer->serialize(['node' => $payload], 'xml', ['groups' => [NodesPayload::GROUP_CREATE_FULL]]));
+        $response = $this->client->executeQuery($query);
+
+        if (Response::HTTP_CREATED === $response->getStatusCode()) {
+            return true;
+        }
+
+        throw new BadResponseReturnException($response, $this->errorResults);
+    }
+
+    public function executeXmlStringQuery(string $xmlPayload): bool
+    {
+        $query = $this->createQuery();
+        $query->setContent($xmlPayload);
         $response = $this->client->executeQuery($query);
 
         if (Response::HTTP_CREATED === $response->getStatusCode()) {
@@ -77,12 +89,6 @@ class CreateNodeFull extends AbstractNodes implements CreateNodeFullInterface
             new XmlEmptyErrorResult(),
             new XmlParseErrorResult(),
             new RequestEmptyErrorResult(),
-            new GenericErrorResult(400, 'Node ID \d+ of \d+ Empty', 'Add node_id for Node x (item) of y (total)'),
-            new GenericErrorResult(400, 'Node Name \d+ of \d+ Empty', 'Add node_name for Node x (item) of y (total)'),
-            new GenericErrorResult(400, 'Node Type \d+ of \d+ Empty', 'Add node_type for Node x (item) of y (total)'),
-            new GenericErrorResult(400, 'Node Date \d+ of \d+ Invalid', 'Correct node_date for Node x (item) of y (total)'),
-            new GenericErrorResult(400, 'Duplicate Node ID Received', 'Change node_id to be unique'),
-            // and much more ... see doc
             new InternalErrorResult(),
         ];
     }
