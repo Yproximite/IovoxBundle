@@ -23,9 +23,10 @@ class RulePayload implements RulePayloadInterface
     #[Assert\NotNull(groups: [])]
     public ?string $ruleLabel;
 
+    /** @var array{ sound_file: array<int, string>|null } */
     #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
-    public ?SoundFilesRulePayload $soundFiles;
+    public array $soundFiles;
 
     #[Groups(groups: [AttachRuleTemplateToLinksPayload::GROUP_ATTACH])]
     #[Assert\NotNull(groups: [])]
@@ -71,11 +72,14 @@ class RulePayload implements RulePayloadInterface
     #[Assert\Choice(choices: ['TRUE', 'FALSE'], groups: [])]
     public ?string $recordCall;
 
+    /**
+     * @param array<int, string>|null $soundFiles
+     */
     public function __construct(
         ?string $ruleId = null,
         ?string $ruleType = null,
         ?string $ruleLabel = null,
-        ?SoundFilesRulePayload $soundFiles = null,
+        ?array $soundFiles = null,
         ?SoundFilesRulePayload $play = null,
         ?ContactRulePayload $contact = null,
         ?SoundFilesRulePayload $callerMessage = null,
@@ -91,7 +95,7 @@ class RulePayload implements RulePayloadInterface
         $this->ruleId            = $ruleId;
         $this->ruleType          = $ruleType;
         $this->ruleLabel         = $ruleLabel;
-        $this->soundFiles        = $soundFiles;
+        $this->soundFiles        = ['sound_file' => $soundFiles];
         $this->play              = $play;
         $this->contact           = $contact;
         $this->callerMessage     = $callerMessage;
