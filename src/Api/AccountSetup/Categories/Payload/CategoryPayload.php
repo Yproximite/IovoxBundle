@@ -28,15 +28,26 @@ class CategoryPayload
     public ?string $type;
 
     #[Groups(groups: [CategoriesPayload::GROUP_CREATE_CONFIGURATION])]
+    public ?string $valueType;
+
+    #[Groups(groups: [CategoriesPayload::GROUP_CREATE_CONFIGURATION])]
     public ?string $colour;
 
-    public function __construct(?string $categoryId, ?string $label = null, ?string $value = null, ?string $parentCategoryId = null, ?string $type = null, ?string $colour = null)
-    {
+    public function __construct(
+        ?string $categoryId,
+        ?string $label = null,
+        ?string $value = null,
+        ?string $parentCategoryId = null,
+        ?string $type = null,
+        ?string $valueType = null,
+        ?string $colour = null
+    ) {
         $this->categoryId       = $categoryId;
         $this->label            = $label;
         $this->value            = $value;
         $this->parentCategoryId = $parentCategoryId;
         $this->type             = $type;
+        $this->valueType        = $valueType;
         $this->colour           = $colour;
     }
 }
