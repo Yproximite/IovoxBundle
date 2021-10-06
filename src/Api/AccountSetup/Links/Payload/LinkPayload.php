@@ -36,6 +36,14 @@ class LinkPayload
     #[Groups(groups: [LinksPayload::GROUP_UPDATE])]
     public ?string $newLinkId;
 
+    /** @var array{ category: array<int, CategoryPayload>|null } */
+    #[Groups(groups: [LinksPayload::GROUP_CREATE, LinksPayload::GROUP_UPDATE])]
+    #[Assert\Valid(groups: [LinksPayload::GROUP_CREATE, LinksPayload::GROUP_UPDATE])]
+    public array $categories;
+
+    /**
+     * @param array<int, CategoryPayload>|null $categories
+     */
     public function __construct(
         ?string $nodeId = null,
         ?string $linkId = null,
@@ -43,7 +51,8 @@ class LinkPayload
         ?string $linkType = null,
         ?string $linkDate = null,
         ?int $clickToCall = null,
-        ?string $newLinkId = null
+        ?string $newLinkId = null,
+        ?array $categories = null,
     ) {
         $this->nodeId      = $nodeId;
         $this->linkId      = $linkId;
@@ -52,5 +61,6 @@ class LinkPayload
         $this->linkDate    = $linkDate;
         $this->clickToCall = $clickToCall;
         $this->newLinkId   = $newLinkId;
+        $this->categories  = ['category' => $categories];
     }
 }
