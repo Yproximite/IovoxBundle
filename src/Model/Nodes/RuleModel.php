@@ -24,7 +24,7 @@ class RuleModel extends AbstractModel
             $opts['rule_id'],
             $opts['rule_type'],
             $opts['rule_label'],
-            ContactModel::create($opts['contact']),
+            ContactModel::create($opts['contact'] ?? []),
             CallerMessageModel::create($opts['caller_message'] ?? []),
             CalledMessageModel::create($opts['called_message'] ?? []),
         );

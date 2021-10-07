@@ -15,8 +15,8 @@ class ContactModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['contact_id'],
-            $opts['phone_number']
+            $opts['contact_id'] ?? [],
+            $opts['phone_number'] ?? []
         );
     }
 }
