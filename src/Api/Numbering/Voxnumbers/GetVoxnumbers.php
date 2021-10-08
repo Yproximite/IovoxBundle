@@ -64,7 +64,6 @@ ACTIVE - All VoxNumbers with call_status ON (Active). This will automatically sw
 OFF - All VoxNumbers with call_status OFF (On Hold). This will stay as OFF until the VoxNumber call_status is set to ON, even when Rule Templates are attached or removed'),
             self::QUERY_PARAMETER_NODE_ID           => new GenericQueryParameter(self::QUERY_PARAMETER_NODE_ID, GenericQueryParameter::TYPE_STRING, 'Returns the VoxNumber attached to the specified Node ID'),
             self::QUERY_PARAMETER_LINK_ID           => new GenericQueryParameter(self::QUERY_PARAMETER_LINK_ID, GenericQueryParameter::TYPE_STRING, 'Returns the VoxNumber attached to the specified Link ID'),
-            self::QUERY_PARAMETER_CAT_IDS           => new GenericQueryParameter(self::QUERY_PARAMETER_CAT_IDS, GenericQueryParameter::TYPE_ARRAY, 'Returns all data for the given category IDs. To produce an AND based search separate each by a comma and to produce an OR based, separate as array elements. For example, cat_ids[]=1,2&cat_ids[]=3,4 would search where category ID is (1 AND 2) OR (3 AND 4). Note: if a search is made for Category ID 5, potentially Location = London, results will include any items further down the tree, such as Notting Hill'),
         ];
 
         $this->allQueryParameters = array_merge([

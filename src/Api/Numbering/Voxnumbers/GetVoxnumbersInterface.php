@@ -18,10 +18,9 @@ interface GetVoxnumbersInterface
     public const QUERY_PARAMETER_CALL_STATUS       = 'call_status';
     public const QUERY_PARAMETER_NODE_ID           = 'node_id';
     public const QUERY_PARAMETER_LINK_ID           = 'link_id';
-    public const QUERY_PARAMETER_CAT_IDS           = 'cat_ids';
 
     /**
-     * @param array{ page?: positive-int, limit?: positive-int, req_fields?: non-empty-string, order?: non-empty-string, voxnumber?: non-empty-string, voxnumber_type?: non-empty-string, voxnumber_country?: non-empty-string, voxnumber_city?: non-empty-string, assigned_status?: non-empty-string, call_status?: non-empty-string, node_id?: non-empty-string, link_id?: non-empty-string, cat_ids?: array<int|string, mixed> } $queryParameters
+     * @param array{ page?: positive-int, limit?: positive-int, req_fields?: non-empty-string, order?: non-empty-string, voxnumber?: non-empty-string, voxnumber_type?: non-empty-string, voxnumber_country?: non-empty-string, voxnumber_city?: non-empty-string, assigned_status?: non-empty-string, call_status?: non-empty-string, node_id?: non-empty-string, link_id?: non-empty-string } $queryParameters
      */
     public function executeQuery(array $queryParameters = []): GetVoxnumbersModel;
 }
