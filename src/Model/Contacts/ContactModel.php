@@ -15,12 +15,12 @@ class ContactModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['contact_id'],
-            $opts['display_name'],
-            $opts['company'],
-            $opts['email'],
-            $opts['business_phone'],
-            $opts['assigned_status'],
+            $opts['contact_id'] ?? null,
+            $opts['display_name'] ?? null,
+            $opts['company'] ?? null,
+            $opts['email'] ?? null,
+            $opts['business_phone'] ?? null,
+            $opts['assigned_status'] ?? null,
         );
     }
 }

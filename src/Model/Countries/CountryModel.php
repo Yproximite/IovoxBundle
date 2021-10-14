@@ -8,15 +8,15 @@ use Yproximite\IovoxBundle\Model\AbstractModel;
 
 class CountryModel extends AbstractModel
 {
-    private function __construct(public int $code, public string $name)
+    private function __construct(public int $code, public ?string $name)
     {
     }
 
     public static function create(array $opts): self
     {
         return new self(
-            (int) $opts['code'],
-            $opts['name'],
+            (int) ($opts['code'] ?? 0),
+            $opts['name'] ?? null,
         );
     }
 }

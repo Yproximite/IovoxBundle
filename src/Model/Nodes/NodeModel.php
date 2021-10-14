@@ -23,14 +23,14 @@ class NodeModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['node_id'],
-            $opts['node_name'],
-            $opts['node_type'],
-            $opts['link_id'],
-            $opts['link_name'],
-            $opts['link_type'],
-            $opts['voxnumber'],
-            $opts['rule_template_name'],
+            $opts['node_id'] ?? null,
+            $opts['node_name'] ?? null,
+            $opts['node_type'] ?? null,
+            $opts['link_id'] ?? null,
+            $opts['link_name'] ?? null,
+            $opts['link_type'] ?? null,
+            $opts['voxnumber'] ?? null,
+            $opts['rule_template_name'] ?? null,
         );
     }
 }

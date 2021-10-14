@@ -15,10 +15,10 @@ class CategoryModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['category_id'],
-            $opts['label'],
-            $opts['value'],
-            (int) $opts['child_count'],
+            $opts['category_id'] ?? null,
+            $opts['label'] ?? null,
+            $opts['value'] ?? null,
+            (int) ($opts['child_count'] ?? 0),
         );
     }
 }

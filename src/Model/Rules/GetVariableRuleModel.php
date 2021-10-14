@@ -18,9 +18,9 @@ class GetVariableRuleModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['rule_id'],
-            $opts['rule_type'],
-            $opts['rule_label'],
+            $opts['rule_id'] ?? null,
+            $opts['rule_type'] ?? null,
+            $opts['rule_label'] ?? null,
             $opts
         );
     }

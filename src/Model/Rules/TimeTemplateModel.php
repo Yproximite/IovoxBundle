@@ -20,7 +20,7 @@ class TimeTemplateModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['label'],
+            $opts['label'] ?? null,
             (new ArrayCollection(static::formatResult($opts['time_frames']['time_frame'] ?? [], false)))->map(fn ($v): TimeFrameModel => TimeFrameModel::create($v))
         );
     }

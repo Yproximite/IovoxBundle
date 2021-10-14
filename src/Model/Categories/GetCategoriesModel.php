@@ -20,7 +20,7 @@ class GetCategoriesModel extends PaginateResponse
 
     public static function create(array $opts): self
     {
-        $response = $opts['response'];
+        $response = $opts['response'] ?? [];
 
         return new self(
             (int) ($response['current_page'] ?? 0),

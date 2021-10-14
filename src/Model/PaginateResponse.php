@@ -21,13 +21,13 @@ class PaginateResponse extends Response
 
     public static function create(array $opts): self
     {
-        $response = $opts['response'];
+        $response = $opts['response'] ?? [];
 
         return new self(
             (int) ($response['current_page'] ?? 0),
             (int) ($response['total_pages'] ?? 0),
             (int) ($response['total_results'] ?? 0),
-            new ArrayCollection($response['results'])
+            new ArrayCollection($response['results'] ?? [])
         );
     }
 }

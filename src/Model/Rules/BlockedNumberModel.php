@@ -20,11 +20,11 @@ class BlockedNumberModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['number'],
-            $opts['in_or_out'],
-            $opts['operator'],
-            $opts['notes'],
-            $opts['default'],
+            $opts['number'] ?? null,
+            $opts['in_or_out'] ?? null,
+            $opts['operator'] ?? null,
+            $opts['notes'] ?? null,
+            $opts['default'] ?? null,
             (new ArrayCollection(static::formatResult($opts['rules']['rule'] ?? [], false)))->map(fn ($v): RuleBlockedNumberModel => RuleBlockedNumberModel::create($v))
         );
     }

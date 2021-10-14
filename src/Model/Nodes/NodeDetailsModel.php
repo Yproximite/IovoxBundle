@@ -24,9 +24,9 @@ class NodeDetailsModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['node_id'],
-            $opts['node_name'],
-            $opts['node_type'],
+            $opts['node_id'] ?? null,
+            $opts['node_name'] ?? null,
+            $opts['node_type'] ?? null,
             (new ArrayCollection(static::formatResult($opts['links']['link'] ?? [], false)))->map(fn ($v): LinkModel => LinkModel::create($v))
         );
     }

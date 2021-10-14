@@ -28,10 +28,10 @@ class LinkModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['link_id'],
-            $opts['link_name'],
-            $opts['link_type'],
-            $opts['voxnumber'],
+            $opts['link_id'] ?? null,
+            $opts['link_name'] ?? null,
+            $opts['link_type'] ?? null,
+            $opts['voxnumber'] ?? null,
             $opts['rule_template_name'] ?? null,
             (new ArrayCollection(static::formatResult($opts['rules']['rule'] ?? [], false)))->map(fn ($v): RuleModel => RuleModel::create($v)),
             (new ArrayCollection(static::formatResult($opts['cats']['cat'] ?? [], false)))->map(fn ($v): CategoryModel => CategoryModel::create($v))

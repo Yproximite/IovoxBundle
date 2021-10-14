@@ -18,11 +18,11 @@ class TimeFrameModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['date_from'],
-            $opts['date_to'],
-            $opts['recurrence'],
-            $opts['time_from'],
-            $opts['time_to'],
+            $opts['date_from'] ?? null,
+            $opts['date_to'] ?? null,
+            $opts['recurrence'] ?? null,
+            $opts['time_from'] ?? null,
+            $opts['time_to'] ?? null,
             $opts['days']['day'] ?? [],
         );
     }

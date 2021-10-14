@@ -15,7 +15,7 @@ class SoundFileModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['sound_file']
+            $opts['sound_file'] ?? null
         );
     }
 }

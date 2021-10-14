@@ -15,8 +15,8 @@ class CategoryIdModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['category_id'],
-            $opts['category_path'],
+            $opts['category_id'] ?? null,
+            $opts['category_path'] ?? null,
         );
     }
 }

@@ -16,8 +16,8 @@ class RuleBlockedNumberModel extends AbstractModel
     {
         return new self(
             $opts['links']['link_id'] ?? null,
-            $opts['time_template'],
-            $opts['blocking_type'],
+            $opts['time_template'] ?? null,
+            $opts['blocking_type'] ?? null,
         );
     }
 }

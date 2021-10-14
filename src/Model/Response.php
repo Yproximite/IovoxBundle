@@ -20,10 +20,10 @@ class Response extends AbstractModel
 
     public static function create(array $opts): self
     {
-        $response = $opts['response'];
+        $response = $opts['response'] ?? [];
 
         return new self(
-            new ArrayCollection($response['results'])
+            new ArrayCollection($response['results'] ?? [])
         );
     }
 }

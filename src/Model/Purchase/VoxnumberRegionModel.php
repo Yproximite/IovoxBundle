@@ -21,12 +21,12 @@ class VoxnumberRegionModel extends AbstractModel
     public static function create(array $opts): self
     {
         return new self(
-            $opts['area_code'],
-            $opts['country_code'],
-            $opts['country_name'],
-            $opts['state_name'],
-            $opts['city_name'],
-            (bool) $opts['require_purchase_info'],
+            $opts['area_code'] ?? null,
+            $opts['country_code'] ?? null,
+            $opts['country_name'] ?? null,
+            $opts['state_name'] ?? null,
+            $opts['city_name'] ?? null,
+            (bool) ($opts['require_purchase_info'] ?? null),
         );
     }
 }
