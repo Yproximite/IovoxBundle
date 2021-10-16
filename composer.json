@@ -19,6 +19,7 @@
     "doctrine/annotations": "^1.13",
     "doctrine/common": "^3.1",
     "symfony/framework-bundle": "^5.3",
+    "symfony/http-client": "^5.3",
     "symfony/serializer": "^5.3",
     "symfony/validator": "^5.3"
   },

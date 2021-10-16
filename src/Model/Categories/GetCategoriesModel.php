@@ -15,7 +15,7 @@ class GetCategoriesModel extends PaginateResponse
      */
     protected function __construct(public int $currentPage, public int $totalPages, public int $totalResults, public Collection $results)
     {
-        parent::__construct($this->currentPage, $this->totalResults, $this->totalResults, $this->results);
+        parent::__construct($this->currentPage, $this->totalPages, $this->totalResults, $this->results);
     }
 
     public static function create(array $opts): self

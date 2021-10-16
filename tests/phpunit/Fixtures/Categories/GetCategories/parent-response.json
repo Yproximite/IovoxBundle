@@ -1,0 +1,29 @@
+{
+  "response": {
+    "current_page": "1",
+    "total_pages": "1",
+    "total_results": "3",
+    "results": {
+      "result": [
+        {
+          "category_id": "13266",
+          "label": "Plateforme",
+          "value": "Platform 1",
+          "child_count": "0"
+        },
+        {
+          "category_id": "11654",
+          "label": "Plateforme",
+          "value": "Platform 2",
+          "child_count": "0"
+        },
+        {
+          "category_id": "11405",
+          "label": "Plateforme",
+          "value": "Platform 3",
+          "child_count": "0"
+        }
+      ]
+    }
+  }
+}
