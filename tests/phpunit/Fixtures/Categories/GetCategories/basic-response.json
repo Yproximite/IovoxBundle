@@ -1,0 +1,35 @@
+{
+  "response": {
+    "current_page": "1",
+    "total_pages": "1",
+    "total_results": "4",
+    "results": {
+      "result": [
+        {
+          "category_id": "platform",
+          "label": "Plateforme",
+          "value": "Plateforme",
+          "child_count": "3"
+        },
+        {
+          "category_id": "Quarantine Date",
+          "label": "Quarantine Date",
+          "value": "Quarantine Date",
+          "child_count": "1"
+        },
+        {
+          "category_id": "Deletion Date",
+          "label": "Deletion Date",
+          "value": "Deletion Date",
+          "child_count": "0"
+        },
+        {
+          "category_id": "Detach Date",
+          "label": "Detach Date",
+          "value": "Detach Date",
+          "child_count": "1"
+        }
+      ]
+    }
+  }
+}
