@@ -50,6 +50,18 @@ class UpdateCallFlow extends AbstractCallFlow implements UpdateCallFlowInterface
         throw new BadResponseReturnException($response, $this->errorResults);
     }
 
+    public function executeXmlStringQuery(string $xmlPayload): bool
+    {
+        $query = $this->createQuery();
+        $query->setContent($xmlPayload);
+        $response = $this->client->executeQuery($query);
+        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
+            return true;
+        }
+
+        throw new BadResponseReturnException($response, $this->errorResults);
+    }
+
     protected function setMethod(): void
     {
         $this->method = Request::METHOD_PUT;
