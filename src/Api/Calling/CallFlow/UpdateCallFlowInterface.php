@@ -10,4 +10,6 @@ interface UpdateCallFlowInterface
      * @param array<int|string, mixed> $payload
      */
     public function executeQuery(array $payload): bool;
+
+    public function executeXmlStringQuery(string $xmlPayload): bool;
 }
