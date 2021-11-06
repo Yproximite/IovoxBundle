@@ -17,7 +17,6 @@ use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
-use Yproximite\IovoxBundle\Api\XmlQueryStringInterface;
 use Yproximite\IovoxBundle\Api\XmlStringQueryTrait;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
@@ -27,7 +26,7 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/updateLinks
  */
-class UpdateLinks extends AbstractLinks implements UpdateLinksInterface, XmlQueryStringInterface
+class UpdateLinks extends AbstractLinks implements UpdateLinksInterface
 {
     use XmlStringQueryTrait;
 

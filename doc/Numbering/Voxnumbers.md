@@ -33,6 +33,30 @@ public function example(SetCallStatusInterface $setCallStatus)
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\Numbering\Voxnumbers\SetCallStatusInterface;
+
+public function example(SetCallStatusInterface $setCallStatus)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <call_status>OFF</call_status>
+    <voxnumbers>
+        <voxnumber>448001020304</voxnumber>
+        <voxnumber>448451234567</voxnumber>
+        <voxnumber>442077277277</voxnumber>
+    </voxnumbers>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $setCallStatus->executeXmlStringQuery($xmlString); 
+}
+```
+
 # DeleteVoxnumbersFromAccount
 
 ```php
