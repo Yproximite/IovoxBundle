@@ -17,6 +17,8 @@ use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
+use Yproximite\IovoxBundle\Api\XmlQueryStringInterface;
+use Yproximite\IovoxBundle\Api\XmlStringQueryTrait;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
@@ -25,8 +27,12 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/updateContacts
  */
-class UpdateContacts extends AbstractContacts implements UpdateContactsInterface
+class UpdateContacts extends AbstractContacts implements UpdateContactsInterface, XmlQueryStringInterface
 {
+    use XmlStringQueryTrait;
+
+    public const EXPECTED_RESPONSE_STATUS_CODE = Response::HTTP_NO_CONTENT;
+
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
@@ -44,7 +50,7 @@ class UpdateContacts extends AbstractContacts implements UpdateContactsInterface
         $query->setContent($this->serializer->serialize($payload, 'xml', ['groups' => [ContactsPayload::GROUP_UPDATE]]));
         $response = $this->client->executeQuery($query);
 
-        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
+        if (self::EXPECTED_RESPONSE_STATUS_CODE === $response->getStatusCode()) {
             return true;
         }
 

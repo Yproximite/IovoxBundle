@@ -16,6 +16,8 @@ use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
+use Yproximite\IovoxBundle\Api\XmlQueryStringInterface;
+use Yproximite\IovoxBundle\Api\XmlStringQueryTrait;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Exception\Api\SerializedXmlException;
@@ -24,8 +26,12 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/updateCallFlow
  */
-class UpdateCallFlow extends AbstractCallFlow implements UpdateCallFlowInterface
+class UpdateCallFlow extends AbstractCallFlow implements UpdateCallFlowInterface, XmlQueryStringInterface
 {
+    use XmlStringQueryTrait;
+
+    public const EXPECTED_RESPONSE_STATUS_CODE = Response::HTTP_NO_CONTENT;
+
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
@@ -36,26 +42,13 @@ class UpdateCallFlow extends AbstractCallFlow implements UpdateCallFlowInterface
         $query = $this->createQuery();
 
         try {
-            // TODO: convert payload to object
             $query->setContent($this->serializer->serialize($payload, 'xml'));
         } catch (\Throwable) {
             throw new SerializedXmlException();
         }
 
         $response = $this->client->executeQuery($query);
-        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
-            return true;
-        }
-
-        throw new BadResponseReturnException($response, $this->errorResults);
-    }
-
-    public function executeXmlStringQuery(string $xmlPayload): bool
-    {
-        $query = $this->createQuery();
-        $query->setContent($xmlPayload);
-        $response = $this->client->executeQuery($query);
-        if (Response::HTTP_NO_CONTENT === $response->getStatusCode()) {
+        if (self::EXPECTED_RESPONSE_STATUS_CODE === $response->getStatusCode()) {
             return true;
         }
 

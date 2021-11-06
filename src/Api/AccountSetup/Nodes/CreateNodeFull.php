@@ -18,6 +18,8 @@ use Yproximite\IovoxBundle\Api\ErrorResult\XmlEmptyErrorResult;
 use Yproximite\IovoxBundle\Api\ErrorResult\XmlParseErrorResult;
 use Yproximite\IovoxBundle\Api\QueryParameter\MethodQueryParameter;
 use Yproximite\IovoxBundle\Api\QueryParameter\VersionQueryParameter;
+use Yproximite\IovoxBundle\Api\XmlQueryStringInterface;
+use Yproximite\IovoxBundle\Api\XmlStringQueryTrait;
 use Yproximite\IovoxBundle\Client;
 use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
 use Yproximite\IovoxBundle\Exception\Api\ValidationPayloadException;
@@ -26,8 +28,12 @@ use Yproximite\IovoxBundle\Serializer\IovoxSerializer;
 /**
  * @see https://docs.iovox.com/display/RA/createNodeFull
  */
-class CreateNodeFull extends AbstractNodes implements CreateNodeFullInterface
+class CreateNodeFull extends AbstractNodes implements CreateNodeFullInterface, XmlQueryStringInterface
 {
+    use XmlStringQueryTrait;
+
+    public const EXPECTED_RESPONSE_STATUS_CODE = Response::HTTP_CREATED;
+
     public function __construct(protected Client $client, protected IovoxSerializer $serializer, protected ValidatorInterface $validator)
     {
         parent::__construct($client);
@@ -45,20 +51,7 @@ class CreateNodeFull extends AbstractNodes implements CreateNodeFullInterface
         $query->setContent($this->serializer->serialize(['node' => $payload], 'xml', ['groups' => [NodesPayload::GROUP_CREATE_FULL]]));
         $response = $this->client->executeQuery($query);
 
-        if (Response::HTTP_CREATED === $response->getStatusCode()) {
-            return true;
-        }
-
-        throw new BadResponseReturnException($response, $this->errorResults);
-    }
-
-    public function executeXmlStringQuery(string $xmlPayload): bool
-    {
-        $query = $this->createQuery();
-        $query->setContent($xmlPayload);
-        $response = $this->client->executeQuery($query);
-
-        if (Response::HTTP_CREATED === $response->getStatusCode()) {
+        if (self::EXPECTED_RESPONSE_STATUS_CODE === $response->getStatusCode()) {
             return true;
         }
 
