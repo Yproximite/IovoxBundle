@@ -37,6 +37,35 @@ public function example(CreateLinksInterface $createLinks)
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\CreateLinksInterface;
+
+public function example(CreateLinksInterface $createLinks)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <link>
+        <node_id>12ABC34</node_id>
+        <link_id>1234</link_id>
+        <link_name>House Buyer Mag</link_name>
+        <link_type>Magazine Advertisement</link_type>
+        <link_date>2008-11-19 14:10:46</link_date>
+        <click_to_call>1</click_to_call>
+    </link>
+    <link>
+       ...
+    <link>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $createLinks->executeXmlStringQuery($xmlString); 
+}
+```
+
 # UpdateLinks
 
 ```php
@@ -61,6 +90,35 @@ public function example(UpdateLinksInterface $updateLinks)
 
     // true if ok else BadResponseReturnException
     $result = $updateLinks->executeQuery($payload);
+}
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\UpdateLinksInterface;
+
+public function example(UpdateLinksInterface $updateLinks)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+     <link>
+         <link_id>ext1</link_id>
+         <new_link_id>ext12</new_link_id>
+         <link_name>My updated Link Name</link_name>
+         <link_type>My updated Link Type</link_type>
+         <click_to_call>1</click_to_call>
+         <link_date>2008-11-19 14:10:46</link_date>
+     </link>
+     <link>
+         ...
+     </link>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $updateLinks->executeXmlStringQuery($xmlString); 
 }
 ```
 

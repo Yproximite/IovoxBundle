@@ -40,7 +40,42 @@ public function example(CreateSoundFilesInterface $createSoundFiles)
     
     // true if ok else BadResponseReturnException
     $result = $createSoundFiles->executeQuery($payload); 
-} 
+}
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\CreateSoundFilesInterface;
+
+public function example(CreateSoundFilesInterface $createSoundFiles)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+  <sound_file>
+     <sound_label>Sound File 1</sound_label>
+     <sound_group>Sound Group 1</sound_group>
+     <!-- sound_file will contain the binary data, base64 encoded, of the sound file you want to create. //-->
+     <sound_file><!-- sound file path here //--></sound_file>
+     <notes>awesome notes for this awesome soundfile!</notes>
+   </sound_file>
+   <sound_file>
+     <sound_label>Sound File 2</sound_label>
+     <sound_group>Sound Group 1</sound_group>
+     <!-- sound_file will contain the binary data, base64 encoded, of the sound file you want to create. //-->
+     <sound_file><!-- sound file path here //--></sound_file>
+     <notes>awesome notes for this new awesome soundfile!</notes>
+   </sound_file>
+   <sound_file>
+     ...
+   </sound_file>
+ </request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $createSoundFiles->executeXmlStringQuery($xmlString); 
+}
 ```
 
 # UpdateSoundFiles
@@ -59,6 +94,42 @@ public function example(UpdateSoundFilesInterface $updateSoundFiles)
     // true if ok else BadResponseReturnException
     $result = $updateSoundFiles->executeQuery($payload); 
 } 
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\SoundFiles\UpdateSoundFilesInterface;
+
+public function example(UpdateSoundFilesInterface $updateSoundFiles)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+   <sound_file>
+     <sound_label>Sound File 1</sound_label>
+     <new_sound_label>Sound File 1 Updated</new_sound_label>
+     <sound_group>Sound Group 1</sound_group>
+     <new_sound_group>Sound Group 1 Updated</new_sound_group>
+     <!-- sound_file will contain the binary data, base64 encoded, of the sound file you want to create. //-->
+     <sound_file></sound_file>
+     <notes>Updated notes are even more awesome!</notes>
+   </sound_file>
+   <sound_file>
+     <sound_label>Sound File 1</sound_label>
+     <new_sound_label>Sound File 1 Updated</new_sound_label>
+     <sound_group>Sound Group 1</sound_group>
+     <notes>New notes!!!!!</notes>
+   </sound_file>
+   <sound_file>
+     ...
+   </sound_file>
+ </request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $updateSoundFiles->executeXmlStringQuery($xmlString); 
+}
 ```
 
 # DeleteSoundFiles

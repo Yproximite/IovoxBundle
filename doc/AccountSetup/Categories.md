@@ -44,6 +44,29 @@ public function example(CreateCategoryConfigurationsInterface $createCategoryCon
 
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoryConfigurationsInterface;
+
+public function example(CreateCategoryConfigurationsInterface $createCategoryConfigurations)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <category>
+        <label>Location</label>
+        <category_id>Location</category_id>
+        <type>Tree</type>
+    </category>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $createCategoryConfigurations->executeXmlStringQuery($xmlString); 
+}
+```
+
 # CreateCategories
 
 ```php
@@ -60,6 +83,33 @@ public function example(CreateCategoriesInterface $createCategories)
     
     // true if ok else BadResponseReturnException
     $result = $createCategories->executeQuery($payload); 
+}
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Categories\CreateCategoriesInterface;
+
+public function example(CreateCategoriesInterface $createCategories)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+     <category>
+         <parent_category_id>1</parent_category_id>
+         <category_id>10</category_id>
+         <label>Location</label>
+         <value>London</value>
+     </category>
+     <category>
+         ....
+     </category>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $createCategories->executeXmlStringQuery($xmlString); 
 }
 ```
 

@@ -56,6 +56,28 @@ public function example(CreateCallFlowInterface $createCallFlow)
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\CreateCallFlowInterface;
+
+public function example(CreateCallFlowInterface $createCallFlow)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<request>
+    <callFlow name="Call Agent" notes="Will Call the agent, can be used for every agent in my account.">
+        <call id="call_1" label="Call" destinationPhoneNumber="?" destinationContactId="?" record="true" sendCallAlert="NONE"></call>
+    </callFlow>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $createCallFlow->executeXmlStringQuery($xmlString); 
+}
+```
+
 # UpdateCallFlow
 
 ```php
@@ -85,6 +107,32 @@ public function example(UpdateCallFlowInterface $updateCallFlow)
 
     // Return true if OK
     $response = $updateCallFlow->executeQuery($payload);
+}
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\Calling\CallFlow\UpdateCallFlowInterface;
+
+public function example(UpdateCallFlowInterface $updateCallFlow)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+  
+<request>
+    <callFlow name="Call Agent" newName="Call Agent + Whisper Called" notes="Will Call the agent, can be used for every agent in my account.">
+        <call id="call_1" label="Call" destinationPhoneNumber="?" destinationContactId="?" record="true" sendCallAlert="NONE">
+            <calledMessage>
+                <soundFile soundLabel="Lead brought by IOVOX"/>
+            </calledMessage>
+        </call>
+    </callFlow>
+</request>
+XML;
+    
+    // true if ok else BadResponseReturnException
+    $result = $updateCallFlow->executeXmlStringQuery($xmlString); 
 }
 ```
 
