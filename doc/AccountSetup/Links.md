@@ -156,6 +156,29 @@ public function example(AttachVoxnumberToLinkInterface $attachVoxnumberToLink)
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachVoxnumberToLinkInterface;
+
+public function example(AttachVoxnumberToLinkInterface $attachVoxnumberToLink)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+     <link>
+         <link_id>444</link_id>
+         <method>BY VOXNUMBER</method>
+         <full_voxnumber>4423012565866</full_voxnumber>
+     </link>
+</request>
+XML;
+
+    // true if ok else BadResponseReturnException
+    $result = $attachVoxnumberToLink->executeXmlStringQuery($xmlString);
+}
+```
+
 # RemoveVoxnumberFromLink
 
 ```php
@@ -219,6 +242,52 @@ public function example(AttachRuleTemplateToLinksInterface $attachRuleTemplateTo
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachRuleTemplateToLinksInterface;
+
+public function example(AttachRuleTemplateToLinksInterface $attachRuleTemplateToLinks)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <template_name>Call Whisper Both</template_name>
+    <overwrite_existing>TRUE</overwrite_existing>
+    <link_ids>
+         <link_id>100</link_id>
+         <link_id>130</link_id>
+         <link_id>200</link_id>
+    </link_ids>
+    <rules_variable>
+        <rule>
+            <rule_id>1</rule_id>
+            <rule_type>play</rule_type>
+            <rule_label>Welcome</rule_label>
+            <sound_files>
+                <sound_file>Sound Group 1|whisper caller</sound_file>
+            </sound_files>
+        </rule>
+        <rule>
+            <rule_id>2</rule_id>
+            <rule_type>messageKeypress</rule_type>
+            <rule_label>Options</rule_label>
+            <play>
+                <sound_files>
+                    <sound_file>Sound Group 1|whisper called</sound_file>
+                    <sound_file>Sound Group 2|whisper caller</sound_file>
+                </sound_files>
+            </play>
+        </rule>
+    </rules_variable>
+</request>
+XML;
+
+    // true if ok else BadResponseReturnException
+    $result = $attachRuleTemplateToLinks->executeXmlStringQuery($xmlString);
+}
+```
+
 # RemoveRuleTemplateFromLinks
 
 ```php
@@ -266,6 +335,42 @@ public function example(AttachSMSTemplateToLinksInterface $attachSMSTemplateToLi
 }
 ```
 
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachSMSTemplateToLinksInterface;
+
+public function example(AttachSMSTemplateToLinksInterface $attachSMSTemplateToLinks)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <template_name>SMS</template_name>
+    <overwrite_existing>TRUE</overwrite_existing>
+    <link_ids>
+        <link_id>100</link_id>
+        <link_id>130</link_id>
+        <link_id>200</link_id>
+    </link_ids>
+    <rules_variable>
+        <rule>
+            <rule_id>sendSms_1</rule_id>
+            <rule_type>sendSms</rule_type>
+            <rule_label>sendSms</rule_label>
+            <contact>
+                <contact_id>1</contact_id>
+                <phone_number>4420754545454</phone_number>
+            </contact>
+        </rule>
+    </rules_variable>
+</request>
+XML;
+
+    // true if ok else BadResponseReturnException
+    $result = $attachSMSTemplateToLinks->executeXmlStringQuery($xmlString);
+}
+```
+
 # RemoveSMSTemplateFromLinks
 
 ```php
@@ -296,6 +401,42 @@ public function example(AttachCategoryToLinkInterface $attachCategoryToLink)
 
     // true if ok else BadResponseReturnException
     $result = $attachCategoryToLink->executeQuery($payload);
+}
+```
+
+OR
+
+```php
+use Yproximite\IovoxBundle\Api\AccountSetup\Links\AttachCategoryToLinkInterface;
+
+public function example(AttachCategoryToLinkInterface $attachCategoryToLink)
+{
+    $xmlString = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+    <link>
+        <link_id>333</link_id>
+        <parent_category_id>231</parent_category_id>
+        <category_id>123</category_id>
+        <value>Marketing</value>
+    </link>
+    <link>
+        <link_id>333</link_id>
+        <parent_category_id>124</parent_category_id>
+        <category_id>124</category_id>
+        <value>Golden</value>
+    </link>
+    <link>
+        <link_id>444</link_id>
+        <parent_category_id>200</parent_category_id>
+        <category_id>230</category_id>
+        <value>London</value>
+    </link>
+</request>
+XML;
+
+    // true if ok else BadResponseReturnException
+    $result = $attachCategoryToLink->executeXmlStringQuery($xmlString);
 }
 ```
 
