@@ -8,6 +8,9 @@ use Yproximite\IovoxBundle\Model\AbstractModel;
 
 class ContactDetailsModel extends AbstractModel
 {
+    /**
+     * @param array<int, string>|null $businessPhone
+     */
     private function __construct(
         public ?string $contactId,
         public ?string $firstName,
@@ -17,7 +20,7 @@ class ContactDetailsModel extends AbstractModel
         public ?string $email2,
         public ?string $company,
         public ?string $title,
-        public ?string $businessPhone,
+        public ?array $businessPhone,
         public ?string $businessFax,
         public ?string $workAddress1,
         public ?string $workAddress2,
@@ -46,7 +49,7 @@ class ContactDetailsModel extends AbstractModel
             $opts['email_2'] ?? null,
             $opts['company'] ?? null,
             $opts['title'] ?? null,
-            $opts['business_phone'] ?? null,
+            array_key_exists('business_phone', $opts) ? is_array($opts['business_phone']) ? $opts['business_phone'] : [$opts['business_phone']] : null,
             $opts['business_fax'] ?? null,
             $opts['work_address_1'] ?? null,
             $opts['work_address_2'] ?? null,
