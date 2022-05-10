@@ -63,7 +63,16 @@ jobs:
 
           # Test specific Symfony versions
           - PHP_VERSION: 8.0
-            SYMFONY_VERSION: 5.3.*
+            SYMFONY_VERSION: 5.4.*
+
+          - PHP_VERSION: 8.1
+            SYMFONY_VERSION: 5.4.*
+
+          - PHP_VERSION: 8.0
+            SYMFONY_VERSION: 6.0.*
+
+          - PHP_VERSION: 8.1
+            SYMFONY_VERSION: 6.0.*
 
     steps:
       - name: Checkout
@@ -88,7 +97,7 @@ jobs:
         run: composer config minimum-stability ${{ matrix.config.STABILITY }}
 
       - name: Install globally Symfony Flex
-        run: composer global require --no-progress --no-scripts --no-plugins symfony/flex dev-main
+        run: composer global require --no-progress --no-scripts --no-plugins symfony/flex
 
       - name: Limit to specific Symfony version
         if: matrix.config.SYMFONY_VERSION
