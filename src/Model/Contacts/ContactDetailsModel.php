@@ -49,7 +49,7 @@ class ContactDetailsModel extends AbstractModel
             $opts['email_2'] ?? null,
             $opts['company'] ?? null,
             $opts['title'] ?? null,
-            array_key_exists('business_phone', $opts) ? is_array($opts['business_phone']) ? $opts['business_phone'] : [$opts['business_phone']] : null,
+            \array_key_exists('business_phone', $opts) ? \is_array($opts['business_phone']) ? $opts['business_phone'] : [$opts['business_phone']] : null,
             $opts['business_fax'] ?? null,
             $opts['work_address_1'] ?? null,
             $opts['work_address_2'] ?? null,

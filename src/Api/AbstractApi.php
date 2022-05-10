@@ -35,7 +35,7 @@ abstract class AbstractApi
     {
         $query = new Query($this->method, $this->endpoint);
         foreach ($queryParameters as $key => $queryParameter) {
-            if (!array_key_exists($key, $this->editableQueryParameters)) {
+            if (!\array_key_exists($key, $this->editableQueryParameters)) {
                 throw new BadQueryParameterException($key, array_keys($this->editableQueryParameters));
             }
 

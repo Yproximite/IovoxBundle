@@ -18,8 +18,8 @@ class RuleTemplateModel extends AbstractModel
             $opts['template_name'] ?? null,
             $opts['template_notes'] ?? null,
             $opts['template_type'] ?? null,
-            array_key_exists('created', $opts) ? new \DateTimeImmutable($opts['created']) : null,
-            array_key_exists('advanced', $opts) ? 'YES' === $opts['advanced'] : null,
+            \array_key_exists('created', $opts) ? new \DateTimeImmutable($opts['created']) : null,
+            \array_key_exists('advanced', $opts) ? 'YES' === $opts['advanced'] : null,
         );
     }
 }

@@ -23,7 +23,7 @@ abstract class AbstractModel implements ModelInterface
             $results = $response['results']['result'] ?? [];
         }
 
-        if ([] !== $results && !array_key_exists(0, $results)) {
+        if ([] !== $results && !\array_key_exists(0, $results)) {
             return [$results];
         }
 

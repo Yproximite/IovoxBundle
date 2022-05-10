@@ -23,9 +23,9 @@ class SoundFileModel extends AbstractModel
         return new self(
             $opts['sound_label'] ?? null,
             $opts['sound_group'] ?? null,
-            array_key_exists('created', $opts) ? (int) $opts['content_length'] : null,
-            array_key_exists('created', $opts) ? new \DateTimeImmutable($opts['created']) : null,
-            array_key_exists('updated', $opts) ? new \DateTimeImmutable($opts['updated']) : null,
+            \array_key_exists('created', $opts) ? (int) $opts['content_length'] : null,
+            \array_key_exists('created', $opts) ? new \DateTimeImmutable($opts['created']) : null,
+            \array_key_exists('updated', $opts) ? new \DateTimeImmutable($opts['updated']) : null,
             $opts['notes'] ?? null,
         );
     }

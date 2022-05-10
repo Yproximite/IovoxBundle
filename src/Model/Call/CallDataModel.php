@@ -74,7 +74,7 @@ class CallDataModel extends AbstractModel
             $opts['link_name'] ?? null,
             $opts['link_type'] ?? null,
             (null !== $hasRecording = $opts['has_recording'] ?? null) ? '0' !== $hasRecording : null,
-            (null !== $emailSent = $opts['email_sent'] ?? null) ? '0' !== $emailSent : null,
+            (null !== $emailSent    = $opts['email_sent'] ?? null) ? '0' !== $emailSent : null,
             $opts['direction'] ?? null,
             $opts['call_origin_encoded'] ?? null,
             (null !== $categories = ($opts['categories']['category'] ?? null)) ?
