@@ -32,7 +32,7 @@ class VoxnumberModel extends AbstractModel
             $opts['voxnumber_type'] ?? null,
             $opts['voxnumber_country'] ?? null,
             $opts['voxnumber_city'] ?? null,
-            array_key_exists('purchase_date', $opts) ? new \DateTimeImmutable($opts['purchase_date']) : null,
+            \array_key_exists('purchase_date', $opts) ? new \DateTimeImmutable($opts['purchase_date']) : null,
         );
     }
 }

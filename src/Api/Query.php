@@ -35,7 +35,7 @@ class Query
             return;
         }
 
-        if (array_key_exists($queryParameter->getName(), $this->queryParameters)) {
+        if (\array_key_exists($queryParameter->getName(), $this->queryParameters)) {
             return;
         }
 

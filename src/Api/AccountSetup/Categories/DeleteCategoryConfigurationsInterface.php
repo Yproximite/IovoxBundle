@@ -11,5 +11,5 @@ interface DeleteCategoryConfigurationsInterface
     /**
      * @param array{ categories_ids: non-empty-string } $queryParameters
      */
-    public function executeQuery(array $queryParameters = []): bool;
+    public function executeQuery(array $queryParameters): bool;
 }

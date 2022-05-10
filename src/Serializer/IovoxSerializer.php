@@ -33,18 +33,12 @@ class IovoxSerializer implements SerializerInterface
         $this->serializer = new Serializer([new ObjectNormalizer($classMetadataFactory, $metadataAwareNameConverter)], ['xml' => new XmlEncoder($xmlEncoderDefaultConfig)]);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function serialize($data, string $format, array $context = [])
+    public function serialize($data, string $format, array $context = []): string
     {
         return $this->serializer->serialize($data, $format, $context);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function deserialize($data, string $type, string $format, array $context = [])
+    public function deserialize($data, string $type, string $format, array $context = []): mixed
     {
         return $this->serializer->deserialize($data, $type, $format, $context);
     }

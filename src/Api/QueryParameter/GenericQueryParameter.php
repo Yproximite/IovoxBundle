@@ -16,7 +16,7 @@ class GenericQueryParameter implements QueryParameterInterface
     /**
      * @param string|int|array<int|string, mixed>|null $defaultValue
      */
-    public function __construct(protected string $name, protected string $type, protected string $description = '', protected bool $mandatory = false, protected string | int | array | null $defaultValue = null)
+    public function __construct(protected string $name, protected string $type, protected string $description = '', protected bool $mandatory = false, protected string|int|array|null $defaultValue = null)
     {
     }
 
@@ -43,10 +43,10 @@ class GenericQueryParameter implements QueryParameterInterface
     public function isValid(int|string|array|null $value): bool
     {
         return match ($this->getType()) {
-            static::TYPE_INTEGER => is_integer($value),
-            static::TYPE_STRING  => is_string($value),
-            static::TYPE_BOOLEAN => in_array($value, [BooleanString::TRUE, BooleanString::FALSE], true),
-            static::TYPE_ARRAY   => is_array($value),
+            static::TYPE_INTEGER => \is_integer($value),
+            static::TYPE_STRING  => \is_string($value),
+            static::TYPE_BOOLEAN => \in_array($value, [BooleanString::TRUE, BooleanString::FALSE], true),
+            static::TYPE_ARRAY   => \is_array($value),
             default              => false,
         };
     }

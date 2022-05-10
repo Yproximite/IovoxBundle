@@ -1,179 +1,169 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategories\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories' \\=\\> non\\-empty\\-string\\)\\.$#"
-			count: 1
-			path: src/Api/AccountSetup/Categories/DeleteCategories.php
-
-		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoriesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories' \\=\\> non\\-empty\\-string\\)\\.$#"
-			count: 1
-			path: src/Api/AccountSetup/Categories/DeleteCategoriesInterface.php
-
-		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoryConfigurations\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
-			count: 1
-			path: src/Api/AccountSetup/Categories/DeleteCategoryConfigurations.php
-
-		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\DeleteCategoryConfigurationsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('categories_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
-			count: 1
-			path: src/Api/AccountSetup/Categories/DeleteCategoryConfigurationsInterface.php
-
-		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryId\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'label' \\=\\> non\\-empty\\-string, 'value' \\=\\> non\\-empty\\-string, \\?'delimiter' \\=\\> string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryId\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, label\\: non\\-empty\\-string, value\\: non\\-empty\\-string, delimiter\\?\\: string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Categories/GetCategoryId.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryIdInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'label' \\=\\> non\\-empty\\-string, 'value' \\=\\> non\\-empty\\-string, \\?'delimiter' \\=\\> string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Categories\\\\GetCategoryIdInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, label\\: non\\-empty\\-string, value\\: non\\-empty\\-string, delimiter\\?\\: string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Categories/GetCategoryIdInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContacts\\:\\:executeQuery\\(\\) is incompatible with type array\\('contact_ids' \\=\\> non\\-empty\\-string, \\?'rm_rules' \\=\\> 'FALSE'\\|'TRUE', \\?'rm_if_user' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContacts\\:\\:executeQuery\\(\\) is incompatible with type array\\{contact_ids\\: non\\-empty\\-string, rm_rules\\?\\: 'FALSE'\\|'TRUE', rm_if_user\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Contacts/DeleteContacts.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContactsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('contact_ids' \\=\\> non\\-empty\\-string, \\?'rm_rules' \\=\\> 'FALSE'\\|'TRUE', \\?'rm_if_user' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\DeleteContactsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{contact_ids\\: non\\-empty\\-string, rm_rules\\?\\: 'FALSE'\\|'TRUE', rm_if_user\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Contacts/DeleteContactsInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'contact_id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, contact_id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Contacts/GetContactDetails.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'contact_id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Contacts\\\\GetContactDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, contact_id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Contacts/GetContactDetailsInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinks\\:\\:executeQuery\\(\\) is incompatible with type array\\('link_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinks\\:\\:executeQuery\\(\\) is incompatible with type array\\{link_ids\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Links/DeleteLinks.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinksInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('link_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Links\\\\DeleteLinksInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{link_ids\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Links/DeleteLinksInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodes\\:\\:executeQuery\\(\\) is incompatible with type array\\('node_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodes\\:\\:executeQuery\\(\\) is incompatible with type array\\{node_ids\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Nodes/DeleteNodes.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('node_ids' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\DeleteNodesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{node_ids\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Nodes/DeleteNodesInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'node_id' \\=\\> non\\-empty\\-string, \\?'link_id' \\=\\> non\\-empty\\-string, \\?'req_fields' \\=\\> non\\-empty\\-string, \\?'return_rule_name' \\=\\> non\\-empty\\-string, \\?'return_voxnumber' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetails\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, node_id\\: non\\-empty\\-string, link_id\\?\\: non\\-empty\\-string, req_fields\\?\\: non\\-empty\\-string, return_rule_name\\?\\: non\\-empty\\-string, return_voxnumber\\?\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Nodes/GetNodeDetails.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\(\\?'page' \\=\\> int\\<1, max\\>, \\?'limit' \\=\\> int\\<1, max\\>, 'node_id' \\=\\> non\\-empty\\-string, \\?'link_id' \\=\\> non\\-empty\\-string, \\?'req_fields' \\=\\> non\\-empty\\-string, \\?'return_rule_name' \\=\\> non\\-empty\\-string, \\?'return_voxnumber' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\AccountSetup\\\\Nodes\\\\GetNodeDetailsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{page\\?\\: int\\<1, max\\>, limit\\?\\: int\\<1, max\\>, node_id\\: non\\-empty\\-string, link_id\\?\\: non\\-empty\\-string, req_fields\\?\\: non\\-empty\\-string, return_rule_name\\?\\: non\\-empty\\-string, return_voxnumber\\?\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/AccountSetup/Nodes/GetNodeDetailsInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\{id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Analytics/Calls/GetCallRecording.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetCallRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Analytics/Calls/GetCallRecordingInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecording\\:\\:executeQuery\\(\\) is incompatible with type array\\{id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Analytics/Calls/GetVoicemailRecording.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('id' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Analytics\\\\Calls\\\\GetVoicemailRecordingInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{id\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Analytics/Calls/GetVoicemailRecordingInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlows\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flows' \\=\\> non\\-empty\\-string, \\?'detach_from_links' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlows\\:\\:executeQuery\\(\\) is incompatible with type array\\{call_flows\\: non\\-empty\\-string, detach_from_links\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/CallFlow/DeleteCallFlows.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlowsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flows' \\=\\> non\\-empty\\-string, \\?'detach_from_links' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\DeleteCallFlowsInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{call_flows\\: non\\-empty\\-string, detach_from_links\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/CallFlow/DeleteCallFlowsInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlow\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flow' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlow\\:\\:executeQuery\\(\\) is incompatible with type array\\{call_flow\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/CallFlow/GetCallFlow.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlowInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('call_flow' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\CallFlow\\\\GetCallFlowInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{call_flow\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/CallFlow/GetCallFlowInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbers\\:\\:executeQuery\\(\\) is incompatible with type array\\('blocked_numbers' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbers\\:\\:executeQuery\\(\\) is incompatible with type array\\{blocked_numbers\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/Rules/DeleteBlockNumbers.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbersInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('blocked_numbers' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteBlockNumbersInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{blocked_numbers\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/Rules/DeleteBlockNumbersInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplates\\:\\:executeQuery\\(\\) is incompatible with type array\\('time_template_labels' \\=\\> non\\-empty\\-string, \\?'force' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplates\\:\\:executeQuery\\(\\) is incompatible with type array\\{time_template_labels\\: non\\-empty\\-string, force\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/Rules/DeleteTimeTemplates.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplatesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('time_template_labels' \\=\\> non\\-empty\\-string, \\?'force' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\Rules\\\\DeleteTimeTemplatesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{time_template_labels\\: non\\-empty\\-string, force\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/Rules/DeleteTimeTemplatesInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFiles\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_files' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFiles\\:\\:executeQuery\\(\\) is incompatible with type array\\{sound_files\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/SoundFiles/DeleteSoundFiles.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFilesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_files' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\DeleteSoundFilesInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{sound_files\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/SoundFiles/DeleteSoundFilesInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileData\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_label' \\=\\> non\\-empty\\-string, \\?'sound_group' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileData\\:\\:executeQuery\\(\\) is incompatible with type array\\{sound_label\\: non\\-empty\\-string, sound_group\\?\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/SoundFiles/GetSoundFileData.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileDataInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('sound_label' \\=\\> non\\-empty\\-string, \\?'sound_group' \\=\\> non\\-empty\\-string\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Calling\\\\SoundFiles\\\\GetSoundFileDataInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{sound_label\\: non\\-empty\\-string, sound_group\\?\\: non\\-empty\\-string\\}\\.$#"
 			count: 1
 			path: src/Api/Calling/SoundFiles/GetSoundFileDataInterface.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccount\\:\\:executeQuery\\(\\) is incompatible with type array\\('full_voxnumbers' \\=\\> non\\-empty\\-string, \\?'rm_if_in_use' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccount\\:\\:executeQuery\\(\\) is incompatible with type array\\{full_voxnumbers\\: non\\-empty\\-string, rm_if_in_use\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Numbering/Voxnumbers/DeleteVoxnumbersFromAccount.php
 
 		-
-			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\(\\)\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccountInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\('full_voxnumbers' \\=\\> non\\-empty\\-string, \\?'rm_if_in_use' \\=\\> 'FALSE'\\|'TRUE'\\)\\.$#"
+			message: "#^Default value of the parameter \\#1 \\$queryParameters \\(array\\{\\}\\) of method Yproximite\\\\IovoxBundle\\\\Api\\\\Numbering\\\\Voxnumbers\\\\DeleteVoxnumbersFromAccountInterface\\:\\:executeQuery\\(\\) is incompatible with type array\\{full_voxnumbers\\: non\\-empty\\-string, rm_if_in_use\\?\\: 'FALSE'\\|'TRUE'\\}\\.$#"
 			count: 1
 			path: src/Api/Numbering/Voxnumbers/DeleteVoxnumbersFromAccountInterface.php
 
 		-
-			message: "#^Parameter \\#2 \\.\\.\\.\\$values of function sprintf expects bool\\|float\\|int\\|string\\|null, array\\|bool\\|float\\|int\\|string\\|null given\\.$#"
+			message: "#^Method Yproximite\\\\IovoxBundle\\\\Api\\\\Query\\:\\:__construct\\(\\) has parameter \\$queryParameters with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Client.php
+			path: src/Api/Query.php
+
+		-
+			message: "#^Method Yproximite\\\\IovoxBundle\\\\Api\\\\Query\\:\\:getQueryParameters\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Api/Query.php
+
+		-
+			message: "#^Property Yproximite\\\\IovoxBundle\\\\Api\\\\Query\\:\\:\\$queryParameters type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Api/Query.php
 
 		-
 			message: "#^Call to an undefined method Symfony\\\\Component\\\\Config\\\\Definition\\\\Builder\\\\NodeDefinition\\:\\:children\\(\\)\\.$#"
@@ -186,12 +176,107 @@ parameters:
 			path: src/DependencyInjection/IovoxExtension.php
 
 		-
-			message: "#^Call to an undefined method iterable\\<int, Symfony\\\\Component\\\\Validator\\\\ConstraintViolationInterface\\>&Symfony\\\\Component\\\\Validator\\\\ConstraintViolationListInterface\\:\\:__toString\\(\\)\\.$#"
+			message: "#^Call to an undefined method Symfony\\\\Component\\\\Validator\\\\ConstraintViolationListInterface\\:\\:__toString\\(\\)\\.$#"
 			count: 1
 			path: src/Exception/Api/ValidationPayloadException.php
 
 		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Call\\\\CallDataModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Call\\\\GetCallDataModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Call/GetCallDataModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Call\\\\CallMetricModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Call\\\\GetCallMetricsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Call/GetCallMetricsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\CallFlow\\\\CallFlowModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\CallFlow\\\\GetCallFlowsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/CallFlow/GetCallFlowsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Categories\\\\CategoryModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Categories\\\\GetCategoriesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Categories/GetCategoriesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Categories\\\\CategoryIdModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Categories\\\\GetCategoryIdModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Categories/GetCategoryIdModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Contacts\\\\ContactDetailsModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Contacts\\\\GetContactDetailsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Contacts/GetContactDetailsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Contacts\\\\ContactModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Contacts\\\\GetContactsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Contacts/GetContactsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Countries\\\\CountryModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Countries\\\\GetCountriesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Countries/GetCountriesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Links\\\\LinkModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Links\\\\GetLinksModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Links/GetLinksModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Nodes\\\\NodeDetailsModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Nodes\\\\GetNodeDetailsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Nodes/GetNodeDetailsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Nodes\\\\NodeModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Nodes\\\\GetNodesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Nodes/GetNodesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\Response\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/PaginateResponse.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Purchase\\\\VoxnumberRegionModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Purchase\\\\GetVoxnumberRegionsModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Purchase/GetVoxnumberRegionsModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\BlockedNumberModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\GetBlockedNumbersModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Rules/GetBlockedNumbersModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\RuleTemplateModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\GetRuleTemplatesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Rules/GetRuleTemplatesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\TimeTemplateModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Rules\\\\GetTimeTemplatesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Rules/GetTimeTemplatesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\SoundFiles\\\\SoundFileModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\SoundFiles\\\\GetSoundFilesModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/SoundFiles/GetSoundFilesModel.php
+
+		-
+			message: "#^PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, Yproximite\\\\IovoxBundle\\\\Model\\\\Voxnumbers\\\\VoxnumberModel\\> of property Yproximite\\\\IovoxBundle\\\\Model\\\\Voxnumbers\\\\GetVoxnumbersModel\\:\\:\\$results is not the same as PHPDoc type Doctrine\\\\Common\\\\Collections\\\\Collection\\<int, T of Yproximite\\\\IovoxBundle\\\\Model\\\\ModelInterface\\> of overridden property Yproximite\\\\IovoxBundle\\\\Model\\\\PaginateResponse\\:\\:\\$results\\.$#"
+			count: 1
+			path: src/Model/Voxnumbers/GetVoxnumbersModel.php
+
+		-
 			message: "#^Method Yproximite\\\\IovoxBundle\\\\Serializer\\\\IovoxSerializer\\:\\:deserialize\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Serializer/IovoxSerializer.php
+
+		-
+			message: "#^Method Yproximite\\\\IovoxBundle\\\\Serializer\\\\IovoxSerializer\\:\\:deserialize\\(\\) has parameter \\$data with no type specified\\.$#"
 			count: 1
 			path: src/Serializer/IovoxSerializer.php
 
