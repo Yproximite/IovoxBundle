@@ -18,6 +18,7 @@
     "php": "^8.0",
     "doctrine/annotations": "^1.13",
     "doctrine/common": "^3.1",
+    "rector/rector": "^0.12.23",
     "symfony/framework-bundle": "^5.4 || ^6.0",
     "symfony/http-client": "^5.4 || ^6.0",
     "symfony/serializer": "^5.4 || ^6.0",

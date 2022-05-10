@@ -108,3 +108,6 @@ jobs:
 
       - name: Run PHPUnit
         run: composer phpunit -- ${{ matrix.config.PHPUNIT_FLAGS }}
+
+      - name: Run Rector
+        run: php bin/rector --dry-run
