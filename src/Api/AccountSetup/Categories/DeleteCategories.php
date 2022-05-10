@@ -21,7 +21,7 @@ use Yproximite\IovoxBundle\Exception\Api\BadResponseReturnException;
  */
 class DeleteCategories extends AbstractCategories implements DeleteCategoriesInterface
 {
-    public function executeQuery(array $queryParameters = []): bool
+    public function executeQuery(array $queryParameters): bool
     {
         $query    = $this->createQuery($queryParameters);
         $response = $this->client->executeQuery($query);

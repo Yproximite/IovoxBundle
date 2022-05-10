@@ -35,6 +35,10 @@ class Client
             $options['body'] = $content;
         }
 
-        return $this->client->request($query->method, sprintf('%s%s', $this->parameterBag->get('iovox.endpoint'), $query->endpoint), $options);
+        if (!\is_string($endpoint = $this->parameterBag->get('iovox.endpoint'))) {
+            throw new \LogicException('Endpoint should be string');
+        }
+
+        return $this->client->request($query->method, sprintf('%s%s', $endpoint, $query->endpoint), $options);
     }
 }
