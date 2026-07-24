@@ -39,6 +39,6 @@ class Client
             throw new \LogicException('Endpoint should be string');
         }
 
-        return $this->client->request($query->method, sprintf('%s%s', $endpoint, $query->endpoint), $options);
+        return $this->client->request($query->method, \sprintf('%s%s', $endpoint, $query->endpoint), $options);
     }
 }

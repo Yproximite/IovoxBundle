@@ -48,7 +48,7 @@ class LinkPayload
         ?\DateTimeImmutable $linkDate = null,
         ?int $clickToCall = null,
         ?array $categories = null,
-        ?AssignVoxnumberPayload $assignVoxnumber = null
+        ?AssignVoxnumberPayload $assignVoxnumber = null,
     ) {
         $this->linkId          = $linkId;
         $this->linkName        = $linkName;

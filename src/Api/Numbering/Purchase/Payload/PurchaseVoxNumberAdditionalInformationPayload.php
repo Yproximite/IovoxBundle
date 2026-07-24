@@ -36,7 +36,7 @@ class PurchaseVoxNumberAdditionalInformationPayload
         ?string $street = null,
         ?int $buildingNumber = null,
         ?string $city = null,
-        ?string $zipcode = null
+        ?string $zipcode = null,
     ) {
         $this->firstname      = $firstname;
         $this->lastname       = $lastname;

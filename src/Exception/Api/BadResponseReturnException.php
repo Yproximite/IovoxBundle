@@ -69,8 +69,8 @@ class BadResponseReturnException extends \Exception
                 continue;
             }
 
-            if (1 === preg_match(sprintf('/^%s$/', $listErrorResult->getError()), $error)) {
-                return sprintf('%s => %s', $error, $listErrorResult->getResolution());
+            if (1 === preg_match(\sprintf('/^%s$/', $listErrorResult->getError()), $error)) {
+                return \sprintf('%s => %s', $error, $listErrorResult->getResolution());
             }
         }
 

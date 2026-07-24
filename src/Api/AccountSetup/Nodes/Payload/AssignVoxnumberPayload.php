@@ -38,7 +38,7 @@ class AssignVoxnumberPayload
         ?string $fullVoxnumber = null,
         ?string $voxnumberCountry = null,
         ?string $postcode = null,
-        ?int $fallbackAreaDistance = null
+        ?int $fallbackAreaDistance = null,
     ) {
         $this->method               = $method;
         $this->voxnumberIdd         = $voxnumberIdd;

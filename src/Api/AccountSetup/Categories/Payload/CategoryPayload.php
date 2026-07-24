@@ -40,7 +40,7 @@ class CategoryPayload
         ?string $parentCategoryId = null,
         ?string $type = null,
         ?string $valueType = null,
-        ?string $colour = null
+        ?string $colour = null,
     ) {
         $this->categoryId       = $categoryId;
         $this->label            = $label;

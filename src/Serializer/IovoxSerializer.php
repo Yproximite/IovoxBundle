@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Serializer;
 
-use Doctrine\Common\Annotations\AnnotationReader;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
-use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
+use Symfony\Component\Serializer\Mapping\Loader\AttributeLoader;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -27,7 +26,7 @@ class IovoxSerializer implements SerializerInterface
             'remove_empty_tags'  => true,
         ];
 
-        $classMetadataFactory       = new ClassMetadataFactory(new AnnotationLoader(new AnnotationReader()));
+        $classMetadataFactory       = new ClassMetadataFactory(new AttributeLoader());
         $metadataAwareNameConverter = new MetadataAwareNameConverter($classMetadataFactory, new CamelCaseToSnakeCaseNameConverter());
 
         $this->serializer = new Serializer([new ObjectNormalizer($classMetadataFactory, $metadataAwareNameConverter)], ['xml' => new XmlEncoder($xmlEncoderDefaultConfig)]);

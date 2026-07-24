@@ -11,6 +11,6 @@ class BadQueryParameterException extends \LogicException
      */
     public function __construct(string $parameter, array $availableParameters)
     {
-        parent::__construct(sprintf('Query parameter "%s" is not a valid element. Only one of these are available: %s', $parameter, implode(', ', $availableParameters)));
+        parent::__construct(\sprintf('Query parameter "%s" is not a valid element. Only one of these are available: %s', $parameter, implode(', ', $availableParameters)));
     }
 }
