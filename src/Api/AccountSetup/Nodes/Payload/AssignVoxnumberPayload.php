@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload;
 
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class AssignVoxnumberPayload

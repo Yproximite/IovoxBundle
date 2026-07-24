@@ -13,24 +13,6 @@ parameters:
 			path: src/Api/AccountSetup/Categories/GetCategoryIdInterface.php
 
 		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Categories/Payload/CategoriesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Categories/Payload/CategoriesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 7
-			path: src/Api/AccountSetup/Categories/Payload/CategoryPayload.php
-
-		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\AccountSetup\\Contacts\\DeleteContacts\:\:executeQuery\(\) is incompatible with type array\{contact_ids\: non\-empty\-string, rm_rules\?\: ''FALSE''\|''TRUE'', rm_if_user\?\: ''FALSE''\|''TRUE''\}\.$#'
 			identifier: parameter.defaultValue
 			count: 1
@@ -55,24 +37,6 @@ parameters:
 			path: src/Api/AccountSetup/Contacts/GetContactDetailsInterface.php
 
 		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 23
-			path: src/Api/AccountSetup/Contacts/Payload/ContactPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 3
-			path: src/Api/AccountSetup/Contacts/Payload/ContactsPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Contacts/Payload/ContactsPayload.php
-
-		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\AccountSetup\\Links\\DeleteLinks\:\:executeQuery\(\) is incompatible with type array\{link_ids\: non\-empty\-string\}\.$#'
 			identifier: parameter.defaultValue
 			count: 1
@@ -85,142 +49,10 @@ parameters:
 			path: src/Api/AccountSetup/Links/DeleteLinksInterface.php
 
 		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/AttachCategoryToLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/AttachCategoryToLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 4
-			path: src/Api/AccountSetup/Links/Payload/AttachRuleTemplateToLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 2
-			path: src/Api/AccountSetup/Links/Payload/AttachRuleTemplateToLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 4
-			path: src/Api/AccountSetup/Links/Payload/AttachSMSTemplateToLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 2
-			path: src/Api/AccountSetup/Links/Payload/AttachSMSTemplateToLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/AttachVoxnumberToLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/AttachVoxnumberToLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 4
-			path: src/Api/AccountSetup/Links/Payload/CategoryPayload.php
-
-		-
 			message: '#^Deprecated in PHP 8\.1\: Required parameter \$value follows optional parameter \$parentCategoryId\.$#'
 			identifier: parameter.requiredAfterOptional
 			count: 1
 			path: src/Api/AccountSetup/Links/Payload/CategoryPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 8
-			path: src/Api/AccountSetup/Links/Payload/LinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/LinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/LinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveCategoryFromLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveCategoryFromLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveRuleTemplateFromLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveSMSTemplateFromLinksPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveVoxnumberFromLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/RemoveVoxnumberFromLinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 2
-			path: src/Api/AccountSetup/Links/Payload/Rules/ContactRulePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 15
-			path: src/Api/AccountSetup/Links/Payload/Rules/RulePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Links/Payload/Rules/SoundFilesRulePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 8
-			path: src/Api/AccountSetup/Links/Payload/VoxNumberPayload.php
 
 		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\AccountSetup\\Nodes\\DeleteNodes\:\:executeQuery\(\) is incompatible with type array\{node_ids\: non\-empty\-string\}\.$#'
@@ -245,54 +77,6 @@ parameters:
 			identifier: parameter.defaultValue
 			count: 1
 			path: src/Api/AccountSetup/Nodes/GetNodeDetailsInterface.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 7
-			path: src/Api/AccountSetup/Nodes/Payload/AssignVoxnumberPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 3
-			path: src/Api/AccountSetup/Nodes/Payload/CategoryPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 7
-			path: src/Api/AccountSetup/Nodes/Payload/LinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Nodes/Payload/LinkPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 6
-			path: src/Api/AccountSetup/Nodes/Payload/NodePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Nodes/Payload/NodePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Nodes/Payload/NodesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/AccountSetup/Nodes/Payload/NodesPayload.php
 
 		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\Analytics\\Calls\\GetCallRecording\:\:executeQuery\(\) is incompatible with type array\{id\: non\-empty\-string\}\.$#'
@@ -367,54 +151,6 @@ parameters:
 			path: src/Api/Calling/Rules/DeleteTimeTemplatesInterface.php
 
 		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 9
-			path: src/Api/Calling/Rules/Payload/BlockedNumberPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/Rules/Payload/BlockedNumbersPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/Rules/Payload/BlockedNumbersPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 3
-			path: src/Api/Calling/Rules/Payload/RuleBlockedNumberPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 6
-			path: src/Api/Calling/Rules/Payload/TimeFramePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 3
-			path: src/Api/Calling/Rules/Payload/TimeTemplatePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/Rules/Payload/TimeTemplatesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/Rules/Payload/TimeTemplatesPayload.php
-
-		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\Calling\\SoundFiles\\DeleteSoundFiles\:\:executeQuery\(\) is incompatible with type array\{sound_files\: non\-empty\-string\}\.$#'
 			identifier: parameter.defaultValue
 			count: 1
@@ -439,42 +175,6 @@ parameters:
 			path: src/Api/Calling/SoundFiles/GetSoundFileDataInterface.php
 
 		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 6
-			path: src/Api/Calling/SoundFiles/Payload/SoundFilePayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/SoundFiles/Payload/SoundFilesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\SerializedName does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Calling/SoundFiles/Payload/SoundFilesPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 7
-			path: src/Api/Numbering/Purchase/Payload/PurchaseVoxNumberAdditionalInformationPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 7
-			path: src/Api/Numbering/Purchase/Payload/PurchaseVoxnumberPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 4
-			path: src/Api/Numbering/Purchase/Payload/PurchaseVoxnumbersPayload.php
-
-		-
 			message: '#^Default value of the parameter \#1 \$queryParameters \(array\{\}\) of method Yproximite\\IovoxBundle\\Api\\Numbering\\Voxnumbers\\DeleteVoxnumbersFromAccount\:\:executeQuery\(\) is incompatible with type array\{full_voxnumbers\: non\-empty\-string, rm_if_in_use\?\: ''FALSE''\|''TRUE''\}\.$#'
 			identifier: parameter.defaultValue
 			count: 1
@@ -485,18 +185,6 @@ parameters:
 			identifier: parameter.defaultValue
 			count: 1
 			path: src/Api/Numbering/Voxnumbers/DeleteVoxnumbersFromAccountInterface.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 1
-			path: src/Api/Numbering/Voxnumbers/Payload/VoxnumberPayload.php
-
-		-
-			message: '#^Attribute class Symfony\\Component\\Serializer\\Annotation\\Groups does not exist\.$#'
-			identifier: attribute.notFound
-			count: 2
-			path: src/Api/Numbering/Voxnumbers/Payload/VoxnumbersPayload.php
 
 		-
 			message: '#^Method Yproximite\\IovoxBundle\\Api\\Query\:\:__construct\(\) has parameter \$queryParameters with no value type specified in iterable type array\.$#'
