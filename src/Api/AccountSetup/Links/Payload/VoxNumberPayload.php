@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Links\Payload;
 
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class VoxNumberPayload
@@ -45,7 +45,7 @@ class VoxNumberPayload
         ?int $fullVoxnumber = null,
         ?string $voxnumberCountry = null,
         ?string $postcode = null,
-        ?int $fallbackAreaDistance = null
+        ?int $fallbackAreaDistance = null,
     ) {
         $this->linkId               = $linkId;
         $this->method               = $method;

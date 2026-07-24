@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\Numbering\Purchase\Payload;
 
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 class PurchaseVoxNumberAdditionalInformationPayload
 {
@@ -36,7 +36,7 @@ class PurchaseVoxNumberAdditionalInformationPayload
         ?string $street = null,
         ?int $buildingNumber = null,
         ?string $city = null,
-        ?string $zipcode = null
+        ?string $zipcode = null,
     ) {
         $this->firstname      = $firstname;
         $this->lastname       = $lastname;

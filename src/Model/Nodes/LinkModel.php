@@ -21,7 +21,7 @@ class LinkModel extends AbstractModel
         public ?string $voxnumber,
         public ?string $ruleTemplateName,
         public Collection $rules,
-        public Collection $categories
+        public Collection $categories,
     ) {
     }
 

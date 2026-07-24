@@ -1,7 +1,7 @@
 # IovoxBundle
 ![CI (master)](https://github.com/Yproximite/IovoxBundle/workflows/CI/badge.svg)
-![](https://img.shields.io/badge/PHP-%5E8.0-blue)
-![](https://img.shields.io/badge/Symfony-%5E5.4%20%7C%7C%20%5E6.0-blue)
+![](https://img.shields.io/badge/PHP-%5E8.2-blue)
+![](https://img.shields.io/badge/Symfony-%5E6.4%20%7C%7C%20%5E7.4%20%7C%7C%20%5E8.0-blue)
 
 ## Installation
 

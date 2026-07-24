@@ -25,10 +25,10 @@ class ConvertXmlString
      */
     public static function convertXsdStringToArray(string $xsdString): ?array
     {
-        $tmpXsdFile = sprintf('%s/schema.xsd', sys_get_temp_dir());
+        $tmpXsdFile = \sprintf('%s/schema.xsd', sys_get_temp_dir());
         file_put_contents($tmpXsdFile, $xsdString);
 
-        $tmpFile                 = sprintf('%s/schema.xml', sys_get_temp_dir());
+        $tmpFile                 = \sprintf('%s/schema.xml', sys_get_temp_dir());
         $doc                     = new \DOMDocument();
         $doc->preserveWhiteSpace = true;
         $doc->load($tmpXsdFile);

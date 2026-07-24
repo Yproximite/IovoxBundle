@@ -10,6 +10,6 @@ class InvalidQueryParameterException extends \LogicException
 {
     public function __construct(mixed $parameterValue, QueryParameterInterface $queryParameter)
     {
-        parent::__construct(sprintf('The "%s" value of "%s" query parameter is invalid. Only "%s" type values are accepted.', $parameterValue, $queryParameter->getName(), $queryParameter->getType()));
+        parent::__construct(\sprintf('The "%s" value of "%s" query parameter is invalid. Only "%s" type values are accepted.', $parameterValue, $queryParameter->getName(), $queryParameter->getType()));
     }
 }

@@ -14,7 +14,7 @@ class SoundFileModel extends AbstractModel
         public ?int $contentLength,
         public ?\DateTimeImmutable $created,
         public ?\DateTimeImmutable $updated,
-        public ?string $notes
+        public ?string $notes,
     ) {
     }
 

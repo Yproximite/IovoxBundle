@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Categories\Payload;
 
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class CategoryPayload
@@ -40,7 +40,7 @@ class CategoryPayload
         ?string $parentCategoryId = null,
         ?string $type = null,
         ?string $valueType = null,
-        ?string $colour = null
+        ?string $colour = null,
     ) {
         $this->categoryId       = $categoryId;
         $this->label            = $label;

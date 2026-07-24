@@ -16,7 +16,7 @@ class NodeModel extends AbstractModel
         public ?string $linkName,
         public ?string $linkType,
         public ?string $voxnumber,
-        public ?string $ruleTemplateName
+        public ?string $ruleTemplateName,
     ) {
     }
 

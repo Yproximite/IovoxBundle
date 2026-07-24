@@ -8,6 +8,6 @@ class CannotConvertXmlToArrayException extends \Exception
 {
     public function __construct(string $response)
     {
-        parent::__construct(sprintf('Cannot convert response "%s" to array.', $response));
+        parent::__construct(\sprintf('Cannot convert response "%s" to array.', $response));
     }
 }

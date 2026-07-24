@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Yproximite\IovoxBundle\Api\AccountSetup\Nodes\Payload;
 
-use Symfony\Component\Serializer\Annotation\Groups;
-use Symfony\Component\Serializer\Annotation\SerializedName;
+use Symfony\Component\Serializer\Attribute\Groups;
+use Symfony\Component\Serializer\Attribute\SerializedName;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class LinkPayload
@@ -48,7 +48,7 @@ class LinkPayload
         ?\DateTimeImmutable $linkDate = null,
         ?int $clickToCall = null,
         ?array $categories = null,
-        ?AssignVoxnumberPayload $assignVoxnumber = null
+        ?AssignVoxnumberPayload $assignVoxnumber = null,
     ) {
         $this->linkId          = $linkId;
         $this->linkName        = $linkName;
