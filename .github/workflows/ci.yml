@@ -69,13 +69,13 @@ jobs:
             SYMFONY_VERSION: 6.4.*
 
           - PHP_VERSION: 8.2
-            SYMFONY_VERSION: 7.0.*
+            SYMFONY_VERSION: 7.4.*
 
           - PHP_VERSION: 8.3
-            SYMFONY_VERSION: 7.0.*
+            SYMFONY_VERSION: 7.4.*
 
           - PHP_VERSION: 8.4
-            SYMFONY_VERSION: 7.0.*
+            SYMFONY_VERSION: 7.4.*
 
           - PHP_VERSION: 8.4
             SYMFONY_VERSION: 8.0.*
